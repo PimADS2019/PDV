@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
+using controllerPimNoite.BL;
 
 namespace ViewPimNoite.Estoque
 {
@@ -36,7 +39,16 @@ namespace ViewPimNoite.Estoque
 
         private void btnSalvarProduto_Click(object sender, RoutedEventArgs e)
         {
+            ProdutoDTO produto = new ProdutoDTO();
 
+            produto.CodReferencia = Convert.ToInt32(txbCodRefEstoque.Text);
+            produto.Produto = txbProdutoEntrada.Text;
+            produto.Forncedor = txbFornecedor.Text;
+
+            Controller.getInstance().AcrescentarQuantidadeEstoque(produto, txbQuantidadeEntrada.Text);
+
+            MessageBox.Show(ProdutoBL.getInstance().mensagem);
+     
         }
     }
 }

@@ -30,7 +30,7 @@ namespace controllerPimNoite.DAO
             return instance;
         }
 
-        public bool ValidarUsuario(UsuarioDTO usuario)
+        public Boolean ValidarUsuario(UsuarioDTO usuario)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"SELECT * FROM TUsuario 

@@ -68,6 +68,8 @@ namespace ViewPimNoite.Produto
             produto.PrecoVenda = Convert.ToInt32(txbPrecoVenda.Text);
 
             Controller.getInstance().CadastrarProduto(produto);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }

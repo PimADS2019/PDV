@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
 
 namespace ViewPimNoite
 {
@@ -27,13 +29,12 @@ namespace ViewPimNoite
 
         private void btnLogar_Click(object sender, RoutedEventArgs e)
         {
-            if (txbUsuario.Text == "admin")
-            {
-                MainMenu menu = new MainMenu();
-                menu.Show();
-            }
-            else
-                MessageBox.Show("Usuário/Senha incorretos!");
+            UsuarioDTO usuario = new UsuarioDTO();
+
+            usuario.Usuario = txbUsuario.Text;
+            usuario.Senha = txbSenha.Password;
+
+            Controller.getInstance().ValidarUsuario(usuario);
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)

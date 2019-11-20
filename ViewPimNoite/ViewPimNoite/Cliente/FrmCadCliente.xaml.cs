@@ -43,6 +43,8 @@ namespace ViewPimNoite.Cliente
             cliente.Celular = txbCelularCliente.Text;
 
             Controller.getInstance().CadastrarCliente(cliente);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
 
         private void txbDtNascCliente_KeyDown(object sender, KeyEventArgs e)

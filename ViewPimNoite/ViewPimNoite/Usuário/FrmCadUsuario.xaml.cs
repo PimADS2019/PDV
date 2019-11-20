@@ -94,12 +94,13 @@ namespace ViewPimNoite.Usuário
         private void btnSalvarUsuario_Click(object sender, RoutedEventArgs e)
         {
             FuncionarioDTO funcionario = new FuncionarioDTO();
+            UsuarioDTO usuario = new UsuarioDTO();
 
             funcionario.Nome = txbNomeUsuario.Text;
             funcionario.Cpf = txbCpfUsuario.Text;
             funcionario.Dtnasc = txbDtNascUsuario.Text;
-            funcionario.Usuario = txbUserUsuario.Text;
-            funcionario.Senha = txbSenhaUsuario.Password;
+            usuario.Usuario = txbUserUsuario.Text;
+            usuario.Senha = txbSenhaUsuario.Password;
             funcionario.ConfSenha = txbConfSenhaUsuario.Password;
             funcionario.Cep = txbCepUsuario.Text;
             funcionario.Endereco = txbEnderecoUsuario.Text;
@@ -112,6 +113,8 @@ namespace ViewPimNoite.Usuário
             funcionario.Email = txbEmailUsuario.Text;
 
             Controller.getInstance().CadastrarFuncionario(funcionario);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }
