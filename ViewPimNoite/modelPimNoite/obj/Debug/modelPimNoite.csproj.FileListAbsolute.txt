@@ -1,0 +1,16 @@
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.csproj.CoreCompileInputs.cache
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.pdb

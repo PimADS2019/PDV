@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{937CFCA2-C60C-482F-89C4-4BC6F1E611A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ViewPimNoite</RootNamespace>
+    <AssemblyName>ViewPimNoite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCadCliente.xaml.cs">
+      <DependentUpon>FrmCadCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmEditCliente.xaml.cs">
+      <DependentUpon>FrmEditCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\FrmEntradaProduto.xaml.cs">
+      <DependentUpon>FrmEntradaProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.xaml.cs">
+      <DependentUpon>FrmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Produto\FrmCadProduto.xaml.cs">
+      <DependentUpon>FrmCadProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Produto\FrmEditProduto.xaml.cs">
+      <DependentUpon>FrmEditProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCEstoque.xaml.cs">
+      <DependentUpon>UCEstoque.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenuItem.xaml.cs">
+      <DependentUpon>UCMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCliente.xaml.cs">
+      <DependentUpon>UCCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCProduto.xaml.cs">
+      <DependentUpon>UCProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCUsuario.xaml.cs">
+      <DependentUpon>UCUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCVenda.xaml.cs">
+      <DependentUpon>UCVenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuário\FrmCadUsuario.xaml.cs">
+      <DependentUpon>FrmCadUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuário\FrmEditUsuario.xaml.cs">
+      <DependentUpon>FrmEditUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ItemMenu.cs" />
+    <Compile Include="ViewModel\SubItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmMainMenu.xaml.cs">
+      <DependentUpon>FrmMainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Cliente\FrmCadCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cliente\FrmEditCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Estoque\FrmEntradaProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Produto\FrmCadProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Produto\FrmEditProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCEstoque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCVenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuário\FrmCadUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuário\FrmEditUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconAtualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Venda\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconLogout.png" />
+    <Resource Include="Imagens\iconTurnOff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconPDV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconHora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconCalendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\LOGO MENU.png" />
+    <Resource Include="Imagens\LOGO LOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\iconUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\controllerPimNoite\controllerPimNoite.csproj">
+      <Project>{d586b244-7aab-4256-a64e-0edd5d4df85c}</Project>
+      <Name>controllerPimNoite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\modelPimNoite\modelPimNoite.csproj">
+      <Project>{733eb66d-bd82-4dda-90f5-232c49a09d01}</Project>
+      <Name>modelPimNoite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

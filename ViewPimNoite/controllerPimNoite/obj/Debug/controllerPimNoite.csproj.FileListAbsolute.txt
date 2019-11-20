@@ -1,0 +1,25 @@
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\bin\Debug\modelPimNoite.dll
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CoreCompileInputs.cache
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+D:\Cursos\UNIP\ADS UNIP\Semestre 4\Ricardo -Program Orient a Objetos II\Exercicios\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\bin\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\pimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\bin\Debug\modelPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.pdb

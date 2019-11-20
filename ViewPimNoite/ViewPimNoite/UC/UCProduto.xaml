@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ViewPimNoite.UC.UCProduto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ViewPimNoite.UC"
+             mc:Ignorable="d" Width="1100" Height="620">
+    <Grid Margin="0,0,1,0">
+        <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
+        <Label Content="Produtos" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="166"/>
+        <DataGrid x:Name="dgProdutos" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cód. Referência" Binding="{Binding codRefPRoduto}"  Width="150"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding nomeProduto}"  Width="300"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding marcaProduto}" Width="300"/>
+                <DataGridTextColumn Header="Custo" Binding="{Binding custoProduto}" Width="150"/>
+                <DataGridTextColumn Header="Preço Venda" Binding="{Binding precVendaProduto}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txbPesqProduto" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar produto" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" />
+        <Button Content="btnAtualizarProduto" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="/ViewPimNoite;component/Imagens/iconAtualizar.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnIncluirProduto" Content="Incluir" FontSize="14" Height="Auto" Margin="24,574,971,16" Click="BtnIncluirProduto_Click" RenderTransformOrigin="0.985,4.237" />
+        <Button x:Name="btnEditarProduto" Content="Editar" Background="Gold" FontSize="14" Height="Auto" Margin="836,574,159,16" BorderBrush="Gold" Click="BtnEditarProduto_Click"/>
+        <Button x:Name="btnExcluirProduto" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" />
+
+    </Grid>
+</UserControl>
