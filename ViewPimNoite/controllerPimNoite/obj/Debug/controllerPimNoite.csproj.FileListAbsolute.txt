@@ -23,3 +23,11 @@ C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\D
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.dll
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete

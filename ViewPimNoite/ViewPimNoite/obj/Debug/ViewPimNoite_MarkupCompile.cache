@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Caroline\Desktop\ViewPimNoite\ViewPimNoite\obj\Debug\
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\
 ViewPimNoite
 none
 false
 DEBUG;TRACE
-C:\Users\Caroline\Desktop\ViewPimNoite\ViewPimNoite\App.xaml
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\ViewPimNoite\App.xaml
 15820524380
 
-22-661148468
-15822559107
+212078175161
+17-1789407669
 Cliente\FrmCadCliente.xaml;Cliente\FrmEditCliente.xaml;Estoque\FrmEntradaProduto.xaml;FrmLogin.xaml;FrmMainMenu.xaml;Produto\FrmCadProduto.xaml;Produto\FrmEditProduto.xaml;UC\UCEstoque.xaml;UC\UCMenuItem.xaml;UC\UCCliente.xaml;UC\UCProduto.xaml;UC\UCUsuario.xaml;UC\UCVenda.xaml;Usuário\FrmCadUsuario.xaml;Usuário\FrmEditUsuario.xaml;
 
-True
+False
 

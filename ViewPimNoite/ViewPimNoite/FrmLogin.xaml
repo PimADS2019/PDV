@@ -32,13 +32,13 @@
 
         <Grid VerticalAlignment="Bottom" Margin="35,0,35,43" Height="240">
             <StackPanel VerticalAlignment="Center" Margin="15,10,15,50">
-                <TextBox x:Name="txtUsuario" Margin="0,0" materialDesign:HintAssist.Hint="Usuário" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Arial" FontSize="15"/>
-                <PasswordBox x:Name="txtSenha" Margin="0,20" materialDesign:HintAssist.Hint="Senha" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Arial" FontSize="15"/>
+                <TextBox x:Name="txbUsuario" Margin="0,0" materialDesign:HintAssist.Hint="Usuário" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Arial" FontSize="15"/>
+                <PasswordBox x:Name="txbSenha" Margin="0,20" materialDesign:HintAssist.Hint="Senha" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Arial" FontSize="15"/>
             </StackPanel>
         </Grid>
         <Image Source="Imagens\LOGO LOGIN.png" HorizontalAlignment="Center" Margin="23,42,26,292" Width="301"/>
-        <Button x:Name="btnLogar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,64" Content="LOGIN" Background="#FF2196F3" BorderBrush="#FF2196F3" Click="Button_Click" />
-        <Button x:Name="btnFechar" Content="x" Margin="309,-1,-1,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF404040" Height="27" Click="Button_Click_1" OpacityMask="Black"/>
+        <Button x:Name="btnLogar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,64" Content="LOGIN" Background="#FF2196F3" BorderBrush="#FF2196F3" Click="btnLogar_Click" />
+        <Button x:Name="btnFechar" Content="x" Margin="309,-1,-1,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF404040" Height="27" OpacityMask="Black" Click="btnFechar_Click"/>
 
     </Grid>
 </Window>

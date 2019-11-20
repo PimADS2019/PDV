@@ -14,3 +14,8 @@ C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\bin\Debug\
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.dll
 C:\Backup\arquivos salvos\Faculdade\pim\2-2019\Back-End\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Users\Vinicius\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb

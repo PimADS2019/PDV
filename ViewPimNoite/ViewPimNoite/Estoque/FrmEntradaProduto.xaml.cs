@@ -23,5 +23,20 @@ namespace ViewPimNoite.Estoque
         {
             InitializeComponent();
         }
+
+        private void txbQuantidadeEntrada_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnSalvarProduto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

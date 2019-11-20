@@ -35,6 +35,7 @@ namespace ViewPimNoite.UC
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
             frmCadastrar.Show();
+
         }
 
 
@@ -46,6 +47,11 @@ namespace ViewPimNoite.UC
         }
 
         private void btnExcluirCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dgClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

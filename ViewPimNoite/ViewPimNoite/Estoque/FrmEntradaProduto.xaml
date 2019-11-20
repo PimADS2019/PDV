@@ -11,14 +11,14 @@
         <Label Content="Informe os dados para entrada de um produto." HorizontalAlignment="Left" Margin="19,27,0,0" VerticalAlignment="Top" Height="auto" FontSize="12" Foreground="#DDFFFFFF" Width="483"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="178" Margin="19,80,0,0"  Stroke="#DDA6A6A6" VerticalAlignment="Top" Width="753"/>
         <Label Content="Código de Referência" HorizontalAlignment="Left" Margin="39,109,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <TextBox x:Name="txbCodRefEstoque" HorizontalAlignment="Left" Height="23" Margin="45,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Produto" HorizontalAlignment="Left" Margin="39,178,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <TextBox x:Name="txbProdutoEntrada" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="45,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Fornecedor" HorizontalAlignment="Left" Margin="456,109,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="462,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <TextBox x:Name="txbFornecedor" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="462,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Quantidade" HorizontalAlignment="Left" Margin="456,178,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="462,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <TextBox x:Name="txbQuantidadeEntrada" HorizontalAlignment="Left" Height="23" Margin="462,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbQuantidadeEntrada_KeyDown"/>
         <Label Content="DADOS" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Margin="45,63,0,0" VerticalAlignment="Top" Background="White" Width="63" Foreground="#DDA6A6A6"/>
-        <Button x:Name="btnSalvarProduto" Content="Salvar" HorizontalAlignment="Left" Margin="628,271,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.727,0.75" Background="#FF279915"/>
+        <Button x:Name="btnSalvarProduto" Content="Salvar" HorizontalAlignment="Left" Margin="628,271,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.727,0.75" Background="#FF279915" Click="btnSalvarProduto_Click"/>
     </Grid>
 </Window>

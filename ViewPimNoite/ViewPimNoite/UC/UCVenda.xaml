@@ -8,7 +8,6 @@
     <Grid Background="#FF515151" Margin="-20,0,-8,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="110" Stroke="#FF2196F3" VerticalAlignment="Top" Width="581" RadiusX="10" RadiusY="5" Margin="55,36,0,0"/>
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
-        <TextBox HorizontalAlignment="Left" FontSize="18" Height="35" Margin="73,96,0,0" TextWrapping="Wrap" Text=" Informe o nome do produto" VerticalAlignment="Top" Width="399" Background="White" Foreground="#FFAAAAAA"/>
         <Button Content="Finalizar Venda" FontSize="26" HorizontalAlignment="Left" Margin="55,468,0,0" VerticalAlignment="Top" Width="287" Height="50"/>
         <Button Content="Quantidade" FontSize="26" HorizontalAlignment="Left" Margin="357,468,0,0" VerticalAlignment="Top" Width="279" Height="50"/>
         <Button Content="Cancelar Venda" FontSize="26" HorizontalAlignment="Left" Margin="55,541,0,0" VerticalAlignment="Top" Width="287" Height="50"/>
@@ -22,5 +21,6 @@
         <Label Content="Itens" HorizontalAlignment="Left" FontWeight="Bold" Margin="695,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="39"/>
         <Label Content="Sub Total" HorizontalAlignment="Left" FontWeight="Bold" Margin="825,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="65"/>
         <Label Content="Desconto" HorizontalAlignment="Left" FontWeight="Bold" Margin="955,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="65"/>
+        <ComboBox HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="536" Height="43" Background="White"/>
     </Grid>
 </UserControl>

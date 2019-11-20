@@ -31,9 +31,78 @@ namespace ViewPimNoite.Cliente
             ClienteDTO cliente = new ClienteDTO();
 
             cliente.Nome = txbNomeCliente.Text;
-
+            cliente.Cpf = txbCpfCliente.Text;
+            cliente.Dtnasc = txbDtNascCliente.Text;
+            cliente.Cep = txbCepCliente.Text;
+            cliente.Endereco = txbEnderecoCliente.Text;
+            cliente.Numero = txbNumeroCliente.Text;
+            cliente.Bairro = txbBairroCliente.Text;
+            cliente.Cidade = txbCidadeCliente.Text;
+            cliente.Estado = txbEstadoCliente.Text;
+            cliente.Telefone = txbTelefoneCliente.Text;
+            cliente.Celular = txbCelularCliente.Text;
 
             Controller.getInstance().CadastrarCliente(cliente);
+        }
+
+        private void txbDtNascCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCpfCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCepCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbNumeroCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbTelefoneCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCelularCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

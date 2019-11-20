@@ -24,20 +24,21 @@ namespace ViewPimNoite
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnLogar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtUsuario.Text == "admin")
+            if (txbUsuario.Text == "admin")
             {
                 MainMenu menu = new MainMenu();
                 menu.Show();
             }
             else
                 MessageBox.Show("Usuário/Senha incorretos!");
+        }
+
+        private void btnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

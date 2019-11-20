@@ -23,5 +23,65 @@ namespace ViewPimNoite.Cliente
         {
             InitializeComponent();
         }
+
+        private void txbCpfCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbDtNascCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCepCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbNumeroCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbTelefoneCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCelularCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

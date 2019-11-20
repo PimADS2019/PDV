@@ -23,5 +23,40 @@ namespace ViewPimNoite.Produto
         {
             InitializeComponent();
         }
+
+        private void btnSalvarProduto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txbCodReferencia_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCusto_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbPrecoVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

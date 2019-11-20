@@ -12,7 +12,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Cód. Referência" Binding="{Binding codRefPRoduto}"  Width="150"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding nomeProduto}"  Width="300"/>
-                <DataGridTextColumn Header="Marca" Binding="{Binding marcaProduto}" Width="300"/>
+                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricanteProduto}" Width="300"/>
                 <DataGridTextColumn Header="Custo" Binding="{Binding custoProduto}" Width="150"/>
                 <DataGridTextColumn Header="Preço Venda" Binding="{Binding precVendaProduto}" Width="150"/>
             </DataGrid.Columns>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
 
 namespace ViewPimNoite.Produto
 {
@@ -22,6 +24,50 @@ namespace ViewPimNoite.Produto
         public FrmCadProduto()
         {
             InitializeComponent();
+        }
+
+        private void txbCodReferencia_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbCusto_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbPrecoVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            KeyConverter key = new KeyConverter();
+
+            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnSalvarProduto_Click(object sender, RoutedEventArgs e)
+        {
+            ProdutoDTO produto = new ProdutoDTO();
+
+            produto.Produto = txbProduto.Text;
+            produto.Fabricante = txbFabricante.Text;
+            produto.CodReferencia = Convert.ToInt32(txbCodReferencia.Text);
+            produto.Forncedor = txbFornecedor.Text;
+            produto.Custo = Convert.ToInt32(txbCusto.Text);
+            produto.PrecoVenda = Convert.ToInt32(txbPrecoVenda.Text);
+
+            Controller.getInstance().CadastrarProduto(produto);
         }
     }
 }
