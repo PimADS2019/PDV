@@ -8,12 +8,8 @@ using System.Data.SqlClient;
 
 namespace controllerPimNoite.DAO
 {
-    public class UsuarioDAO
+    public class UsuarioDAO : Conexao
     {
-        Conexao conn = new Conexao();
-        SqlDataReader dr;
-
-        private bool response;
         private static UsuarioDAO instance = null;
 
         private UsuarioDAO()
@@ -32,24 +28,31 @@ namespace controllerPimNoite.DAO
 
         public Boolean ValidarUsuario(UsuarioDTO usuario)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"SELECT * FROM TUsuario 
-                                WHERE usuario = @usuario 
-                                AND senha = @senha";
-
-            cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@senha", usuario);
-
+            String sqlText = String.Format("Select * from tb_Funcionarios Where Usuario = '{0}' and Senha = '{1}'", usuario.Usuario, usuario.Senha);
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
             try
             {
-                cmd.Connection = conn.Conectar();
-                cmd.ExecuteNonQuery();
-                conn.Desconectar();
-                return response = true;
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    conn.Close();
+                    return true;
+                }
+
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return response = false;
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+                throw ex;
+
             }
         }
     }

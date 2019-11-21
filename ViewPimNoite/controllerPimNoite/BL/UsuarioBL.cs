@@ -27,7 +27,7 @@ namespace controllerPimNoite.BL
             return instance;
         }
 
-        public string ValidarUsuario(UsuarioDTO usuario)
+        public String ValidarUsuario(UsuarioDTO usuario)
         {
             mensagem = "";
 

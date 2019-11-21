@@ -10,14 +10,9 @@ namespace controllerPimNoite.DAO
 {
     public class Conexao
     {
-        SqlConnection conn;
+        protected SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Servidor"].ConnectionString);
 
-        public Conexao()
-        {
-            conn.ConnectionString = @"Data Source=DESKTOP-E1CCUJ5\SQLEXPRESS;Initial Catalog=(nomedatabase);User ID=sa;Password=chuab23";
-        }
-
-        public SqlConnection Conectar()
+        /*public SqlConnection Conectar()
         {
             if (conn.State == System.Data.ConnectionState.Closed)
             {
@@ -33,7 +28,6 @@ namespace controllerPimNoite.DAO
             {
                 conn.Close();
             }
-        }
-        
+        }*/      
     }
 }

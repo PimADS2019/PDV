@@ -25,6 +25,7 @@ namespace modelPimNoite.DTO
         private string telefone;
         private string celular;
         private string email;
+        private string complemento;
 
         public string Nome { get => nome; set => nome = value; }
         public string Cpf { get => cpf; set => cpf = value; }
@@ -43,5 +44,6 @@ namespace modelPimNoite.DTO
         public string Email { get => email; set => email = value; }
         public int CodFuncionario { get => codFuncionario; set => codFuncionario = value; }
         public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public string Complemento { get => complemento; set => complemento = value; }
     }
 }

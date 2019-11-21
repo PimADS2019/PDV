@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using modelPimNoite.DTO;
 
 namespace controllerPimNoite.DAO
 {
-    public class ProdutoDAO
+    public class ProdutoDAO : Conexao
     {
         public string mensagem;
         private static ProdutoDAO instance = null;
@@ -33,7 +34,32 @@ namespace controllerPimNoite.DAO
 
         public void CadastrarProduto(ProdutoDTO produto)
         {
-            this.mensagem = "produto cadastrado com sucesso";
+            SqlCommand cmd = new SqlCommand("SP_CadastroProdutos", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Nome_Produto", produto.Produto);
+            cmd.Parameters.AddWithValue("@Fabricante", produto.Fabricante);
+            cmd.Parameters.AddWithValue("@Tamanho", produto.Tamanho);
+            cmd.Parameters.AddWithValue("@Custo", produto.Custo);
+            cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
+            cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
+            cmd.Parameters.AddWithValue("@Inativar", 1);
+
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                this.mensagem = "Produto cadastrado com sucesso";
+            }
+            catch (Exception ex)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+
+                throw ex;
+            }
+            
         }
 
         public List<ProdutoDTO> ConsultarProduto(string produto)

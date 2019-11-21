@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using modelPimNoite.DTO;
 using controllerPimNoite.Controller;
+using ViewPimNoite;
 
 namespace ViewPimNoite
 {
@@ -34,7 +35,17 @@ namespace ViewPimNoite
             usuario.Usuario = txbUsuario.Text;
             usuario.Senha = txbSenha.Password;
 
-            Controller.getInstance().ValidarUsuario(usuario);
+            if (Controller.getInstance().ValidarUsuario(usuario).Equals(""))
+            {
+                MainMenu mainMenu = new MainMenu();
+
+                mainMenu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(Controller.getInstance().ValidarUsuario(usuario));
+            }
+
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)

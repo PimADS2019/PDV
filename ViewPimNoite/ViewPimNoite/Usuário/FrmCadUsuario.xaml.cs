@@ -98,9 +98,9 @@ namespace ViewPimNoite.Usuário
 
             funcionario.Nome = txbNomeUsuario.Text;
             funcionario.Cpf = txbCpfUsuario.Text;
-            funcionario.Dtnasc = txbDtNascUsuario.Text;
-            usuario.Usuario = txbUserUsuario.Text;
-            usuario.Senha = txbSenhaUsuario.Password;
+            funcionario.Dtnasc = "1993-01-26";
+            funcionario.Usuario = txbUserUsuario.Text;
+            funcionario.Senha = txbSenhaUsuario.Password;
             funcionario.ConfSenha = txbConfSenhaUsuario.Password;
             funcionario.Cep = txbCepUsuario.Text;
             funcionario.Endereco = txbEnderecoUsuario.Text;
@@ -111,6 +111,8 @@ namespace ViewPimNoite.Usuário
             funcionario.Telefone = txbTelefoneUsuario.Text;
             funcionario.Celular = txbCelularUsuario.Text;
             funcionario.Email = txbEmailUsuario.Text;
+            funcionario.Complemento = "casa 1";
+            funcionario.TipoUsuario = "Dono";
 
             Controller.getInstance().CadastrarFuncionario(funcionario);
 

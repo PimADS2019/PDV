@@ -32,7 +32,7 @@ namespace ViewPimNoite.Cliente
 
             cliente.Nome = txbNomeCliente.Text;
             cliente.Cpf = txbCpfCliente.Text;
-            cliente.Dtnasc = txbDtNascCliente.Text;
+            cliente.Dtnasc = "1993-01-26";
             cliente.Cep = txbCepCliente.Text;
             cliente.Endereco = txbEnderecoCliente.Text;
             cliente.Numero = txbNumeroCliente.Text;
@@ -41,6 +41,9 @@ namespace ViewPimNoite.Cliente
             cliente.Estado = txbEstadoCliente.Text;
             cliente.Telefone = txbTelefoneCliente.Text;
             cliente.Celular = txbCelularCliente.Text;
+            cliente.TipoUsuario = "Cliente";
+            cliente.Complemento = "casa 1";
+            cliente.Email = txbEmailCliente.Text;
 
             Controller.getInstance().CadastrarCliente(cliente);
 

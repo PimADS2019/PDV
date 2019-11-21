@@ -66,6 +66,7 @@ namespace ViewPimNoite.Produto
             produto.Forncedor = txbFornecedor.Text;
             produto.Custo = Convert.ToInt32(txbCusto.Text);
             produto.PrecoVenda = Convert.ToInt32(txbPrecoVenda.Text);
+            produto.Tamanho = "M";
 
             Controller.getInstance().CadastrarProduto(produto);
 

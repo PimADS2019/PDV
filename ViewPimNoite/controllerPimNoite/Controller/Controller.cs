@@ -28,7 +28,7 @@ namespace controllerPimNoite.Controller
         }
 
         //Login
-        public string ValidarUsuario(UsuarioDTO usuario)
+        public String ValidarUsuario(UsuarioDTO usuario)
         {
             return UsuarioBL.getInstance().ValidarUsuario(usuario);
         }
