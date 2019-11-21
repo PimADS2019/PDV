@@ -135,10 +135,10 @@ namespace controllerPimNoite.Controller
             return VendaBL.getInstance().ChecarVendaProduto(produto);
         }
 
-        /*public VendaDTO CalculosVenda(List<VendaDTO> produtos, string quantidade)
+        public VendaDTO CalculosVenda(List<int> qtdProdutos, string quantidade, ProdutoDTO produtoDTO)
         {
-            return VendaBL.getInstance().CalculosVenda(produtos, quantidade);
-        }*/
+            return VendaBL.getInstance().CalculosVenda(qtdProdutos, quantidade, produtoDTO);
+        }
 
         public void SalvarVenda(VendaDTO venda)
         {

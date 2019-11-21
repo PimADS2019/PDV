@@ -37,12 +37,12 @@ namespace controllerPimNoite.BL
             try
             {
                 this.codReferencia = Convert.ToInt32(produto);
-                return ChecarVendaProduto(produto);
+                return ChecarVendaProduto(codReferencia);
             }
             catch (Exception)
             {
-                this.produtoDTO.Produto = produto;
-                return ChecarVendaProduto(this.produtoDTO.Produto);
+                produtoDTO.Produto = produto;
+                return ChecarVendaProduto(produtoDTO);
             }
         }
 
