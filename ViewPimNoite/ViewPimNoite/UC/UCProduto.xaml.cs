@@ -37,7 +37,6 @@ namespace ViewPimNoite.UC
         private void BtnEditarProduto_Click(object sender, RoutedEventArgs e)
         {
             FrmEditProduto frmEditar = new FrmEditProduto();
-            //preciso testar isso, não sei se vai dar certo
             frmEditar.txbCodReferencia.Text = dgProdutos.SelectedCells[0].ToString();
             frmEditar.txbProduto.Text = dgProdutos.SelectedCells[1].ToString();
             frmEditar.txbFabricante.Text = dgProdutos.SelectedCells[2].ToString();

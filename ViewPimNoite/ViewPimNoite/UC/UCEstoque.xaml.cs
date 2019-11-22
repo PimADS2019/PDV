@@ -31,6 +31,9 @@ namespace ViewPimNoite.UC
         private void BtnEntradaProduto_Click(object sender, RoutedEventArgs e)
         {
             FrmEntradaProduto frmEntradaProduto = new FrmEntradaProduto();
+            frmEntradaProduto.txbCodRefEstoque.Text = dgEstoque.SelectedCells[0].ToString();
+            frmEntradaProduto.txbProdutoEntrada.Text = dgEstoque.SelectedCells[1].ToString();
+            frmEntradaProduto.txbFornecedor.Text = dgEstoque.SelectedCells[2].ToString();
             frmEntradaProduto.Show();
         }
 

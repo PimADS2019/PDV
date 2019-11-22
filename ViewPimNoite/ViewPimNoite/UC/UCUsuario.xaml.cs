@@ -38,6 +38,22 @@ namespace ViewPimNoite.UC
         private void BtnEditarUsuario_Click(object sender, RoutedEventArgs e)
         {
             FrmEditUsuario frmEditar = new FrmEditUsuario();
+            frmEditar.txbNomeUsuario.Text = dgUsuarios.SelectedCells[1].ToString();
+            frmEditar.txbCpfUsuario.Text = dgUsuarios.SelectedCells[2].ToString();
+            frmEditar.txbDtNascUsuario.Text = dgUsuarios.SelectedCells[3].ToString();
+            frmEditar.txbUserUsuario.Text = dgUsuarios.SelectedCells[4].ToString();
+            frmEditar.txbSenhaUsuario.Password = dgUsuarios.SelectedCells[5].ToString();
+            frmEditar.txbConfSenhaUsuario.Password = dgUsuarios.SelectedCells[6].ToString();
+            frmEditar.txbCepUsuario.Text = dgUsuarios.SelectedCells[7].ToString();
+            frmEditar.txbEnderecoUsuario.Text = dgUsuarios.SelectedCells[8].ToString();
+            frmEditar.txbNumeroUsuario.Text = dgUsuarios.SelectedCells[9].ToString();
+            frmEditar.txbBairroUsuario.Text = dgUsuarios.SelectedCells[10].ToString();
+            frmEditar.txbComplementoUsuario.Text = dgUsuarios.SelectedCells[11].ToString();
+            frmEditar.txbCidadeUsuario.Text = dgUsuarios.SelectedCells[12].ToString();
+            frmEditar.txbEstadoUsuario.Text = dgUsuarios.SelectedCells[13].ToString();
+            frmEditar.txbTelefoneUsuario.Text = dgUsuarios.SelectedCells[14].ToString();
+            frmEditar.txbCelularUsuario.Text = dgUsuarios.SelectedCells[15].ToString();
+            frmEditar.txbEmailUsuario.Text = dgUsuarios.SelectedCells[16].ToString();
             frmEditar.Show();
         }
 

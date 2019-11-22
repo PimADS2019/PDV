@@ -24,7 +24,6 @@
                 <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Celular" Binding="{Binding Celular}" Width="100"/>
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Visibility="Hidden"/>
-
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqCliente" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" MouseDoubleClick="TxbPesqCliente_MouseDoubleClick" Foreground="#FFB4B4B4" TextChanged="txbPesqCliente_TextChanged_1" />
