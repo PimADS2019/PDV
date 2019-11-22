@@ -64,8 +64,15 @@ namespace controllerPimNoite.BL
 
         public void ExcluirCliente(string idCliente)
         {
-            ClienteDAO.getInstance().ExcluirCliente(Convert.ToInt32(idCliente));
-            this.mensagem = ClienteDAO.getInstance().mensagem;
+            try
+            {
+                ClienteDAO.getInstance().ExcluirCliente(Convert.ToInt32(idCliente));
+                this.mensagem = ClienteDAO.getInstance().mensagem;
+            }
+            catch (Exception)
+            {
+                this.mensagem = "Id inválido";
+            }
         }
 
         public void EditarCliente(ClienteDTO cliente)

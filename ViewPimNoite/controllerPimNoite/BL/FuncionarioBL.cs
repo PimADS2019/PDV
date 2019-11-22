@@ -83,8 +83,16 @@ namespace controllerPimNoite.BL
 
         public void ExcluirFuncionario(string idFuncionario)
         {
-            FuncionarioDAO.getInstance().ExcluirFuncionario(Convert.ToInt32(idFuncionario));
-            this.mensagem = FuncionarioDAO.getInstance().mensagem;
+            try
+            {
+                FuncionarioDAO.getInstance().ExcluirFuncionario(Convert.ToInt32(idFuncionario));
+                this.mensagem = FuncionarioDAO.getInstance().mensagem;
+            }
+            catch (Exception)
+            {
+                this.mensagem = "Id inválido";
+            }
+            
         }
 
         public void EditarFuncionario(FuncionarioDTO funcionario)

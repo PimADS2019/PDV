@@ -82,8 +82,15 @@ namespace controllerPimNoite.BL
 
         public void ExcluirProduto(string idProduto)
         {
-            ProdutoDAO.getInstance().ExcluirProduto(Convert.ToInt32(idProduto));
-            this.mensagem = ProdutoDAO.getInstance().mensagem;
+            try
+            {
+                ProdutoDAO.getInstance().ExcluirProduto(Convert.ToInt32(idProduto));
+                this.mensagem = ProdutoDAO.getInstance().mensagem;
+            }
+            catch (Exception)
+            {
+                this.mensagem = "Id inválido";
+            }
         }
 
         public void EditarProduto(ProdutoDTO produto)
