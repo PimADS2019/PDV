@@ -223,10 +223,6 @@
     <Resource Include="Imagens\iconCalendario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagens\LOGO MENU.png" />
-    <Resource Include="Imagens\LOGO LOGIN.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagens\iconUsuario.png" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +237,10 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\DesignProjectLogoLogin.png" />
+    <Resource Include="Imagens\DesignProjectLogoMenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

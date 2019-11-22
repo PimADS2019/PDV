@@ -13,9 +13,7 @@
         <SolidColorBrush x:Key="Brush1" Color="#FF2196F3"/>
     </Window.Resources>
     <Grid Margin="0,0,0,10">
-
         <Rectangle Height="362" VerticalAlignment="Top">
-
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -23,22 +21,19 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-
         <Rectangle Width="280" Height="204" VerticalAlignment="Bottom" Margin="35,0,35,79" RadiusY="10" RadiusX="10" Fill="White">
             <Rectangle.Effect>
                 <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
             </Rectangle.Effect>
         </Rectangle>
-
         <Grid VerticalAlignment="Bottom" Margin="35,0,35,43" Height="240">
             <StackPanel VerticalAlignment="Center" Margin="15,10,15,50">
                 <TextBox x:Name="txbUsuario" Margin="0,0" materialDesign:HintAssist.Hint="Usuário" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Arial" FontSize="15"/>
                 <PasswordBox x:Name="txbSenha" Margin="0,20" materialDesign:HintAssist.Hint="Senha" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Arial" FontSize="15"/>
             </StackPanel>
         </Grid>
-        <Image Source="Imagens\LOGO LOGIN.png" HorizontalAlignment="Center" Margin="23,42,26,292" Width="301"/>
+        <Image Source="Imagens\DesignProjectLogoLogin.png" HorizontalAlignment="Center" Margin="26,41,23,293" Width="301"/>
         <Button x:Name="btnLogar" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="100,0,100,64" Content="LOGIN" Background="#FF2196F3" BorderBrush="#FF2196F3" Click="btnLogar_Click" />
         <Button x:Name="btnFechar" Content="x" Margin="309,-1,-1,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF404040" Height="27" OpacityMask="Black" Click="btnFechar_Click"/>
-
     </Grid>
 </Window>

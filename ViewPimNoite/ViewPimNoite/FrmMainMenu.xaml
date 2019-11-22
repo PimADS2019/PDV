@@ -40,7 +40,7 @@
                         <ImageBrush ImageSource="Imagens/iconLogout.png"/>
                     </Button.Background>
                 </Button>
-                <Image Source="Imagens/LOGO MENU.png" HorizontalAlignment="Left"/>
+                <Image Source="Imagens/DesignProjectLogoMenu.png" HorizontalAlignment="Left" Width="431"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="0,38,78,62"/>
             </Grid>
         </materialDesign:ColorZone>
