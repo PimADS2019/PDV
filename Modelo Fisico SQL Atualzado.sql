@@ -269,7 +269,7 @@ end
 /* Fim Insert Vendas */
 
 /* inicio Update Cliente */
-create procedure SP_Editarliente
+create procedure SP_EditarCliente
 (
 	@Nome_Pessoa Varchar(40),
 	@CPF Varchar(11),
@@ -304,15 +304,103 @@ begin
 	where IdEstado = @FkEstado
 end
 /* Fim Update Cliente */
+
+/* inicio Update Funcionario */
+create procedure SP_EditarFuncionario
+(
+	@Nome_Pessoa Varchar(40),
+	@CPF Varchar(11),
+	@DataNascimento date,
+	@TipoUsuario Varchar(11),
+	@CEP Varchar(9),
+	@Endereco Varchar(40),
+	@Numero Varchar(5),
+	@Bairro Varchar(30),
+	@Complemento Varchar(40),
+	@Nome_Cidade Varchar(40),
+	@Estado Varchar(2),
+	@Telefone Varchar(10),
+	@Celular Varchar(11),
+	@Email Varchar(70),
+	@Usuario Varchar(20),
+	@Senha Varchar(20),
+	@IdPessoa int
+)
+as
+begin
+	declare @FkCidade int
+	update tb_Pessoas
+	set Nome_Pessoa = @Nome_Pessoa, CPF = @CPF, DataNascimento = @DataNascimento, TipoUsuario = @TipoUsuario, Celular = @Celular, @Telefone = @Telefone, Email = @Email, Endereco = @Endereco, Numero =  @Numero, Bairro = @Bairro, Complemento = @Complemento, @FkCidade = (select fk_Cidades_IdCidade from tb_Pessoas where IdPessoa = @IdPessoa)  
+	where IdPessoa = @IdPessoa
+
+	declare @FkEstado int
+	update tb_Cidades
+	set Nome_Cidade = @Nome_Cidade, CEP = @CEP, @FkEstado = (select fk_Estados_IdEstado from tb_Cidades where IdCidade = @FkCidade)
+	where IdCidade = @FkCidade
+
+	update tb_Estados
+	set Sigla = @Estado
+	where IdEstado = @FkEstado
+
+	update tb_Funcionarios
+	set Usuario = @Usuario, Senha = @Senha
+	where fk_Pessoas_IdPessoa = @IdPessoa
+end
+/* Fim Update Funcionario */
+
+/* inicio Update Produtos */
+create procedure SP_EditarProduto
+(
+	@Nome_Produto Varchar(40),
+	@Fabricante Varchar(40),
+	@Tamanho Varchar(3),
+	@Custo float,
+	@Fornecedor Varchar(40),
+	@Precounitario float,
+	@Quantidade int,
+	@IdProduto int
+
+)
+as
+begin
+
+	update tb_Produtos
+	set Nome_produto = @Nome_Produto, Tamanho = @Tamanho, Fabricante = @Fabricante, Fornecedor = @Fornecedor   
+	where IdProduto = @IdProduto
+
+	update tb_Estoques
+	set Quantidade = @Quantidade, ValorUnitario = @Precounitario, Custo = @Custo
+	where fk_Produtos_IdProduto = @IdProduto
+end
+/* Fim Update Produtos */
+
+/* inicio Update QuantidadeProduto */
+create procedure SP_AdicionarQuantidade
+(
+	@Quantidade int,
+	@IdProduto int
+)
+as
+begin
+	update tb_Estoques
+	set Quantidade = Quantidade + @Quantidade
+	where fk_Produtos_IdProduto = @IdProduto
+end
+/* Fim Quantidade Produtos */
 /* fim Procedure */
 
-Select * from tb_Funcionarios Where Usuario = '{0}' and Senha = '{1}'
-Select * from tb_Pessoas
 insert tb_Funcionarios(Usuario, Senha)
 values ('admin', 'admin')
 
-update tb_Pessoas
-set inativar = 0
-where IdPessoa = 1
+select Nome_produto, Fornecedor  from tb_Produtos
+where inativar = 1 and IdProduto = 1
+select *  from tb_Estoques
 
-exec SP_Editarliente 'Joao', '213213','2000-07-07','Vendedor','213213','dos cambaras', '234', 'Alfa', 'casa2', 'Sorocaba', 'Rn', '1233231', '32123','jjoaoa@oao',1
+select Nome_produto, Fabricante, Custo, ValorUnitario, Quantidade  from tb_Produtos
+inner join tb_Estoques
+on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
+where inativar = 1 and Nome_produto like @nome_Produto
+
+
+
+

@@ -129,7 +129,7 @@ namespace controllerPimNoite.DAO
 
         public void EditarCliente(ClienteDTO cliente)
         {
-            SqlCommand cmd = new SqlCommand("SP_Editarliente", conn);
+            SqlCommand cmd = new SqlCommand("SP_EditarCliente", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Nome_Pessoa", cliente.Nome);
             cmd.Parameters.AddWithValue("@CPF", cliente.Cpf);
