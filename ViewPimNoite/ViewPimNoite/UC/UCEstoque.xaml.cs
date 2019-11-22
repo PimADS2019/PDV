@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ViewPimNoite.Estoque;
+using controllerPimNoite.Controller;
+using modelPimNoite.DTO;
 
 namespace ViewPimNoite.UC
 {
@@ -30,6 +32,13 @@ namespace ViewPimNoite.UC
         {
             FrmEntradaProduto frmEntradaProduto = new FrmEntradaProduto();
             frmEntradaProduto.Show();
+        }
+
+        private void dgEstoque_Initialized(object sender, EventArgs e)
+        {
+            List<ProdutoDTO> listEstoque = Controller.getInstance().ConsultarEstoque("");
+
+            dgEstoque.ItemsSource = listEstoque;
         }
     }
 }

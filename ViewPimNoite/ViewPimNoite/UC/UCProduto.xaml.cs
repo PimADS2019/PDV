@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ViewPimNoite.Produto;
+using controllerPimNoite.Controller;
+using modelPimNoite.DTO;
 
 namespace ViewPimNoite.UC
 {
@@ -36,6 +38,12 @@ namespace ViewPimNoite.UC
         {
             FrmEditProduto frmEditar = new FrmEditProduto();
             frmEditar.Show();
+        }
+
+        private void dgProdutos_Initialized(object sender, EventArgs e)
+        {
+            List<ProdutoDTO> listDadosProdutos = Controller.getInstance().ConsultarProduto("");
+            dgProdutos.ItemsSource = listDadosProdutos;
         }
     }
 }

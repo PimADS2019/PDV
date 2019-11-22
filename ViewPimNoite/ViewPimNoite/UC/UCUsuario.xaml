@@ -8,12 +8,16 @@
     <Grid Margin="0,0,1,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
         <Label Content="Usuários" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
+<<<<<<< Updated upstream
         <DataGrid x:Name="dgUsuarios" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" SelectionChanged="DgUsuarios_SelectionChanged">
+=======
+        <DataGrid x:Name="dgUsuarios" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgUsuarios_Initialized">
+>>>>>>> Stashed changes
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding idUsuario}"  Width="60"/>
-                <DataGridTextColumn Header="Usuário" Binding="{Binding userName}"  Width="300"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding nomeUsuario}" Width="200"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding telefoneUsuario}" Width="200"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding codFuncionario}"  Width="60"/>
+                <DataGridTextColumn Header="Usuário" Binding="{Binding usuario}"  Width="300"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding nome}" Width="200"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding telefone}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqUsuario" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar usuário" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" />

@@ -25,3 +25,8 @@ C:\Users\Wellington\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoi
 C:\Users\Wellington\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csproj.CoreCompileInputs.cache
 C:\Users\Wellington\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
 C:\Users\Wellington\Desktop\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb

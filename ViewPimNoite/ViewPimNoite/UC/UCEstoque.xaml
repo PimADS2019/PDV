@@ -8,14 +8,14 @@
     <Grid Margin="0,0,1,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
         <Label Content="Estoque" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
-        <DataGrid x:Name="dgEstoque" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6">
+        <DataGrid  x:Name="dgEstoque" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgEstoque_Initialized">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Cod. Referência" Binding="{Binding codRefProduto}"  Width="150"/>
-                <DataGridTextColumn Header="Produto" Binding="{Binding nomeProduto}"  Width="300"/>
-                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricanteProduto}" Width="300"/>
-                <DataGridTextColumn Header="Custo" Binding="{Binding custoProduto}" Width="150"/>
-                <DataGridTextColumn Header="Preço Venda" Binding="{Binding precVendaProduto}" Width="150"/>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding qtdEstoque}" Width="150"/>
+                <DataGridTextColumn Header="Cod. Referência" Binding="{Binding CodReferencia}"  Width="150"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="300"/>
+                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="300"/>
+                <DataGridTextColumn Header="Custo" Binding="{Binding custo}" Width="150"/>
+                <DataGridTextColumn Header="Preço Venda" Binding="{Binding precoVenda}" Width="150"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding quantidade}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqProdutoEstoque" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar produto no estoque" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" />

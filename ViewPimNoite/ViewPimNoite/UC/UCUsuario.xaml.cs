@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ViewPimNoite.Usuário;
+using controllerPimNoite.Controller;
+using modelPimNoite.DTO;
 
 namespace ViewPimNoite.UC
 {
@@ -37,6 +39,12 @@ namespace ViewPimNoite.UC
         {
             FrmEditUsuario frmEditar = new FrmEditUsuario();
             frmEditar.Show();
+        }
+
+        private void dgUsuarios_Initialized(object sender, EventArgs e)
+        {
+            List<FuncionarioDTO> listDadosFuncionario = Controller.getInstance().ConsultarFuncionarioPorNome("");
+            dgUsuarios.ItemsSource = listDadosFuncionario;
         }
     }
 }

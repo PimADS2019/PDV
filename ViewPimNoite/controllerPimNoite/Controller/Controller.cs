@@ -87,7 +87,7 @@ namespace controllerPimNoite.Controller
             this.mensagem = ProdutoBL.getInstance().mensagem;
         }
 
-        public List<ClienteDTO> ConsultarProduto(string produto)
+        public List<ProdutoDTO> ConsultarProduto(string produto)
         {
             return ClienteBL.getInstance().ConsultarCliente(produto);
         }
