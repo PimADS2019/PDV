@@ -15,6 +15,7 @@
                 <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="300"/>
                 <DataGridTextColumn Header="Custo" Binding="{Binding custo}" Width="150"/>
                 <DataGridTextColumn Header="Preço Venda" Binding="{Binding precoVenda}" Width="150"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding forncedor}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqProduto" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar produto" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" TextChanged="txbPesqProduto_TextChanged" />
