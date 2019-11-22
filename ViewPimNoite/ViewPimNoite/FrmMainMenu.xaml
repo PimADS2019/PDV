@@ -1,4 +1,4 @@
-﻿<Window x:Class="ViewPimNoite.MainMenu"
+﻿<Window x:Name="FrmMainMenu" x:Class="ViewPimNoite.MainMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,7 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         
         mc:Ignorable="d"
-        Title="DevUpx PDV" Height="768" Width="1366" WindowState="Maximized" Icon="Imagens/iconPDV.png">
+        Title="DesignProject PDV" Height="768" Width="1366" WindowState="Maximized" Icon="Imagens/iconPDV.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

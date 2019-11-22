@@ -30,3 +30,8 @@ C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb

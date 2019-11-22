@@ -11,9 +11,22 @@
         <DataGrid x:Name="dgUsuarios" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgUsuarios_Initialized">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding codFuncionario}"  Width="60"/>
-                <DataGridTextColumn Header="Usuário" Binding="{Binding usuario}"  Width="300"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding nome}" Width="200"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding telefone}" Width="200"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Data Nasc." Binding="{Binding DtNasc}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Usuário" Binding="{Binding usuario}"  Width="300"/>
+                <DataGridTextColumn Header="Senha" Binding="{Binding Senha}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Conf. Senha" Binding="{Binding ConfSenha}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Cep" Binding="{Binding Cep}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Número" Binding="{Binding Numero}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Celular" Binding="{Binding Celular}" Width="200"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqUsuario" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar usuário" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" TextChanged="txbPesqUsuario_TextChanged" />

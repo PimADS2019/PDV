@@ -8,16 +8,26 @@
     <Grid Margin="0,0,1,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
         <Label Content="Clientes" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
-        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" SelectionChanged="dgClientes_SelectionChanged" Initialized="dgClientes_Initialized">
+        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgClientes_Initialized">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding idCliente}"  Width="60"/>
-                <DataGridTextColumn Header="Cliente" Binding="{Binding nome}"  Width="400"/>
-                <DataGridTextColumn Header="CPF" Binding="{Binding cpf}" Width="200"/>
-                <DataGridTextColumn Header="Telefone" Binding="{Binding telefone}" Width="200"/>
-                <DataGridTextColumn Header="Endereço" Binding="{Binding endereco}" Width="500"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding idCliente}"  Width="50"/>
+                <DataGridTextColumn Header="Cliente" Binding="{Binding Nome}"  Width="300"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="200"/>
+                <DataGridTextColumn Header="Data Nasc." Binding="{Binding Dtnasc}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="CEP" Binding="{Binding Cep}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="250"/>
+                <DataGridTextColumn Header="Número" Binding="{Binding Numero}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Celular" Binding="{Binding Celular}" Width="100"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Visibility="Hidden"/>
+
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txbPesqCliente" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" MouseDoubleClick="TxbPesqCliente_MouseDoubleClick" Foreground="#FFB4B4B4" ManipulationStarting="txbPesqCliente_ManipulationStarting" TextChanged="txbPesqCliente_TextChanged_1" />
+        <TextBox x:Name="txbPesqCliente" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" MouseDoubleClick="TxbPesqCliente_MouseDoubleClick" Foreground="#FFB4B4B4" TextChanged="txbPesqCliente_TextChanged_1" />
         <Button Content="btnAtualizarCliente" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
             <Button.BorderBrush>
                 <ImageBrush/>
@@ -28,7 +38,7 @@
         </Button>
         <Button x:Name="btnIncluirCliente" Content="Incluir" FontSize="14" Height="Auto" Margin="24,574,971,16" Click="BtnIncluirCliente_Click" RenderTransformOrigin="0.985,4.237" />
         <Button x:Name="btnEditarCliente" Content="Editar" Background="Gold" FontSize="14" Height="Auto" Margin="836,574,159,16" BorderBrush="Gold" Click="BtnEditarCliente_Click" />
-        <Button x:Name="btnExcluirCliente" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" Click="btnExcluirCliente_Click" />
+        <Button x:Name="btnExcluirCliente" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed"/>
 
     </Grid>
 </UserControl>

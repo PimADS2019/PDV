@@ -37,6 +37,7 @@ namespace ViewPimNoite.Cliente
             cliente.Endereco = txbEnderecoCliente.Text;
             cliente.Numero = txbNumeroCliente.Text;
             cliente.Bairro = txbBairroCliente.Text;
+            cliente.Complemento = txbComplemento.Text;
             cliente.Cidade = txbCidadeCliente.Text;
             cliente.Estado = txbEstadoCliente.Text;
             cliente.Telefone = txbTelefoneCliente.Text;

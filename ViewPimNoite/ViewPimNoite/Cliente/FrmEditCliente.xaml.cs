@@ -83,5 +83,10 @@ namespace ViewPimNoite.Cliente
                 e.Handled = true;
             }
         }
+
+        private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

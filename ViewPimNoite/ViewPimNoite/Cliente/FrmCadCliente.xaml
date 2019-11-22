@@ -21,13 +21,15 @@
         <Label Content="CEP" HorizontalAlignment="Left" Margin="39,260,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6" />
         <TextBox x:Name="txbCepCliente" HorizontalAlignment="Left" Height="23" Margin="45,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbCepCliente_KeyDown"/>
         <Label Content="Endereço" HorizontalAlignment="Left" Margin="185,260,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox x:Name="txbEnderecoCliente" HorizontalAlignment="Left" Height="23" Margin="191,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="417" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <TextBox x:Name="txbEnderecoCliente" HorizontalAlignment="Left" Height="23" Margin="191,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="428" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Número" HorizontalAlignment="Left" Margin="635,260,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
         <TextBox x:Name="txbNumeroCliente" HorizontalAlignment="Left" Height="23" Margin="641,286,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbNumeroCliente_KeyDown"/>
         <Label Content="Bairro" HorizontalAlignment="Left" Margin="39,331,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
         <TextBox x:Name="txbBairroCliente" HorizontalAlignment="Left" Height="23" Margin="45,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
-        <Label Content="Cidade" HorizontalAlignment="Left" Margin="185,336,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox x:Name="txbCidadeCliente" HorizontalAlignment="Left" Height="23" Margin="191,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="417" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <Label Content="Complemento" HorizontalAlignment="Left" Margin="186,339,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
+        <TextBox x:Name="txbComplemento" HorizontalAlignment="Left" Height="23" Margin="191,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
+        <Label Content="Cidade" HorizontalAlignment="Left" Margin="363,339,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
+        <TextBox x:Name="txbCidadeCliente" HorizontalAlignment="Left" Height="23" Margin="368,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="251" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Estado" HorizontalAlignment="Left" Margin="635,336,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
         <TextBox x:Name="txbEstadoCliente" HorizontalAlignment="Left" Height="23" Margin="641,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="Telefone" HorizontalAlignment="Left" Margin="39,407,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
@@ -39,5 +41,6 @@
         <Label Content="DADOS" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Margin="45,210,0,0" VerticalAlignment="Top" Background="White" Width="63" Foreground="#DDA6A6A6"/>
         <Label Content="IDENTIFICAÇÃO" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Margin="45,63,0,0" VerticalAlignment="Top" Background="White" Width="123" Foreground="#DDA6A6A6"/>
         <Button x:Name="btnSalvarCliente" Content="Salvar" HorizontalAlignment="Left" Margin="628,509,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.727,0.75" Background="#FF279915" Click="btnSalvarCliente_Click"/>
+        
     </Grid>
 </Window>

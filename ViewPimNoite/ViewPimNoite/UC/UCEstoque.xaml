@@ -10,11 +10,9 @@
         <Label Content="Estoque" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
         <DataGrid  x:Name="dgEstoque" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgEstoque_Initialized">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Cod. Referência" Binding="{Binding CodReferencia}"  Width="150"/>
-                <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="300"/>
-                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="300"/>
-                <DataGridTextColumn Header="Custo" Binding="{Binding custo}" Width="150"/>
-                <DataGridTextColumn Header="Preço Venda" Binding="{Binding precoVenda}" Width="150"/>
+                <DataGridTextColumn Header="Cod. Ref." Binding="{Binding CodReferencia}"  Width="120"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="250"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding Fornecedor}" Width="250"/>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding quantidade}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>

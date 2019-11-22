@@ -48,3 +48,11 @@ C:\Users\Isac\Desktop\PIM\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPi
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete

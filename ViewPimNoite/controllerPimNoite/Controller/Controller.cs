@@ -86,12 +86,12 @@ namespace controllerPimNoite.Controller
             ProdutoBL.getInstance().CadastrarProduto(produto);
             this.mensagem = ProdutoBL.getInstance().mensagem;
         }
-
+        
         public List<ProdutoDTO> ConsultarProduto(string produto)
         {
-            return ClienteBL.getInstance().ConsultarCliente(produto);
+            return ProdutoBL.getInstance().ConsultarProduto(produto);
         }
-
+        
         public void ExcluirProduto(string idProduto)
         {
             ProdutoBL.getInstance().ExcluirProduto(idProduto);

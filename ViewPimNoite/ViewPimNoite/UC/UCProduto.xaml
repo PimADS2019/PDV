@@ -10,12 +10,12 @@
         <Label Content="Produtos" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="166"/>
         <DataGrid x:Name="dgProdutos" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgProdutos_Initialized">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Cód. Referência" Binding="{Binding codReferencia}"  Width="150"/>
+                <DataGridTextColumn Header="Cód. Ref." Binding="{Binding codReferencia}"  Width="120"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="300"/>
-                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="300"/>
+                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="200"/>
                 <DataGridTextColumn Header="Custo" Binding="{Binding custo}" Width="150"/>
                 <DataGridTextColumn Header="Preço Venda" Binding="{Binding precoVenda}" Width="150"/>
-                <DataGridTextColumn Header="Fornecedor" Binding="{Binding forncedor}" Width="*"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding forncedor}" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqProduto" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar produto" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" TextChanged="txbPesqProduto_TextChanged" />
