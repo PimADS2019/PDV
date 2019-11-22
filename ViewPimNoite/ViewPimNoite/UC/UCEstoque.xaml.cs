@@ -40,5 +40,10 @@ namespace ViewPimNoite.UC
 
             dgEstoque.ItemsSource = listEstoque;
         }
+
+        private void txbPesqProdutoEstoque_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dgEstoque.FindName(txbPesqProdutoEstoque.Text);
+        }
     }
 }

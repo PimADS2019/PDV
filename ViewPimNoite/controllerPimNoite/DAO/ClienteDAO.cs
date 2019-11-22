@@ -63,7 +63,6 @@ namespace controllerPimNoite.DAO
                 throw ex;
             }
         }
-
         public List<ClienteDTO> ConsultarCliente(string nome)
         {
             String sqlText = "select IdPessoa, Nome_Pessoa, CPF, Telefone, Endereco from tb_Pessoas where Inativar = 1";
@@ -123,8 +122,6 @@ namespace controllerPimNoite.DAO
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();  
             }
-
-            
         }
 
         public void EditarCliente(ClienteDTO cliente)

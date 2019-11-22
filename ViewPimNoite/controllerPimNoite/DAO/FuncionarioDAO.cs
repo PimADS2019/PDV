@@ -23,7 +23,6 @@ namespace controllerPimNoite.DAO
             {
                 instance = new FuncionarioDAO();
             }
-
             return instance;
         }
 
@@ -63,7 +62,6 @@ namespace controllerPimNoite.DAO
 
                 throw ex;
             }
-            
         }
 
         public List<FuncionarioDTO> ConsultarFuncionarioPorNome(string nome)
@@ -95,7 +93,6 @@ namespace controllerPimNoite.DAO
                     funcionarioDTO.Telefone = Convert.ToString(dr["Telefone"]);
 
                     listadefuncionarios.Add(funcionarioDTO);
-
                 }
                 conn.Close();
 

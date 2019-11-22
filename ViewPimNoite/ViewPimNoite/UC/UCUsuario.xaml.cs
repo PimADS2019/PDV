@@ -46,5 +46,10 @@ namespace ViewPimNoite.UC
             List<FuncionarioDTO> listDadosFuncionario = Controller.getInstance().ConsultarFuncionarioPorNome("");
             dgUsuarios.ItemsSource = listDadosFuncionario;
         }
+
+        private void txbPesqUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dgUsuarios.FindName(txbPesqUsuario.Text);
+        }
     }
 }

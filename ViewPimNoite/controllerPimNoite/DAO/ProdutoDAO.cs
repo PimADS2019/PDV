@@ -44,7 +44,6 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
             cmd.Parameters.AddWithValue("@Inativar", 1);
 
-
             try
             {
                 conn.Open();
@@ -59,7 +58,6 @@ namespace controllerPimNoite.DAO
 
                 throw ex;
             }
-            
         }
 
         public List<ProdutoDTO> ConsultarProduto(string produto)
@@ -91,10 +89,8 @@ namespace controllerPimNoite.DAO
                     produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
 
                     listadeprodutos.Add(produtoDTO);
-
                 }
                 conn.Close();
-
             }
             catch (Exception ex)
             {
@@ -190,7 +186,6 @@ namespace controllerPimNoite.DAO
 
                 }
                 conn.Close();
-
             }
             catch (Exception ex)
             {

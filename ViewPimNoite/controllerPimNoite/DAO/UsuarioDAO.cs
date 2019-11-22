@@ -52,7 +52,6 @@ namespace controllerPimNoite.DAO
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
                 throw ex;
-
             }
         }
     }

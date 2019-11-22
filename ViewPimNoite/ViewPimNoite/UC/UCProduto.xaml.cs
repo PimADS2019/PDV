@@ -45,5 +45,10 @@ namespace ViewPimNoite.UC
             List<ProdutoDTO> listDadosProdutos = Controller.getInstance().ConsultarProduto("");
             dgProdutos.ItemsSource = listDadosProdutos;
         }
+
+        private void txbPesqProduto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dgProdutos.FindName(txbPesqProduto.Text);
+        }
     }
 }
