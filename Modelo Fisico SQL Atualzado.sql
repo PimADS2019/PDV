@@ -248,26 +248,38 @@ create procedure SP_CadastroVenda
 	@SubTotal float,
 	@Desconto float,
 	@Total float,
-	@Quantidade int,
 	@IdFuncioanrio int,
-	@IdCliente int,
-	@IdProduto int
+	@IdCliente int
 )
 as
 begin
 	insert into tb_Transacoes
 	values (@Desconto, @SubTotal, @Total, @IdFuncioanrio, @IdCliente)
-	declare @Id_Transacao int=@@identity
-	/*insert nova procedure*/
 
+	select SCOPE_IDENTITY() from tb_Transacoes
+
+end
+/* Fim Insert Vendas */
+
+/* Inicio Insert ProdutoVendas */
+create procedure SP_CadastroProdutoVenda
+(
+	@IdVenda int,
+	@Quantidade int,
+	@IdProduto int
+)
+as
+begin
 	insert into tb_ItensTransacoes_Produtos
-	values (@IdProduto, @Id_Transacao)
+	values (@IdProduto, @IdVenda)
 
 	update tb_Estoques
 	set Quantidade = Quantidade - @Quantidade
 	where tb_Estoques.fk_Produtos_IdProduto = @IdProduto
 end
 /* Fim Insert Vendas */
+	
+
 
 /* inicio Update Cliente */
 create procedure SP_EditarCliente
@@ -402,6 +414,7 @@ inner join tb_Estoques
 on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
 where inativar = 1 and Nome_produto like @nome_Produto
 
+exec SP_CadastroVenda 1, 1,1,1,1
 
 
-
+select * from tb_Transacoes
