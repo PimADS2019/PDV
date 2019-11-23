@@ -32,6 +32,11 @@ namespace controllerPimNoite.BL
             return instance;
         }
 
+        public List<VendaDTO> ConsultarVendas(string vendas)
+        {
+            return VendaDAO.getInstance().ConsultarVendas(vendas);
+        }
+
         public List<ProdutoDTO> ChecarVendaProduto(string produto)
         {
             try
@@ -58,6 +63,7 @@ namespace controllerPimNoite.BL
 
         public VendaDTO CalculosVenda(List<ItensVendaDTO> listProdutos, string qtdVendida, ProdutoDTO produtos)
         {
+            //Calculando o subTotal
             try
             {
                 qtdVenda = Convert.ToInt32(qtdVendida);
@@ -68,15 +74,22 @@ namespace controllerPimNoite.BL
                 return null;
             }
 
-            foreach(ItensVendaDTO itensPedido in listProdutos)
+            vendaDTO.SbTotal += produtos.PrecoVenda * qtdVenda;
+
+            //Preenchendo o ItensVendaDTO com as informações
+            foreach (ItensVendaDTO itensPedido in listProdutos)
             {
                 itensPedido.Quantidade = qtdVenda;
                 itensPedido.ProdutoDTO = produtos;
             }
 
+            //Quantidade de itens
             vendaDTO.Itens = listProdutos.Count();
-            vendaDTO.SbTotal += produtos.PrecoVenda * qtdVenda;
+            
+            //Registrando data da compra
+            vendaDTO.DtCompra = DateTime.Now;
 
+            //Descontos
             if (vendaDTO.SbTotal > 150)
             {
                 vendaDTO.Desconto = 0.05;
@@ -96,6 +109,7 @@ namespace controllerPimNoite.BL
                 vendaDTO.VlTotal = Math.Round(vendaDTO.SbTotal - (vendaDTO.SbTotal * vendaDTO.Desconto), 2);
             }
 
+            //Atribuindo a lista preenchida ao VendaDTO
             vendaDTO.ItensVendaDTO = listProdutos;
 
             return vendaDTO;

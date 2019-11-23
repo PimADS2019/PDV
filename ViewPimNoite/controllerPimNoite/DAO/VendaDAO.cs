@@ -27,6 +27,12 @@ namespace controllerPimNoite.DAO
             return instance;
         }
 
+        public List<VendaDTO> ConsultarVendas(string vendas)
+        {
+            //data, id produto e total
+            return null;
+        }
+
         public List<ProdutoDTO> ChecarProdutoNome(ProdutoDTO produto)
         {
             //codReferencia, vlVenda, produto, quantidade

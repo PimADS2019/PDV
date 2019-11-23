@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using controllerPimNoite.Controller;
+using modelPimNoite.DTO;
 
 namespace ViewPimNoite.UC
 {
@@ -23,6 +25,12 @@ namespace ViewPimNoite.UC
         public UCVendas()
         {
             InitializeComponent();
+        }
+
+        private void dgVendas_Initialized(object sender, EventArgs e)
+        {
+            List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas("");
+            dgVendas.ItemsSource = listDadosClientes;
         }
     }
 }

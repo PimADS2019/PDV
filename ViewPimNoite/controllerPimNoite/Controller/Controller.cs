@@ -145,5 +145,10 @@ namespace controllerPimNoite.Controller
             VendaBL.getInstance().SalvarVenda(venda);
             this.mensagem = VendaBL.getInstance().mensagem;
         }
+
+        public List<VendaDTO> ConsultarVendas(string vendas)
+        {
+            return VendaBL.getInstance().ConsultarVendas(vendas);
+        }
     }
 }
