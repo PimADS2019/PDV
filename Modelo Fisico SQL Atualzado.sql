@@ -258,6 +258,7 @@ begin
 	insert into tb_Transacoes
 	values (@Desconto, @SubTotal, @Total, @IdFuncioanrio, @IdCliente)
 	declare @Id_Transacao int=@@identity
+	/*insert nova procedure*/
 
 	insert into tb_ItensTransacoes_Produtos
 	values (@IdProduto, @Id_Transacao)

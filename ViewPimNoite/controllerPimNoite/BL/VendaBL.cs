@@ -101,6 +101,9 @@ namespace controllerPimNoite.BL
             }
 
             VendaDAO.getInstance().SalvarVenda(venda);
+            
+            //foreach(ProdutoDTO p in venda.ProdutosDTO)
+
             this.mensagem = VendaDAO.getInstance().mensagem;
             vendaDTO = new VendaDTO();
         }

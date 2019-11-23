@@ -25,6 +25,18 @@ namespace ViewPimNoite.UC
             InitializeComponent();
         }
 
+        private List<ItemVendaDTO> carrinho = new List<ItemVendaDTO>();
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ItemVendaDTO it = new ItemVendaDTO();
+            it.Quantidade = int.Parse(txbQuantidadeProduto.Text);
+            it.Produto = new ProdutoDTO();
+            it.Produto.Id = Convert.ToInt32(cmbProduto.SelectedValue);
+
+            carrinho.Add(it);
+
+            dgProdutosVenda.ItemsSource = carrinho;
+        }
     }
 }
