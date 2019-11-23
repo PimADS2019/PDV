@@ -27,7 +27,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqCliente" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" MouseDoubleClick="TxbPesqCliente_MouseDoubleClick" Foreground="#FFB4B4B4" TextChanged="txbPesqCliente_TextChanged_1" />
-        <Button Content="btnAtualizarCliente" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+        <Button x:Name="btnAtualizar" Content="btnAtualizarCliente" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizar_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

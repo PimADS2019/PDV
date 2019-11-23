@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
 
 namespace ViewPimNoite.UC
 {
@@ -23,29 +25,39 @@ namespace ViewPimNoite.UC
         public UCEfetuarVenda()
         {
             InitializeComponent();
+            Atualizar_cmbProduto();
+        }
+        private void Atualizar_cmbProduto()
+        {
+            ProdutoDTO produto = new ProdutoDTO();
+
+            cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto(Convert.ToString(produto));
+            cmbProduto.DisplayMemberPath = "Produto";
+            cmbProduto.SelectedValuePath = "Codigo";
         }
 
-        //private List<ItemVendaDTO> listaItens = new List<ItemVendaDTO>();
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
+        private void btnIncluirItem_Click(object sender, RoutedEventArgs e)
         {
-            //Adicionar Button.CausesValidation para OK
-
-            /*
-            ItemVendaDTO item = new ItemVendaDTO();
+            ItensVendaDTO item = new ItensVendaDTO();
             item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
-            item.Produto = new ProdutoDTO();
-            item.Produto.Id = Convert.ToInt32(cmbProduto.SelectedValue);
+            item.ProdutoDTO = new ProdutoDTO();
+            item.ProdutoDTO.Codigo = Convert.ToInt32(cmbProduto.SelectedValue);
 
             listaItens.Add(item);
 
-            dgProdutosVenda.ItemsSource = carrinho;
-            */
+            dgProdutosVenda.ItemsSource = listaItens;
         }
 
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
+            VendaDTO venda = new VendaDTO();
 
+            venda.ItensVendaDTO = listaItens;
+
+            Controller.getInstance().SalvarVenda(venda);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }

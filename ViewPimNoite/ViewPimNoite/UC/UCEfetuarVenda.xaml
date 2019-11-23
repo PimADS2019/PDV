@@ -29,6 +29,6 @@
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
         <ComboBox x:Name="cmbProduto_Copy" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="378" Height="43" Background="White" FontSize="25"/>
         <TextBox x:Name="txbQuantidadeProduto" HorizontalAlignment="Left" Height="43" Margin="463,94,0,0" TextWrapping="Wrap" Text="1" TextAlignment="Center" VerticalAlignment="Top" Width="73" Background="White" FontSize="25" Foreground="#FFBFBFBF"/>
-        <Button x:Name="btnIncluirItem" Content="&gt;" HorizontalAlignment="Left" Margin="548,94,0,0" VerticalAlignment="Top" Width="40" Height="43" Click="Button_Click" Background="#FFC1C1C1" RenderTransformOrigin="0.475,0.575" BorderBrush="#FFC1C1C1"/>
+        <Button x:Name="btnIncluirItem" Content="&gt;" HorizontalAlignment="Left" Margin="548,94,0,0" VerticalAlignment="Top" Width="40" Height="43" Click="btnIncluirItem_Click" Background="#FFC1C1C1" RenderTransformOrigin="0.475,0.575" BorderBrush="#FFC1C1C1"/>
     </Grid>
 </UserControl>

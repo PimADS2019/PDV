@@ -76,5 +76,11 @@ namespace ViewPimNoite.UC
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }
+
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            List<ClienteDTO> listDadosClientes = Controller.getInstance().ConsultarCliente("");
+            dgClientes.ItemsSource = listDadosClientes;
+        }
     }
 }

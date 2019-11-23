@@ -368,3 +368,4 @@ C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCEfetuarVenda.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCVendas.baml
+C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.g.cs
