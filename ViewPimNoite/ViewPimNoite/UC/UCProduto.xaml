@@ -10,6 +10,7 @@
         <Label Content="Produtos" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="166"/>
         <DataGrid x:Name="dgProdutos" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgProdutos_Initialized">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding codigo}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Cód. Ref." Binding="{Binding codReferencia}"  Width="120"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="300"/>
                 <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="200"/>
@@ -29,7 +30,7 @@
         </Button>
         <Button x:Name="btnIncluirProduto" Content="Incluir" FontSize="14" Height="Auto" Margin="24,574,971,16" Click="BtnIncluirProduto_Click" RenderTransformOrigin="0.985,4.237" />
         <Button x:Name="btnEditarProduto" Content="Editar" Background="Gold" FontSize="14" Height="Auto" Margin="836,574,159,16" BorderBrush="Gold" Click="BtnEditarProduto_Click"/>
-        <Button x:Name="btnExcluirProduto" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" />
+        <Button x:Name="btnExcluirProduto" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" Click="btnExcluirProduto_Click" />
 
     </Grid>
 </UserControl>

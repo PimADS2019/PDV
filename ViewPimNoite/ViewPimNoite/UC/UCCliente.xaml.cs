@@ -35,7 +35,7 @@ namespace ViewPimNoite.UC
         private void BtnIncluirCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
-            frmCadastrar.Show();
+            frmCadastrar.ShowDialog();
 
         }
         private void BtnEditarCliente_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace ViewPimNoite.UC
             frmEditar.txbTelefoneCliente.Text = dgClientes.SelectedCells[11].ToString();
             frmEditar.txbCelularCliente.Text = dgClientes.SelectedCells[12].ToString();
             frmEditar.txbEmailCliente.Text = dgClientes.SelectedCells[13].ToString();
-            frmEditar.Show();
+            frmEditar.ShowDialog();
         }
         private void dgClientes_Initialized(object sender, EventArgs e)
         {
@@ -64,6 +64,17 @@ namespace ViewPimNoite.UC
         private void txbPesqCliente_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             dgClientes.FindName(txbPesqCliente.Text);
+        }
+
+        private void btnExcluirCliente_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteDTO cliente = new ClienteDTO();
+
+            cliente.IdCliente = Convert.ToInt32(dgClientes.SelectedCells[0].ToString());
+
+            Controller.getInstance().ExcluirCliente(Convert.ToString(cliente));
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }

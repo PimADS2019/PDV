@@ -31,19 +31,19 @@ namespace ViewPimNoite.UC
         private void BtnIncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             FrmCadProduto frmCadastrar = new FrmCadProduto();
-            frmCadastrar.Show();    
+            frmCadastrar.ShowDialog();    
         }
 
         private void BtnEditarProduto_Click(object sender, RoutedEventArgs e)
         {
             FrmEditProduto frmEditar = new FrmEditProduto();
-            frmEditar.txbCodReferencia.Text = dgProdutos.SelectedCells[0].ToString();
-            frmEditar.txbProduto.Text = dgProdutos.SelectedCells[1].ToString();
-            frmEditar.txbFabricante.Text = dgProdutos.SelectedCells[2].ToString();
-            frmEditar.txbCusto.Text = dgProdutos.SelectedCells[3].ToString();
-            frmEditar.txbPrecoVenda.Text = dgProdutos.SelectedCells[4].ToString();
-            frmEditar.txbFornecedor.Text = dgProdutos.SelectedCells[5].ToString();
-            frmEditar.Show();
+            frmEditar.txbCodReferencia.Text = dgProdutos.SelectedCells[1].ToString();
+            frmEditar.txbProduto.Text = dgProdutos.SelectedCells[2].ToString();
+            frmEditar.txbFabricante.Text = dgProdutos.SelectedCells[3].ToString();
+            frmEditar.txbCusto.Text = dgProdutos.SelectedCells[4].ToString();
+            frmEditar.txbPrecoVenda.Text = dgProdutos.SelectedCells[5].ToString();
+            frmEditar.txbFornecedor.Text = dgProdutos.SelectedCells[6].ToString();
+            frmEditar.ShowDialog();
         }
 
         private void dgProdutos_Initialized(object sender, EventArgs e)
@@ -55,6 +55,17 @@ namespace ViewPimNoite.UC
         private void txbPesqProduto_TextChanged(object sender, TextChangedEventArgs e)
         {
             dgProdutos.FindName(txbPesqProduto.Text);
+        }
+
+        private void btnExcluirProduto_Click(object sender, RoutedEventArgs e)
+        {
+            ProdutoDTO produto = new ProdutoDTO();
+
+            produto.Codigo = Convert.ToInt32(dgProdutos.SelectedCells[0].ToString());
+
+            Controller.getInstance().ExcluirProduto(Convert.ToString(produto));
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }

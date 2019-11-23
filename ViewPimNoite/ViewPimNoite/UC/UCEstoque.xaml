@@ -26,7 +26,6 @@
             </Button.Background>
         </Button>
         <Button x:Name="btnEntradaProduto" Content="Entrada de Produto" FontSize="14" Height="Auto" Margin="24,574,909,16" Click="BtnEntradaProduto_Click" RenderTransformOrigin="0.985,4.237" />
-
     </Grid>
 </UserControl>
 

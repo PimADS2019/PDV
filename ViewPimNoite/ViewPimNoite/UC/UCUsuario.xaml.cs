@@ -31,8 +31,7 @@ namespace ViewPimNoite.UC
         private void BtnIncluirUsuario_Click(object sender, RoutedEventArgs e)
         {
             FrmCadUsuario frmCadastrar = new FrmCadUsuario();
-            frmCadastrar.Show();
-
+            frmCadastrar.ShowDialog();
         }
 
         private void BtnEditarUsuario_Click(object sender, RoutedEventArgs e)
@@ -54,7 +53,7 @@ namespace ViewPimNoite.UC
             frmEditar.txbTelefoneUsuario.Text = dgUsuarios.SelectedCells[14].ToString();
             frmEditar.txbCelularUsuario.Text = dgUsuarios.SelectedCells[15].ToString();
             frmEditar.txbEmailUsuario.Text = dgUsuarios.SelectedCells[16].ToString();
-            frmEditar.Show();
+            frmEditar.ShowDialog();
         }
 
         private void dgUsuarios_Initialized(object sender, EventArgs e)
@@ -66,6 +65,17 @@ namespace ViewPimNoite.UC
         private void txbPesqUsuario_TextChanged(object sender, TextChangedEventArgs e)
         {
             dgUsuarios.FindName(txbPesqUsuario.Text);
+        }
+
+        private void btnExcluirUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            FuncionarioDTO funcionario = new FuncionarioDTO();
+
+            funcionario.IdFuncionario= Convert.ToInt32(dgUsuarios.SelectedCells[0].ToString());
+
+            Controller.getInstance().ExcluirFuncionario(Convert.ToString(funcionario));
+
+            MessageBox.Show(Controller.getInstance().mensagem);
         }
     }
 }

@@ -16,27 +16,31 @@ using System.Windows.Shapes;
 namespace ViewPimNoite.UC
 {
     /// <summary>
-    /// Interação lógica para UCVenda.xam
+    /// Interação lógica para UCEfetuarVenda.xam
     /// </summary>
-    public partial class UCVenda : UserControl
+    public partial class UCEfetuarVenda : UserControl
     {
-        public UCVenda()
+        public UCEfetuarVenda()
         {
             InitializeComponent();
         }
 
-        private List<ItemVendaDTO> carrinho = new List<ItemVendaDTO>();
+        //private List<ItemVendaDTO> listaItens = new List<ItemVendaDTO>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ItemVendaDTO it = new ItemVendaDTO();
-            it.Quantidade = int.Parse(txbQuantidadeProduto.Text);
-            it.Produto = new ProdutoDTO();
-            it.Produto.Id = Convert.ToInt32(cmbProduto.SelectedValue);
+            //Adicionar Button.CausesValidation para OK
 
-            carrinho.Add(it);
+            /*
+            ItemVendaDTO item = new ItemVendaDTO();
+            item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
+            item.Produto = new ProdutoDTO();
+            item.Produto.Id = Convert.ToInt32(cmbProduto.SelectedValue);
+
+            listaItens.Add(item);
 
             dgProdutosVenda.ItemsSource = carrinho;
+            */
         }
     }
 }

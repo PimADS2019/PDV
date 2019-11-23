@@ -40,7 +40,7 @@
         </Button>
         <Button x:Name="btnIncluirUsuario" Content="Incluir" FontSize="14" Height="Auto" Margin="24,574,971,16" Click="BtnIncluirUsuario_Click" RenderTransformOrigin="0.985,4.237" />
         <Button x:Name="btnEditarUsuario" Content="Editar" Background="Gold" FontSize="14" Height="Auto" Margin="836,574,159,16" BorderBrush="Gold" Click="BtnEditarUsuario_Click" />
-        <Button x:Name="btnExcluirUsuario" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" />
+        <Button x:Name="btnExcluirUsuario" Content="Excluir" Background="DarkRed" FontSize="14" Height="Auto" Margin="964,574,32,16" BorderBrush="DarkRed" Click="btnExcluirUsuario_Click" />
 
     </Grid>
 </UserControl>

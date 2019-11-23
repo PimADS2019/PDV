@@ -96,11 +96,17 @@
     <Compile Include="UC\UCProduto.xaml.cs">
       <DependentUpon>UCProduto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCSobre.xaml.cs">
+      <DependentUpon>UCSobre.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCUsuario.xaml.cs">
       <DependentUpon>UCUsuario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCVenda.xaml.cs">
-      <DependentUpon>UCVenda.xaml</DependentUpon>
+    <Compile Include="UC\UCEfetuarVenda.xaml.cs">
+      <DependentUpon>UCEfetuarVenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCVendas.xaml.cs">
+      <DependentUpon>UCVendas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Usuário\FrmCadUsuario.xaml.cs">
       <DependentUpon>FrmCadUsuario.xaml</DependentUpon>
@@ -186,11 +192,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UC\UCSobre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC\UCUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC\UCVenda.xaml">
+    <Page Include="UC\UCEfetuarVenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\UCVendas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -39,15 +39,13 @@ namespace ViewPimNoite
 
         public MainMenu()
         {
-
             InitializeComponent();
             DataHoraAtual();
             
-
             var menuVenda = new List<SubItem>();
             var item1 = new ItemMenu("PDV", menuVenda, PackIconKind.CashRegister);
-            menuVenda.Add(new SubItem("Efetuar Venda", new UCVenda()));
-            menuVenda.Add(new SubItem("Vendas Realizadas"));
+            menuVenda.Add(new SubItem("Efetuar Venda", new UCEfetuarVenda()));
+            menuVenda.Add(new SubItem("Vendas Realizadas", new UCVendas()));
 
             var menuCadastro = new List<SubItem>();
             var item2 = new ItemMenu("CADASTRO", menuCadastro, PackIconKind.AccountAdd);
@@ -61,15 +59,12 @@ namespace ViewPimNoite
 
             var menuAjuda = new List<SubItem>();
             var item4 = new ItemMenu("AJUDA", menuAjuda, PackIconKind.HelpCircle);
-            menuAjuda.Add(new SubItem("Manual"));
             menuAjuda.Add(new SubItem("Sobre"));
-
 
             Menu.Children.Add(new UCMenuItem(item1, this));
             Menu.Children.Add(new UCMenuItem(item2, this));
             Menu.Children.Add(new UCMenuItem(item3, this));
             Menu.Children.Add(new UCMenuItem(item4, this));
-
         }
 
         internal void MudarTela(object sender)

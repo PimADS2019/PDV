@@ -34,7 +34,7 @@ namespace ViewPimNoite.UC
             frmEntradaProduto.txbCodRefEstoque.Text = dgEstoque.SelectedCells[0].ToString();
             frmEntradaProduto.txbProdutoEntrada.Text = dgEstoque.SelectedCells[1].ToString();
             frmEntradaProduto.txbFornecedor.Text = dgEstoque.SelectedCells[2].ToString();
-            frmEntradaProduto.Show();
+            frmEntradaProduto.ShowDialog();
         }
 
         private void dgEstoque_Initialized(object sender, EventArgs e)
