@@ -42,5 +42,10 @@ namespace ViewPimNoite.UC
             dgProdutosVenda.ItemsSource = carrinho;
             */
         }
+
+        private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

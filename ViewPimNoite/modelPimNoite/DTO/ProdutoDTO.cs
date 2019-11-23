@@ -16,7 +16,6 @@ namespace modelPimNoite.DTO
         private double custo;
         private double precoVenda;
         private string tamanho;
-        private int quantidade;
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Produto { get => produto; set => produto = value; }
@@ -26,6 +25,5 @@ namespace modelPimNoite.DTO
         public double Custo { get => custo; set => custo = value; }
         public double PrecoVenda { get => precoVenda; set => precoVenda = value; }
         public string Tamanho { get => tamanho; set => tamanho = value; }
-        public int Quantidade { get => quantidade; set => quantidade = value; }
     }
 }

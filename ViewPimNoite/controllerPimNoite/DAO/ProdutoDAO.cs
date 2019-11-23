@@ -131,7 +131,6 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Tamanho", produto.Tamanho);
             cmd.Parameters.AddWithValue("@Fabricante", produto.Fabricante);
             cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
-            cmd.Parameters.AddWithValue("@Quantidade", produto.Quantidade);
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
             cmd.Parameters.AddWithValue("@Custo", produto.Custo);
 
@@ -180,7 +179,6 @@ namespace controllerPimNoite.DAO
                     produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
                     produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
                     produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
-                    produtoDTO.Quantidade = Convert.ToInt32(dr["Quantidade"]);
 
                     listadeprodutos.Add(produtoDTO);
 
@@ -233,7 +231,6 @@ namespace controllerPimNoite.DAO
         {
             SqlCommand cmd = new SqlCommand("SP_AdicionarQuantidade", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Quantidade", produto.Quantidade);
 
             try
             {

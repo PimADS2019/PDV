@@ -228,7 +228,6 @@ C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCMenuItem.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCCliente.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCProduto.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCUsuario.g.cs
-C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCVenda.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\Usuário\FrmCadUsuario.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\Usuário\FrmEditUsuario.g.cs
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\App.g.cs
@@ -247,7 +246,6 @@ C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCMenuItem.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCCliente.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCProduto.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCUsuario.baml
-C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCVenda.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\Usuário\FrmCadUsuario.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\Usuário\FrmEditUsuario.baml
 C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.g.resources
@@ -364,3 +362,9 @@ C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.Properties.Resources.resources
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.csproj.GenerateResource.cache
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.csproj.CopyComplete
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCEfetuarVenda.g.cs
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCVendas.g.cs
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.g.cs
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.baml
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCEfetuarVenda.baml
+C:\Users\Isac\Desktop\PIM\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCVendas.baml

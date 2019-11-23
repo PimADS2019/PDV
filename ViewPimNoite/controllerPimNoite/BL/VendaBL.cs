@@ -14,10 +14,10 @@ namespace controllerPimNoite.BL
         private int codReferencia;
         private int qtdVenda;
         private ProdutoDTO produtoDTO;
-        private static VendaBL instance = null;
         private VendaDTO vendaDTO;
 
 
+        private static VendaBL instance = null;
         private VendaBL()
         {
         }
@@ -56,16 +56,22 @@ namespace controllerPimNoite.BL
             return VendaDAO.getInstance().ChecarProdutoId(codReferencia);
         }
 
-        public VendaDTO CalculosVenda(List<int> listProdutos, string quantidade, ProdutoDTO produtos)
+        public VendaDTO CalculosVenda(List<ItensVendaDTO> listProdutos, string qtdVendida, ProdutoDTO produtos)
         {
             try
             {
-                qtdVenda = Convert.ToInt32(quantidade);
+                qtdVenda = Convert.ToInt32(qtdVendida);
             }
             catch (Exception)
             {
                 this.mensagem = "Quantidade inválida";
                 return null;
+            }
+
+            foreach(ItensVendaDTO itensPedido in listProdutos)
+            {
+                itensPedido.Quantidade = qtdVenda;
+                itensPedido.ProdutoDTO = produtos;
             }
 
             vendaDTO.Itens = listProdutos.Count();
@@ -90,6 +96,8 @@ namespace controllerPimNoite.BL
                 vendaDTO.VlTotal = Math.Round(vendaDTO.SbTotal - (vendaDTO.SbTotal * vendaDTO.Desconto), 2);
             }
 
+            vendaDTO.ItensVendaDTO = listProdutos;
+
             return vendaDTO;
         }
 
@@ -102,9 +110,12 @@ namespace controllerPimNoite.BL
 
             VendaDAO.getInstance().SalvarVenda(venda);
             
-            //foreach(ProdutoDTO p in venda.ProdutosDTO)
+            foreach(ItensVendaDTO itens in venda.ItensVendaDTO)
+            {
+                ItensVendaDAO.getInstance().RegistrarItensVendidos(itens.ProdutoDTO.CodReferencia, itens.Quantidade);
+            }
 
-            this.mensagem = VendaDAO.getInstance().mensagem;
+            this.mensagem = ItensVendaDAO.getInstance().mensagem;
             vendaDTO = new VendaDTO();
         }
     }
