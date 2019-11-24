@@ -42,6 +42,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Custo", produto.Custo);
             cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
+            cmd.Parameters.AddWithValue("@CodReferencia", produto.CodReferencia);
             cmd.Parameters.AddWithValue("@Inativar", 1);
 
             try

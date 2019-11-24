@@ -1,6 +1,6 @@
 /* Modelo Logico: */
 
-Create DataBase db_Pim
+create DataBase db_Pim
 go
 
 use db_Pim
@@ -52,6 +52,7 @@ CREATE TABLE tb_Transacoes (
 	Desconto FLOAT,
     SubTotal FLOAT,
 	Total FLOAT,
+	DataVenda date,
     fk_Funcionarios_IdFuncionario INT,
     fk_Clientes_IdCliente INT
 );
@@ -72,6 +73,7 @@ CREATE TABLE tb_Produtos (
     Tamanho VARCHAR (3),
     Fabricante VARCHAR (40),
     Fornecedor VARCHAR (40),
+	CodReferencia int, 
 	inativar bit
 );
 go
@@ -229,12 +231,13 @@ create procedure SP_CadastroProdutos
 	@Custo float,
 	@Fornecedor Varchar(40),
 	@Precounitario float,
+	@CodReferencia int,
 	@Inativar bit
 )
 as
 begin
 	insert into tb_Produtos
-	values (@Nome_Produto, @Tamanho, @Fabricante, @Fornecedor, @Inativar)
+	values (@Nome_Produto, @Tamanho, @Fabricante, @Fornecedor,@CodReferencia, @Inativar)
 	declare @Id_Produto int=@@identity
 
 	insert into tb_Estoques (ValorUnitario, Custo, fk_Produtos_IdProduto)
@@ -249,12 +252,13 @@ create procedure SP_CadastroVenda
 	@Desconto float,
 	@Total float,
 	@IdFuncioanrio int,
-	@IdCliente int
+	@IdCliente int,
+	@DataVenda date
 )
 as
 begin
 	insert into tb_Transacoes
-	values (@Desconto, @SubTotal, @Total, @IdFuncioanrio, @IdCliente)
+	values (@Desconto, @SubTotal, @Total,@DataVenda, @IdFuncioanrio, @IdCliente)
 
 	select SCOPE_IDENTITY() from tb_Transacoes
 
@@ -409,7 +413,7 @@ select Nome_produto, Fornecedor  from tb_Produtos
 where inativar = 1 and IdProduto = 1
 select *  from tb_Estoques
 
-select Nome_produto, Fabricante, Custo, ValorUnitario, Quantidade  from tb_Produtos
+select Fabricante, Custo, ValorUnitario, Quantidade  from tb_Produtos
 inner join tb_Estoques
 on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
 where inativar = 1 and Nome_produto like @nome_Produto
@@ -417,4 +421,17 @@ where inativar = 1 and Nome_produto like @nome_Produto
 exec SP_CadastroVenda 1, 1,1,1,1
 
 
-select * from tb_Transacoes
+select CodReferencia, ValorUnitario, Nome_produto from tb_Produtos
+inner join tb_Estoques
+on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
+where inativar = 1 and Nome_produto like @nome_Produto
+
+insert into tb_Funcionarios (Usuario, Senha)
+values ('admin', 'admin')
+
+select * from tb_Pessoas
+select * from tb_Funcionarios
+select * from tb_Clientes
+
+SELECT * from tb_Produtos
+select * from tb_Estoques

@@ -40,3 +40,9 @@ C:\Users\Vinicius\Documents\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoi
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csprojAssemblyReference.cache
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.csproj.CoreCompileInputs.cache
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.dll
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\modelPimNoite\obj\Debug\modelPimNoite.pdb

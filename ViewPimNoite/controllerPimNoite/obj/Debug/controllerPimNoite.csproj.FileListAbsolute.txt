@@ -64,3 +64,12 @@ C:\Users\Vinicius\Documents\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\contro
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
 C:\Users\Vinicius\Documents\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csprojAssemblyReference.cache
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CoreCompileInputs.cache
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.dll
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.dll
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\controllerPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.dll
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\bin\Debug\modelPimNoite.pdb
+C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\controllerPimNoite\obj\Debug\controllerPimNoite.csproj.CopyComplete
