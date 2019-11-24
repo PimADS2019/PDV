@@ -32,16 +32,19 @@ namespace controllerPimNoite.BL
             if (cliente.Nome.Length < 3)
             {
                 this.mensagem = "Favor inserir o nome completo do funcionário.";
+                return;
             }
 
             if ((cliente.Cpf.Length < 11) || (cliente.Cpf.Length > 14))
             {
                 this.mensagem = "Favor verificar o campo CPF.";
+                return;
             }
 
             if ((cliente.Cep.Length < 8) || (cliente.Cep.Length > 9))
             {
                 this.mensagem = "Favor verificar o campo CEP.";
+                return;
             }
         }
 

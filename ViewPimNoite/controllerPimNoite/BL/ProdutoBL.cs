@@ -34,21 +34,25 @@ namespace controllerPimNoite.BL
             if (produto.Produto == "")
             {
                 this.mensagem = "O nome do produto é obrigatório.";
+                return;
             }
 
             if (produto.CodReferencia <= 0)
             {
                 this.mensagem = "O Código de referência do produto não pode ser um valor negativo.";
+                return;
             }
 
             if (produto.PrecoVenda <= 0)
             {
                 this.mensagem = "O preço de venda do produto não pode ser um valor negativo ou 0.";
+                return;
             }
 
             if (produto.Custo <= 0)
             {
                 this.mensagem = "O preço de venda do produto não pode ser um valor negativo ou 0.";
+                return;
             }
 
            

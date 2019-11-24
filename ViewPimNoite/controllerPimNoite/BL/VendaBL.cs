@@ -71,7 +71,6 @@ namespace controllerPimNoite.BL
             catch (Exception)
             {
                 this.mensagem = "Quantidade inválida";
-                return null;
             }
 
             vendaDTO.SbTotal += produtos.PrecoVenda * qtdVenda;

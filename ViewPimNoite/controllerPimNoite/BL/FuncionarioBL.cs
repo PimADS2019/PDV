@@ -32,36 +32,43 @@ namespace controllerPimNoite.BL
             if (funcionario.Nome.Length < 3)
             {
                 this.mensagem = "Favor inserir o nome completo do funcionário.";
+                return;
             }
 
             if ((funcionario.Cpf.Length < 11) || (funcionario.Cpf.Length > 14))
             {
                 this.mensagem = "Favor verificar o campo CPF.";
+                return;
             }
 
             if (funcionario.Usuario == "")
             {
                 this.mensagem = "Campo usuário é obrigatório.";
+                return;
             }
 
             if (funcionario.Senha == "")
             {
                 this.mensagem = "Campo senha é obrigatório.";
+                return;
             }
 
             if (funcionario.ConfSenha == "")
             {
                 this.mensagem = "Favor confirmar a sua senha.";
+                return;
             }
 
             if (funcionario.ConfSenha != funcionario.Senha)
             {
                 this.mensagem = "Senha não coincide com Confirmação de Senha. Favor digitar novamente";
+                return;
             }
 
             if ((funcionario.Cep.Length < 8) || (funcionario.Cep.Length > 9))
             {
                 this.mensagem = "Favor verificar o campo CEP.";
+                return;
             }
         }
         public void CadastrarFuncionario(FuncionarioDTO funcionario)
