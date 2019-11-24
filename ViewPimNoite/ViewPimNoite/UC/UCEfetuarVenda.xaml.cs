@@ -22,6 +22,8 @@ namespace ViewPimNoite.UC
     /// </summary>
     public partial class UCEfetuarVenda : UserControl
     {
+        VendaDTO vendaDTO = new VendaDTO();
+
         public UCEfetuarVenda()
         {
             InitializeComponent();
@@ -45,17 +47,20 @@ namespace ViewPimNoite.UC
             item.ProdutoDTO.Codigo = Convert.ToInt32(cmbProduto.SelectedValue);
 
             listaItens.Add(item);
+            vendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, item.ProdutoDTO);
+            lblQtdItens.Content = vendaDTO.Itens;
+            lblSubTotal.Content = vendaDTO.SbTotal;
+            lblDesconto.Content = vendaDTO.Desconto;
+            lblTotal.Content = vendaDTO.VlTotal;
 
             dgProdutosVenda.ItemsSource = listaItens;
         }
 
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
-            VendaDTO venda = new VendaDTO();
+            vendaDTO.ItensVendaDTO = listaItens;
 
-            venda.ItensVendaDTO = listaItens;
-
-            Controller.getInstance().SalvarVenda(venda);
+            Controller.getInstance().SalvarVenda(vendaDTO);
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }

@@ -11,6 +11,7 @@ namespace controllerPimNoite.DAO
     public class VendaDAO : Conexao
     {
         public string mensagem;
+        public int idInsertVenda;
         private static VendaDAO instance = null;
 
         private VendaDAO()

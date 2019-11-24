@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ViewPimNoite.UC"
              mc:Ignorable="d" Width="1100" Height="620">
-    <Grid Background="#FF515151" Margin="-20,0,-8,0">
+    <Grid Background="#FF515151" Margin="-114,0,86,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="110" Stroke="#FF2196F3" VerticalAlignment="Top" Width="408" RadiusX="10" RadiusY="5" Margin="55,36,0,0"/>
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
         <Button x:Name="btnFinalizarVenda" Content="Finalizar Venda" FontSize="35" HorizontalAlignment="Left" Margin="55,523,0,0" VerticalAlignment="Top" Width="544" Height="68" Background="Green" BorderBrush="Green" Click="btnFinalizarVenda_Click"/>
@@ -14,7 +14,7 @@
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="35" Stroke="#FF2196F3" VerticalAlignment="Top" Width="125" RadiusX="10" RadiusY="5" Margin="955,486,0,0"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="60" Stroke="#FF2196F3" VerticalAlignment="Top" Width="385" RadiusX="10" RadiusY="5" Margin="695,531,0,0"/>
         <Label Content="Total à Pagar" HorizontalAlignment="Left" FontWeight="Bold" Margin="695,528,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="46" Width="181"/>
-        <DataGrid x:Name="dgProdutosVenda" HorizontalAlignment="Left" Height="427" Margin="695,36,0,0" VerticalAlignment="Top" Width="385">
+        <DataGrid x:Name="dgProdutosVenda" HorizontalAlignment="Left" Height="427" Margin="692,36,0,0" VerticalAlignment="Top" Width="385">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Qtd" Binding="{Binding Quantidade}"  Width="60"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="220"/>
@@ -29,6 +29,10 @@
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
         <ComboBox x:Name="cmbProduto_Copy" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="378" Height="43" Background="White" FontSize="25"/>
         <TextBox x:Name="txbQuantidadeProduto" HorizontalAlignment="Left" Height="43" Margin="463,94,0,0" TextWrapping="Wrap" Text="1" TextAlignment="Center" VerticalAlignment="Top" Width="73" Background="White" FontSize="25" Foreground="#FFBFBFBF"/>
-        <Button x:Name="btnIncluirItem" Content="&gt;" HorizontalAlignment="Left" Margin="548,94,0,0" VerticalAlignment="Top" Width="40" Height="43" Click="btnIncluirItem_Click" Background="#FFC1C1C1" RenderTransformOrigin="0.475,0.575" BorderBrush="#FFC1C1C1"/>
+        <Button x:Name="btnIncluirItem" Content="&gt;" HorizontalAlignment="Left" Margin="548,94,0,0" VerticalAlignment="Top" Width="40" Height="43" Click="btnIncluirItem_Click" Background="#FFC1C1C1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFC1C1C1"/>
+        <Label x:Name="lblSubTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="890,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
+        <Label x:Name="lblQtdItens" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="749,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
+        <Label x:Name="lblDesconto" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="1014,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
+        <Label x:Name="lblTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="872,545,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Height="29" Width="102"/>
     </Grid>
 </UserControl>
