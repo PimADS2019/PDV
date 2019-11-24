@@ -120,6 +120,7 @@ namespace controllerPimNoite.BL
             if(venda.Itens == 0)
             {
                 this.mensagem = "É necessário que tenha pelo menos 1 item para registrar uma venda";
+                return;
             }
 
             VendaDAO.getInstance().SalvarVenda(venda);
