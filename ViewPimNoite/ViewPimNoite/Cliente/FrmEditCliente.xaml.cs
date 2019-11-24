@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using controllerPimNoite.Controller;
+using modelPimNoite.DTO;
 
 namespace ViewPimNoite.Cliente
 {
@@ -86,7 +88,31 @@ namespace ViewPimNoite.Cliente
 
         private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
         {
+            ClienteDTO cliente = new ClienteDTO();
 
+            cliente.Nome = txbNomeCliente.Text;
+            cliente.Cpf = txbCpfCliente.Text;
+            cliente.Dtnasc = txbDtNascCliente.Text;
+            cliente.Cep = txbCepCliente.Text;
+            cliente.Endereco = txbEnderecoCliente.Text;
+            cliente.Numero = txbNumeroCliente.Text;
+            cliente.Bairro = txbBairroCliente.Text;
+            cliente.Complemento = txbComplemento.Text;
+            cliente.Cidade = txbCidadeCliente.Text;
+            cliente.Estado = txbEstadoCliente.Text;
+            cliente.Telefone = txbTelefoneCliente.Text;
+            cliente.Celular = txbCelularCliente.Text;
+            cliente.Email = txbEmailCliente.Text;
+            cliente.TipoUsuario = "Cliente";
+
+            Controller.getInstance().EditarCliente(cliente);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
+
+            if (Controller.getInstance().mensagem.Equals("Cliente editado com sucesso"))
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -48,7 +48,11 @@ namespace ViewPimNoite.Estoque
             Controller.getInstance().AcrescentarQuantidadeEstoque(produto, txbQuantidadeEntrada.Text);
 
             MessageBox.Show(ProdutoBL.getInstance().mensagem);
-     
+
+            if (Controller.getInstance().mensagem.Equals("Entrada de produto com sucesso"))
+            {
+                this.Close();
+            }
         }
     }
 }

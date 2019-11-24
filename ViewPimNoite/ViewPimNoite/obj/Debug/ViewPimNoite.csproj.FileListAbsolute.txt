@@ -427,3 +427,4 @@ C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimN
 C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.csproj.GenerateResource.cache
 C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.csproj.CoreCompileInputs.cache
 C:\Users\Wellington\Desktop\Pim\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\ViewPimNoite.csproj.CopyComplete
+C:\Users\Vinicius\Documents\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\UC\UCSobre.baml

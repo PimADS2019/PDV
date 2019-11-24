@@ -94,29 +94,33 @@ namespace ViewPimNoite.Usuário
         private void btnSalvarUsuario_Click(object sender, RoutedEventArgs e)
         {
             FuncionarioDTO funcionario = new FuncionarioDTO();
-            UsuarioDTO usuario = new UsuarioDTO();
 
             funcionario.Nome = txbNomeUsuario.Text;
             funcionario.Cpf = txbCpfUsuario.Text;
-            funcionario.Dtnasc = "1993-01-26";
+            funcionario.Dtnasc = txbDtNascUsuario.Text;
             funcionario.Usuario = txbUserUsuario.Text;
+            funcionario.TipoUsuario = txbTipoUsuario.Text;
             funcionario.Senha = txbSenhaUsuario.Password;
             funcionario.ConfSenha = txbConfSenhaUsuario.Password;
             funcionario.Cep = txbCepUsuario.Text;
             funcionario.Endereco = txbEnderecoUsuario.Text;
             funcionario.Numero = txbNumeroUsuario.Text;
             funcionario.Bairro = txbBairroUsuario.Text;
+            funcionario.Complemento = txbComplementoUsuario.Text;
             funcionario.Cidade = txbCidadeUsuario.Text;
             funcionario.Estado = txbEstadoUsuario.Text;
             funcionario.Telefone = txbTelefoneUsuario.Text;
             funcionario.Celular = txbCelularUsuario.Text;
             funcionario.Email = txbEmailUsuario.Text;
-            funcionario.Complemento = "casa 1";
-            funcionario.TipoUsuario = "Dono";
 
             Controller.getInstance().CadastrarFuncionario(funcionario);
 
             MessageBox.Show(Controller.getInstance().mensagem);
+
+            if (Controller.getInstance().mensagem.Equals("Usuário cadastrado com sucesso"))
+            {
+                this.Close();
+            }
         }
     }
 }

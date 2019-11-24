@@ -16,8 +16,9 @@
                 <DataGridTextColumn Header="Total" Binding="{Binding vlTotal}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txbPesqVenda" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar venda" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4"/>
-        <Button x:Name="btnAtualizaVenda" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+        <TextBox x:Name="txbPesqVenda" LostFocus="txbPesqVenda_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="Black" TextChanged="txbPesqVenda_TextChanged"/>
+        <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar venda" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" />
+        <Button x:Name="btnAtualizaVenda" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizaVenda_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

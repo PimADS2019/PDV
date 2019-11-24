@@ -53,7 +53,7 @@ namespace controllerPimNoite.DAO
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                this.mensagem = "funcionario cadastrado com sucesso";
+                this.mensagem = "Usuário cadastrado com sucesso";
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace controllerPimNoite.DAO
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                this.mensagem = "Funcionario Excluido com sucesso";
+                this.mensagem = "Usuário excluido com sucesso";
             }
             catch (Exception ex)
             {
@@ -156,7 +156,7 @@ namespace controllerPimNoite.DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                this.mensagem = "Funcionario Editado com sucesso";
+                this.mensagem = "Usuário editado com sucesso";
             }
             catch (Exception ex)
             {

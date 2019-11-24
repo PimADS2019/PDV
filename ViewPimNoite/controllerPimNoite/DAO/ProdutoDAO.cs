@@ -115,7 +115,7 @@ namespace controllerPimNoite.DAO
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                this.mensagem = "Produto Excluido com sucesso";
+                this.mensagem = "Produto excluido com sucesso";
             }
             catch (Exception ex)
             {
@@ -141,7 +141,7 @@ namespace controllerPimNoite.DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                this.mensagem = "Produto Editado com sucesso";
+                this.mensagem = "Produto editado com sucesso";
             }
             catch (Exception ex)
             {
@@ -239,7 +239,7 @@ namespace controllerPimNoite.DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                this.mensagem = "Quantidade Alterada com sucesso";
+                this.mensagem = "Entrada de produto com sucesso";
             }
             catch (Exception ex)
             {

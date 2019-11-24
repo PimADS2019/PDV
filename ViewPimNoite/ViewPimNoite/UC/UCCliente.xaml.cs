@@ -27,11 +27,6 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
-
-        private void TxbPesqCliente_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            txbPesqCliente.Clear();
-        }
         private void BtnIncluirCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
@@ -81,6 +76,22 @@ namespace ViewPimNoite.UC
         {
             List<ClienteDTO> listDadosClientes = Controller.getInstance().ConsultarCliente("");
             dgClientes.ItemsSource = listDadosClientes;
+        }
+
+        private void txbPesqCliente_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPesqCliente.Text))
+            {
+                txbPesqCliente.Visibility = Visibility.Collapsed;
+                txbWaterMark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void txbWaterMark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txbWaterMark.Visibility = Visibility.Collapsed;
+            txbPesqCliente.Visibility = Visibility.Visible;
+            txbPesqCliente.Focus();
         }
     }
 }

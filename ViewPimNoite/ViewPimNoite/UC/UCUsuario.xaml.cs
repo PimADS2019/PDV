@@ -77,5 +77,19 @@ namespace ViewPimNoite.UC
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }
+        private void txbPesqUsuario_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPesqUsuario.Text))
+            {
+                txbPesqUsuario.Visibility = Visibility.Collapsed;
+                txbWaterMark.Visibility = Visibility.Visible;
+            }
+        }
+        private void txbWaterMark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txbWaterMark.Visibility = Visibility.Collapsed;
+            txbPesqUsuario.Visibility = Visibility.Visible;
+            txbPesqUsuario.Focus();
+        }
     }
 }

@@ -16,8 +16,9 @@
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding quantidade}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txbPesqProdutoEstoque" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar produto no estoque" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" TextChanged="txbPesqProdutoEstoque_TextChanged" />
-        <Button Content="btnAtualizarEstoque" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+        <TextBox x:Name="txbPesqProdutoEstoque" LostFocus="txbPesqProdutoEstoque_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF0C0C0C" TextChanged="txbPesqProdutoEstoque_TextChanged" />
+        <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar produto no estoque" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" TextChanged="txbPesqProdutoEstoque_TextChanged" />
+        <Button x:Name="btnAtualizarEstoque" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Content="&#xD;&#xA;" Click="btnAtualizarEstoque_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

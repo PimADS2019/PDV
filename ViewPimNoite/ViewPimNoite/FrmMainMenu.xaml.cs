@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using ViewPimNoite.ViewModel;
 using ViewPimNoite.UC;
+using controllerPimNoite;
 
 namespace ViewPimNoite
 {
@@ -80,8 +81,13 @@ namespace ViewPimNoite
 
         private void BtnLogout_Click(object sender, RoutedEventArgs e)
         {
+            Estaticos.logado = false;
             Login login = new Login();
             login.ShowDialog();
+            if (!Estaticos.logado)
+            {
+                this.Close();
+            }
         }
     }
 }

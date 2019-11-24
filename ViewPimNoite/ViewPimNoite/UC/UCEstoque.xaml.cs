@@ -48,5 +48,29 @@ namespace ViewPimNoite.UC
         {
             dgEstoque.FindName(txbPesqProdutoEstoque.Text);
         }
+
+        private void btnAtualizarEstoque_Click(object sender, RoutedEventArgs e)
+        {
+            List<ProdutoDTO> listEstoque = Controller.getInstance().ConsultarEstoque("");
+
+            dgEstoque.ItemsSource = listEstoque;
+        }
+
+
+        private void txbPesqProdutoEstoque_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbPesqProdutoEstoque.Text))
+            {
+                txbPesqProdutoEstoque.Visibility = Visibility.Collapsed;
+                txbWaterMark.Visibility = Visibility.Visible;
+            }
+        }
+        private void txbWaterMark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txbWaterMark.Visibility = Visibility.Collapsed;
+            txbPesqProdutoEstoque.Visibility = Visibility.Visible;
+            txbPesqProdutoEstoque.Focus();
+        }
+
     }
 }

@@ -32,7 +32,7 @@ namespace ViewPimNoite.Cliente
 
             cliente.Nome = txbNomeCliente.Text;
             cliente.Cpf = txbCpfCliente.Text;
-            cliente.Dtnasc = "1993-01-26";
+            cliente.Dtnasc = txbDtNascCliente.Text;
             cliente.Cep = txbCepCliente.Text;
             cliente.Endereco = txbEnderecoCliente.Text;
             cliente.Numero = txbNumeroCliente.Text;
@@ -42,13 +42,18 @@ namespace ViewPimNoite.Cliente
             cliente.Estado = txbEstadoCliente.Text;
             cliente.Telefone = txbTelefoneCliente.Text;
             cliente.Celular = txbCelularCliente.Text;
-            cliente.TipoUsuario = "Cliente";
-            cliente.Complemento = "casa 1";
             cliente.Email = txbEmailCliente.Text;
+            cliente.TipoUsuario = "Cliente";
 
             Controller.getInstance().CadastrarCliente(cliente);
 
             MessageBox.Show(Controller.getInstance().mensagem);
+
+            if (Controller.getInstance().mensagem.Equals("Cliente cadastrado com sucesso"))
+            {
+                this.Close();
+            }
+
         }
 
         private void txbDtNascCliente_KeyDown(object sender, KeyEventArgs e)

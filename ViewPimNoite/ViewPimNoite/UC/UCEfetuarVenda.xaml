@@ -24,15 +24,14 @@
         <Label Content="Itens" HorizontalAlignment="Left" FontWeight="Bold" Margin="695,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="39"/>
         <Label Content="Sub Total" HorizontalAlignment="Left" FontWeight="Bold" Margin="825,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="65"/>
         <Label Content="Desconto" HorizontalAlignment="Left" FontWeight="Bold" Margin="955,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="65"/>
-        <ComboBox x:Name="cmbProduto" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="369" Height="43" Background="White"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="110" Stroke="#FF2196F3" VerticalAlignment="Top" Width="544" RadiusX="10" RadiusY="5" Margin="55,36,0,0"/>
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
-        <ComboBox x:Name="cmbProduto_Copy" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="378" Height="43" Background="White" FontSize="25"/>
         <TextBox x:Name="txbQuantidadeProduto" HorizontalAlignment="Left" Height="43" Margin="463,94,0,0" TextWrapping="Wrap" Text="1" TextAlignment="Center" VerticalAlignment="Top" Width="73" Background="White" FontSize="25" Foreground="#FFBFBFBF"/>
         <Button x:Name="btnIncluirItem" Content="&gt;" HorizontalAlignment="Left" Margin="548,94,0,0" VerticalAlignment="Top" Width="40" Height="43" Click="btnIncluirItem_Click" Background="#FFC1C1C1" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFC1C1C1"/>
-        <Label x:Name="lblSubTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="890,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
-        <Label x:Name="lblQtdItens" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="749,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
-        <Label x:Name="lblDesconto" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="1014,489,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="38"/>
-        <Label x:Name="lblTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="872,545,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Height="29" Width="102"/>
+        <Label x:Name="lblSubTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="898,496,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="45"/>
+        <Label x:Name="lblQtdItens" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="763,496,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="45"/>
+        <Label x:Name="lblDesconto" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="1024,496,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="47"/>
+        <Label x:Name="lblTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="898,552,0,0" VerticalAlignment="Top" FontSize="22" Foreground="White" Height="39" Width="172"/>
+        <ComboBox x:Name="cmbProduto" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="369" Height="43" Background="White"/>
     </Grid>
 </UserControl>

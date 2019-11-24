@@ -150,7 +150,7 @@ namespace controllerPimNoite.DAO
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                this.mensagem = "Cliente Editado com sucesso";
+                this.mensagem = "Cliente editado com sucesso";
             }
             catch (Exception ex)
             {

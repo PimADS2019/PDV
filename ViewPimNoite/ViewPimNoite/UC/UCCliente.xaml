@@ -8,7 +8,7 @@
     <Grid Margin="0,0,1,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
         <Label Content="Clientes" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
-        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgClientes_Initialized">
+        <DataGrid x:Name="dgClientes" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgClientes_Initialized" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding idCliente}"  Width="50"/>
                 <DataGridTextColumn Header="Cliente" Binding="{Binding Nome}"  Width="300"/>
@@ -26,7 +26,8 @@
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txbPesqCliente" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" TextWrapping="Wrap" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" MouseDoubleClick="TxbPesqCliente_MouseDoubleClick" Foreground="#FFB4B4B4" TextChanged="txbPesqCliente_TextChanged_1" />
+        <TextBox x:Name="txbPesqCliente" LostFocus="txbPesqCliente_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="Black" TextChanged="txbPesqCliente_TextChanged_1" />
+        <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar cliente" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4"/>
         <Button x:Name="btnAtualizar" Content="btnAtualizarCliente" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizar_Click">
             <Button.BorderBrush>
                 <ImageBrush/>

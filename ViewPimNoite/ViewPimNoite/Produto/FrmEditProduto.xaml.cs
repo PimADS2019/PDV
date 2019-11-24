@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
 
 namespace ViewPimNoite.Produto
 {
@@ -26,7 +28,24 @@ namespace ViewPimNoite.Produto
 
         private void btnSalvarProduto_Click(object sender, RoutedEventArgs e)
         {
+            ProdutoDTO produto = new ProdutoDTO();
 
+            produto.Produto = txbProduto.Text;
+            produto.Fabricante = txbFabricante.Text;
+            produto.CodReferencia = Convert.ToInt32(txbCodReferencia.Text);
+            produto.Forncedor = txbFornecedor.Text;
+            produto.Custo = Convert.ToInt32(txbCusto.Text);
+            produto.PrecoVenda = Convert.ToInt32(txbPrecoVenda.Text);
+            produto.Tamanho = "";
+
+            Controller.getInstance().EditarProduto(produto);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
+
+            if (Controller.getInstance().mensagem.Equals("Produto editado com sucesso"))
+            {
+                this.Close();
+            }
         }
 
         private void txbCodReferencia_KeyDown(object sender, KeyEventArgs e)

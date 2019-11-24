@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelPimNoite.DTO;
+using controllerPimNoite.Controller;
 
 namespace ViewPimNoite.Usuário
 {
@@ -81,6 +83,38 @@ namespace ViewPimNoite.Usuário
             if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnSalvarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            FuncionarioDTO funcionario = new FuncionarioDTO();
+
+            funcionario.Nome = txbNomeUsuario.Text;
+            funcionario.Cpf = txbCpfUsuario.Text;
+            funcionario.Dtnasc = txbDtNascUsuario.Text;
+            funcionario.Usuario = txbUserUsuario.Text;
+            funcionario.TipoUsuario = txbTipoUsuario.Text;
+            funcionario.Senha = txbSenhaUsuario.Password;
+            funcionario.ConfSenha = txbConfSenhaUsuario.Password;
+            funcionario.Cep = txbCepUsuario.Text;
+            funcionario.Endereco = txbEnderecoUsuario.Text;
+            funcionario.Numero = txbNumeroUsuario.Text;
+            funcionario.Bairro = txbBairroUsuario.Text;
+            funcionario.Complemento = txbComplementoUsuario.Text;
+            funcionario.Cidade = txbCidadeUsuario.Text;
+            funcionario.Estado = txbEstadoUsuario.Text;
+            funcionario.Telefone = txbTelefoneUsuario.Text;
+            funcionario.Celular = txbCelularUsuario.Text;
+            funcionario.Email = txbEmailUsuario.Text;
+
+            Controller.getInstance().EditarFuncionario(funcionario);
+
+            MessageBox.Show(Controller.getInstance().mensagem);
+
+            if (Controller.getInstance().mensagem.Equals("Usuário editado com sucesso"))
+            {
+                this.Close();
             }
         }
     }
