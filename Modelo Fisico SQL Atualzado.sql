@@ -424,7 +424,7 @@ exec SP_CadastroVenda 1, 1,1,1,1
 select CodReferencia, ValorUnitario, Nome_produto from tb_Produtos
 inner join tb_Estoques
 on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-where inativar = 1 and Nome_produto like @nome_Produto
+where inativar = 1 and Nome_produto like '% %'
 
 insert into tb_Funcionarios (Usuario, Senha)
 values ('admin', 'admin')

@@ -64,9 +64,10 @@ namespace controllerPimNoite.DAO
             }
         }
         public List<ClienteDTO> ConsultarCliente(string nome)
-        {
-            String sqlText = "select IdPessoa, Nome_Pessoa, CPF, Telefone, Endereco from tb_Pessoas where Inativar = 1";
-            SqlCommand cmd = new SqlCommand(sqlText, conn);
+        { 
+            SqlCommand cmd = new SqlCommand("select IdPessoa, Nome_Pessoa, CPF,Endereco, Celular from tb_Pessoas where Inativar = 1 and Nome_Pessoa like @nome_Pessoa", conn);
+
+            cmd.Parameters.AddWithValue("@nome_Pessoa", '%' + nome + '%');
             List<ClienteDTO> listadeclientes = null;
 
             try
@@ -83,7 +84,7 @@ namespace controllerPimNoite.DAO
                     clienteDTO.IdCliente = Convert.ToInt32(dr["IdPessoa"]);
                     clienteDTO.Nome = Convert.ToString(dr["Nome_Pessoa"]);
                     clienteDTO.Cpf = Convert.ToString(dr["CPF"]);
-                    clienteDTO.Telefone = Convert.ToString(dr["Telefone"]);
+                    clienteDTO.Celular = Convert.ToString(dr["Celular"]);
                     clienteDTO.Endereco = Convert.ToString(dr["Endereco"]);
 
                     listadeclientes.Add(clienteDTO);

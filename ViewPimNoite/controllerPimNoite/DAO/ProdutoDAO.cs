@@ -63,7 +63,7 @@ namespace controllerPimNoite.DAO
 
         public List<ProdutoDTO> ConsultarProduto(string produto)
         {
-            SqlCommand cmd = new SqlCommand(@"select Nome_produto, Fabricante, Custo, ValorUnitario  from tb_Produtos
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo, ValorUnitario  from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 1 and Nome_produto like @nome_Produto", conn);
@@ -155,12 +155,12 @@ namespace controllerPimNoite.DAO
         //Estoque
         public List<ProdutoDTO> ConsultarEstoque(string estoque)
         {
-            SqlCommand cmd = new SqlCommand(@"select Nome_produto, Fabricante, Custo, ValorUnitario, Quantidade  from tb_Produtos
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo, ValorUnitario from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 1 and Nome_produto like @nome_Produto", conn);
 
-            cmd.Parameters.AddWithValue("@nome_Produto", "%" + estoque + "%");
+            cmd.Parameters.AddWithValue("@nome_Produto", '%'+estoque+'%');
 
             List<ProdutoDTO> listadeprodutos = null;
 
@@ -201,7 +201,7 @@ namespace controllerPimNoite.DAO
             SqlCommand cmd = new SqlCommand(@"select Nome_produto, Fornecedor  from tb_Produtos
                                               where inativar = 1 and IdProduto = @CodReferencia", conn);
 
-            cmd.Parameters.AddWithValue("@CodReferenci", codReferencia);
+            cmd.Parameters.AddWithValue("@CodReferencia", codReferencia);
             ProdutoDTO produtoDTO = null;
             try
             {
