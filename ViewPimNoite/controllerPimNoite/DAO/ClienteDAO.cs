@@ -65,7 +65,7 @@ namespace controllerPimNoite.DAO
         }
         public List<ClienteDTO> ConsultarCliente(string nome)
         { 
-            SqlCommand cmd = new SqlCommand("select IdPessoa, Nome_Pessoa, CPF,Endereco, Celular from tb_Pessoas where Inativar = 1 and Nome_Pessoa like @nome_Pessoa", conn);
+            SqlCommand cmd = new SqlCommand("select * from tb_Pessoas where Inativar = 1 and Nome_Pessoa like @nome_Pessoa", conn);
 
             cmd.Parameters.AddWithValue("@nome_Pessoa", '%' + nome + '%');
             List<ClienteDTO> listadeclientes = null;
@@ -84,8 +84,13 @@ namespace controllerPimNoite.DAO
                     clienteDTO.IdCliente = Convert.ToInt32(dr["IdPessoa"]);
                     clienteDTO.Nome = Convert.ToString(dr["Nome_Pessoa"]);
                     clienteDTO.Cpf = Convert.ToString(dr["CPF"]);
+                    clienteDTO.Dtnasc = Convert.ToString(dr["DataNascimento"]);
                     clienteDTO.Celular = Convert.ToString(dr["Celular"]);
+                    clienteDTO.Email= Convert.ToString(dr["Email"]);
                     clienteDTO.Endereco = Convert.ToString(dr["Endereco"]);
+                    clienteDTO.Numero = Convert.ToString(dr["Numero"]);
+                    clienteDTO.Bairro = Convert.ToString(dr["Bairro"]);
+                    clienteDTO.Complemento = Convert.ToString(dr["Complemento"]);
 
                     listadeclientes.Add(clienteDTO);
 
@@ -108,7 +113,7 @@ namespace controllerPimNoite.DAO
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Pessoas 
                                             set inativar = 0
-                                            where IdPessoas = @IdCliente",conn);
+                                            where IdPessoa = @IdCliente",conn);
             cmd.Parameters.AddWithValue("@IdCliente", idCliente);
 
             try

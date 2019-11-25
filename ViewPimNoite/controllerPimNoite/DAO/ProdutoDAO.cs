@@ -68,7 +68,7 @@ namespace controllerPimNoite.DAO
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 1 and Nome_produto like @nome_Produto", conn);
 
-            cmd.Parameters.AddWithValue("@nome_Produto", "%" + produto + "%");
+            cmd.Parameters.AddWithValue("@nome_Produto", '%' + produto + '%');
 
             List<ProdutoDTO> listadeprodutos = null;
 

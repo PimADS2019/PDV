@@ -36,19 +36,23 @@ namespace ViewPimNoite.UC
         private void BtnEditarCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmEditCliente frmEditar = new FrmEditCliente();
-            frmEditar.txbNomeCliente.Text = dgClientes.SelectedCells[1].ToString();
-            frmEditar.txbCpfCliente.Text = dgClientes.SelectedCells[2].ToString();
-            frmEditar.txbDtNascCliente.Text = dgClientes.SelectedCells[3].ToString();
-            frmEditar.txbCepCliente.Text = dgClientes.SelectedCells[4].ToString();
-            frmEditar.txbEnderecoCliente.Text = dgClientes.SelectedCells[5].ToString();
-            frmEditar.txbNumeroCliente.Text = dgClientes.SelectedCells[6].ToString();
-            frmEditar.txbBairroCliente.Text = dgClientes.SelectedCells[7].ToString();
-            frmEditar.txbComplemento.Text = dgClientes.SelectedCells[8].ToString();
-            frmEditar.txbCidadeCliente.Text = dgClientes.SelectedCells[9].ToString();
-            frmEditar.txbEstadoCliente.Text = dgClientes.SelectedCells[10].ToString();
-            frmEditar.txbTelefoneCliente.Text = dgClientes.SelectedCells[11].ToString();
-            frmEditar.txbCelularCliente.Text = dgClientes.SelectedCells[12].ToString();
-            frmEditar.txbEmailCliente.Text = dgClientes.SelectedCells[13].ToString();
+
+            ClienteDTO cliente = new ClienteDTO();
+            cliente = dgClientes.SelectedItem as ClienteDTO;
+
+            frmEditar.txbNomeCliente.Text = cliente.Nome;
+            frmEditar.txbCpfCliente.Text = cliente.Cpf;
+            frmEditar.txbDtNascCliente.Text = cliente.Dtnasc;
+            frmEditar.txbCepCliente.Text = cliente.Cep;
+            frmEditar.txbEnderecoCliente.Text = cliente.Endereco;
+            frmEditar.txbNumeroCliente.Text = cliente.Numero;
+            frmEditar.txbBairroCliente.Text = cliente.Bairro;
+            frmEditar.txbComplemento.Text = cliente.Complemento;
+            frmEditar.txbCidadeCliente.Text = cliente.Cidade;
+            frmEditar.txbEstadoCliente.Text = cliente.Estado;
+            frmEditar.txbTelefoneCliente.Text = cliente.Telefone;
+            frmEditar.txbCelularCliente.Text = cliente.Celular;
+            frmEditar.txbEmailCliente.Text = cliente.Email;
             frmEditar.ShowDialog();
         }
         private void dgClientes_Initialized(object sender, EventArgs e)
@@ -65,9 +69,9 @@ namespace ViewPimNoite.UC
         {
             ClienteDTO cliente = new ClienteDTO();
 
-            cliente.IdCliente = Convert.ToInt32(dgClientes.SelectedCells[0].ToString());
+            cliente = dgClientes.SelectedItem as ClienteDTO;
 
-            Controller.getInstance().ExcluirCliente(Convert.ToString(cliente));
+            Controller.getInstance().ExcluirCliente(Convert.ToString(cliente.IdCliente));
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }

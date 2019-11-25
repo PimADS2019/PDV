@@ -33,7 +33,7 @@ namespace ViewPimNoite.UC
         {
             ProdutoDTO produto = new ProdutoDTO();
 
-            cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto(Convert.ToString(produto));
+            cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto("");
             cmbProduto.DisplayMemberPath = "Produto";
             cmbProduto.SelectedValuePath = "Codigo";
         }
