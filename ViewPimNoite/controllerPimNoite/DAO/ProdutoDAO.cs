@@ -83,7 +83,7 @@ namespace controllerPimNoite.DAO
                 {
                     produtoDTO = new ProdutoDTO();
 
-                    produtoDTO.Codigo = Convert.ToInt32(dr["IdProduto"]);
+                    produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
                     produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
                     produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
                     produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
@@ -175,7 +175,7 @@ namespace controllerPimNoite.DAO
                 {
                     produtoDTO = new ProdutoDTO();
 
-                    produtoDTO.Codigo = Convert.ToInt32(dr["IdProduto"]);
+                    produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
                     produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
                     produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
                     produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);

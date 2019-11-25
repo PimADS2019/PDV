@@ -166,5 +166,33 @@ namespace controllerPimNoite.DAO
                 throw ex;
             };
         }
+        public Boolean ValidarUsuario(FuncionarioDTO funcionario)
+        {
+            String sqlText = String.Format("Select * from tb_Funcionarios Where Usuario = '{0}' and Senha = '{1}'", funcionario.Usuario, funcionario.Senha);
+            SqlCommand cmd = new SqlCommand(sqlText, conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    conn.Close();
+                    return true;
+                }
+
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+                throw ex;
+            }
+        }
     }
 }

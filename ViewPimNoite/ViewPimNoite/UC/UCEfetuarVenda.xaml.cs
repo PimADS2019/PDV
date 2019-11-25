@@ -35,7 +35,7 @@ namespace ViewPimNoite.UC
 
             cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto("");
             cmbProduto.DisplayMemberPath = "Produto";
-            cmbProduto.SelectedValuePath = "Codigo";
+            cmbProduto.SelectedValuePath = "idProduto";
         }
 
         private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
@@ -44,7 +44,7 @@ namespace ViewPimNoite.UC
             ItensVendaDTO item = new ItensVendaDTO();
             item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
             item.ProdutoDTO = new ProdutoDTO();
-            item.ProdutoDTO.Codigo = Convert.ToInt32(cmbProduto.SelectedValue);
+            item.ProdutoDTO.IdProduto = Convert.ToInt32(cmbProduto.SelectedValue);
 
             listaItens.Add(item);
             vendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, item.ProdutoDTO);

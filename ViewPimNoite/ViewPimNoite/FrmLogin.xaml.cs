@@ -30,12 +30,12 @@ namespace ViewPimNoite
 
         private void btnLogar_Click(object sender, RoutedEventArgs e)
         {
-            UsuarioDTO usuario = new UsuarioDTO();
+            FuncionarioDTO funcionario = new FuncionarioDTO();
 
-            usuario.Usuario = txbUsuario.Text;
-            usuario.Senha = txbSenha.Password;
+            funcionario.Usuario = txbUsuario.Text;
+            funcionario.Senha = txbSenha.Password;
 
-            if (Controller.getInstance().ValidarUsuario(usuario).Equals(""))
+            if (Controller.getInstance().ValidarUsuario(funcionario).Equals(""))
             {
                 MainMenu mainMenu = new MainMenu();
 
@@ -43,7 +43,7 @@ namespace ViewPimNoite
             }
             else
             {
-                MessageBox.Show(Controller.getInstance().ValidarUsuario(usuario));
+                MessageBox.Show(Controller.getInstance().ValidarUsuario(funcionario));
             }
 
         }

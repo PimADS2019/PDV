@@ -26,6 +26,7 @@ namespace ViewPimNoite.UC
         public UCUsuario()
         {
             InitializeComponent();
+            dgUsuarios.IsReadOnly = true;
         }
 
         private void BtnIncluirUsuario_Click(object sender, RoutedEventArgs e)
@@ -36,23 +37,27 @@ namespace ViewPimNoite.UC
 
         private void BtnEditarUsuario_Click(object sender, RoutedEventArgs e)
         {
+            FuncionarioDTO funcionario = new FuncionarioDTO();
+            funcionario = dgUsuarios.SelectedItem as FuncionarioDTO;
+
             FrmEditUsuario frmEditar = new FrmEditUsuario();
-            frmEditar.txbNomeUsuario.Text = dgUsuarios.SelectedCells[1].ToString();
-            frmEditar.txbCpfUsuario.Text = dgUsuarios.SelectedCells[2].ToString();
-            frmEditar.txbDtNascUsuario.Text = dgUsuarios.SelectedCells[3].ToString();
-            frmEditar.txbUserUsuario.Text = dgUsuarios.SelectedCells[4].ToString();
-            frmEditar.txbSenhaUsuario.Password = dgUsuarios.SelectedCells[5].ToString();
-            frmEditar.txbConfSenhaUsuario.Password = dgUsuarios.SelectedCells[6].ToString();
-            frmEditar.txbCepUsuario.Text = dgUsuarios.SelectedCells[7].ToString();
-            frmEditar.txbEnderecoUsuario.Text = dgUsuarios.SelectedCells[8].ToString();
-            frmEditar.txbNumeroUsuario.Text = dgUsuarios.SelectedCells[9].ToString();
-            frmEditar.txbBairroUsuario.Text = dgUsuarios.SelectedCells[10].ToString();
-            frmEditar.txbComplementoUsuario.Text = dgUsuarios.SelectedCells[11].ToString();
-            frmEditar.txbCidadeUsuario.Text = dgUsuarios.SelectedCells[12].ToString();
-            frmEditar.txbEstadoUsuario.Text = dgUsuarios.SelectedCells[13].ToString();
-            frmEditar.txbTelefoneUsuario.Text = dgUsuarios.SelectedCells[14].ToString();
-            frmEditar.txbCelularUsuario.Text = dgUsuarios.SelectedCells[15].ToString();
-            frmEditar.txbEmailUsuario.Text = dgUsuarios.SelectedCells[16].ToString();
+            frmEditar.txbNomeUsuario.Text = funcionario.Nome;
+            frmEditar.txbCpfUsuario.Text = funcionario.Cpf;
+            frmEditar.txbDtNascUsuario.Text = funcionario.Dtnasc;
+            frmEditar.txbUserUsuario.Text = funcionario.Usuario;
+            frmEditar.txbTipoUsuario.Text = funcionario.TipoUsuario;
+            frmEditar.txbSenhaUsuario.Password = funcionario.Senha;
+            frmEditar.txbConfSenhaUsuario.Password = funcionario.ConfSenha;
+            frmEditar.txbCepUsuario.Text = funcionario.Cep;
+            frmEditar.txbEnderecoUsuario.Text = funcionario.Endereco;
+            frmEditar.txbNumeroUsuario.Text = funcionario.Numero;
+            frmEditar.txbBairroUsuario.Text = funcionario.Bairro;
+            frmEditar.txbComplementoUsuario.Text = funcionario.Complemento;
+            frmEditar.txbCidadeUsuario.Text = funcionario.Cidade;
+            frmEditar.txbEstadoUsuario.Text = funcionario.Estado;
+            frmEditar.txbTelefoneUsuario.Text = funcionario.Telefone;
+            frmEditar.txbCelularUsuario.Text = funcionario.Celular;
+            frmEditar.txbEmailUsuario.Text = funcionario.Email;
             frmEditar.ShowDialog();
         }
 
@@ -71,9 +76,9 @@ namespace ViewPimNoite.UC
         {
             FuncionarioDTO funcionario = new FuncionarioDTO();
 
-            funcionario.IdFuncionario= Convert.ToInt32(dgUsuarios.SelectedCells[0].ToString());
+            funcionario = dgUsuarios.SelectedItem as FuncionarioDTO;
 
-            Controller.getInstance().ExcluirFuncionario(Convert.ToString(funcionario));
+            Controller.getInstance().ExcluirFuncionario(Convert.ToString(funcionario.IdFuncionario));
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }

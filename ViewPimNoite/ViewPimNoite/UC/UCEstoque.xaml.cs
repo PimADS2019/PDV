@@ -42,6 +42,7 @@ namespace ViewPimNoite.UC
             List<ProdutoDTO> listEstoque = Controller.getInstance().ConsultarEstoque("");
 
             dgEstoque.ItemsSource = listEstoque;
+
         }
 
         private void txbPesqProdutoEstoque_TextChanged(object sender, TextChangedEventArgs e)

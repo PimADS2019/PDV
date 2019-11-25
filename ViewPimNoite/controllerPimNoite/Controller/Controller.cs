@@ -28,9 +28,9 @@ namespace controllerPimNoite.Controller
         }
 
         //Login
-        public String ValidarUsuario(UsuarioDTO usuario)
+        public String ValidarUsuario(FuncionarioDTO funcionario)
         {
-            return UsuarioBL.getInstance().ValidarUsuario(usuario);
+            return FuncionarioBL.getInstance().ValidarUsuario(funcionario);
         }
         
         //Funcionarios

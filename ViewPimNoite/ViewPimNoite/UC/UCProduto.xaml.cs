@@ -36,14 +36,18 @@ namespace ViewPimNoite.UC
 
         private void BtnEditarProduto_Click(object sender, RoutedEventArgs e)
         {
+            ProdutoDTO produto = new ProdutoDTO();
+            produto = dgProdutos.SelectedItem as ProdutoDTO;
+
             FrmEditProduto frmEditar = new FrmEditProduto();
-            frmEditar.txbCodReferencia.Text = dgProdutos.SelectedCells[1].ToString();
-            frmEditar.txbProduto.Text = dgProdutos.SelectedCells[2].ToString();
-            frmEditar.txbFabricante.Text = dgProdutos.SelectedCells[3].ToString();
-            frmEditar.txbCusto.Text = dgProdutos.SelectedCells[4].ToString();
-            frmEditar.txbPrecoVenda.Text = dgProdutos.SelectedCells[5].ToString();
-            frmEditar.txbFornecedor.Text = dgProdutos.SelectedCells[6].ToString();
-            frmEditar.ShowDialog();
+
+            frmEditar.txbCodReferencia.Text = Convert.ToString(produto.CodReferencia);
+            frmEditar.txbProduto.Text = produto.Produto;
+            frmEditar.txbFabricante.Text = produto.Fabricante;
+            frmEditar.txbCusto.Text = Convert.ToString(produto.Custo);
+            frmEditar.txbPrecoVenda.Text = Convert.ToString(produto.PrecoVenda);
+            frmEditar.txbFornecedor.Text = produto.Forncedor;
+            frmEditar.ShowDialog();      
         }
 
         private void dgProdutos_Initialized(object sender, EventArgs e)
@@ -61,9 +65,9 @@ namespace ViewPimNoite.UC
         {
             ProdutoDTO produto = new ProdutoDTO();
 
-            produto.Codigo = Convert.ToInt32(dgProdutos.SelectedCells[0].ToString());
+            produto = dgProdutos.SelectedItem as ProdutoDTO;
 
-            Controller.getInstance().ExcluirProduto(Convert.ToString(produto));
+            Controller.getInstance().ExcluirProduto(Convert.ToString(produto.IdProduto));
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }

@@ -113,5 +113,22 @@ namespace controllerPimNoite.BL
                 this.mensagem = FuncionarioDAO.getInstance().mensagem;
             }
         }
+
+        public String ValidarUsuario(FuncionarioDTO funcionario)
+        {
+            mensagem = "";
+
+            if ((funcionario.Usuario == "") || (funcionario.Senha == ""))
+            {
+                return mensagem = "Usuário ou senha não foi digitado, favor inserir Usuário e senha.";
+            }
+
+            if (FuncionarioDAO.getInstance().ValidarUsuario(funcionario) == false)
+            {
+                return mensagem = "Usuario ou senha incorreto.";
+            }
+
+            return mensagem = "";
+        }
     }
 }

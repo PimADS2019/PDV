@@ -8,7 +8,7 @@ namespace modelPimNoite.DTO
 {
     public class ProdutoDTO
     {
-        private int codigo;
+        private int idProduto;
         private string produto;
         private string fabricante;
         private int codReferencia;
@@ -17,7 +17,7 @@ namespace modelPimNoite.DTO
         private double precoVenda;
         private string tamanho;
 
-        public int Codigo { get => codigo; set => codigo = value; }
+        public int IdProduto { get => idProduto; set => idProduto = value; }
         public string Produto { get => produto; set => produto = value; }
         public string Fabricante { get => fabricante; set => fabricante = value; }
         public int CodReferencia { get => codReferencia; set => codReferencia = value; }
@@ -25,5 +25,6 @@ namespace modelPimNoite.DTO
         public double Custo { get => custo; set => custo = value; }
         public double PrecoVenda { get => precoVenda; set => precoVenda = value; }
         public string Tamanho { get => tamanho; set => tamanho = value; }
+
     }
 }

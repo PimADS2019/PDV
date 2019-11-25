@@ -45,7 +45,6 @@
     <Compile Include="BL\ClienteBL.cs" />
     <Compile Include="BL\FuncionarioBL.cs" />
     <Compile Include="BL\ProdutoBL.cs" />
-    <Compile Include="BL\UsuarioBL.cs" />
     <Compile Include="BL\VendaBL.cs" />
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
@@ -53,7 +52,6 @@
     <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\ItensVendaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
-    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\VendaDAO.cs" />
     <Compile Include="Estaticos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
