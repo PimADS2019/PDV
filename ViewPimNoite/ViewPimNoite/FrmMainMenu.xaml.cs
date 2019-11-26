@@ -57,7 +57,7 @@ namespace ViewPimNoite
 
             var menuEstoque = new List<SubItem>();
             var item3 = new ItemMenu("ESTOQUE", menuEstoque, PackIconKind.Basket);  
-            menuEstoque.Add(new SubItem("Consultar Estoque", new UCEstoque()));
+            menuEstoque.Add(new SubItem("Estoque de Produto", new UCEstoque()));
 
             var menuAjuda = new List<SubItem>();
             var item4 = new ItemMenu("AJUDA", menuAjuda, PackIconKind.HelpCircle);

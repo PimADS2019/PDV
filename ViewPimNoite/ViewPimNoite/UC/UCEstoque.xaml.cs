@@ -39,6 +39,7 @@ namespace ViewPimNoite.UC
                 frmEntradaProduto.txbCodRefEstoque.Text = produto.CodReferencia.ToString();
                 frmEntradaProduto.txbProdutoEntrada.Text = produto.Produto;
                 frmEntradaProduto.txbFornecedor.Text = produto.Forncedor;
+                frmEntradaProduto.txbIdProduto.Text = produto.IdProduto.ToString();
                 frmEntradaProduto.ShowDialog();
             }
             else

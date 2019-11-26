@@ -44,6 +44,7 @@ namespace ViewPimNoite.Estoque
             produto.CodReferencia = Convert.ToInt32(txbCodRefEstoque.Text);
             produto.Produto = txbProdutoEntrada.Text;
             produto.Forncedor = txbFornecedor.Text;
+            produto.IdProduto = Convert.ToInt32(txbIdProduto.Text);
 
             Controller.getInstance().AcrescentarQuantidadeEstoque(produto, txbQuantidadeEntrada.Text);
 

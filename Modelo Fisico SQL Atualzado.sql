@@ -60,7 +60,7 @@ go
 
 CREATE TABLE tb_Estoques (
     IdEstoque INT PRIMARY KEY identity,
-    Quantidade INT,
+    Quantidade INT NOT NULL,
     ValorUnitario FLOAT,
 	Custo float,
     fk_Produtos_IdProduto INT
@@ -232,6 +232,7 @@ create procedure SP_CadastroProdutos
 	@Fornecedor Varchar(40),
 	@Precounitario float,
 	@CodReferencia int,
+	@Quantidade int,
 	@Inativar bit
 )
 as
@@ -240,8 +241,8 @@ begin
 	values (@Nome_Produto, @Tamanho, @Fabricante, @Fornecedor,@CodReferencia, @Inativar)
 	declare @Id_Produto int=@@identity
 
-	insert into tb_Estoques (ValorUnitario, Custo, fk_Produtos_IdProduto)
-	values (@Precounitario,@Custo, @Id_Produto)
+	insert into tb_Estoques (ValorUnitario, Custo, Quantidade, fk_Produtos_IdProduto)
+	values (@Precounitario,@Custo, @Quantidade, @Id_Produto)
 end
 /* Fim Insert Produtos */
 

@@ -43,6 +43,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
             cmd.Parameters.AddWithValue("@CodReferencia", produto.CodReferencia);
+            cmd.Parameters.AddWithValue("@Quantidade", 0);
             cmd.Parameters.AddWithValue("@Inativar", 1);
 
             try
@@ -158,7 +159,8 @@ namespace controllerPimNoite.DAO
         //Estoque
         public List<ProdutoDTO> ConsultarEstoque(string estoque)
         {
-            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo, ValorUnitario from tb_Produtos
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo,
+                                            ValorUnitario, Quantidade, Fornecedor, CodReferencia from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 1 and Nome_produto like @nome_Produto", conn);
@@ -180,9 +182,12 @@ namespace controllerPimNoite.DAO
 
                     produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
                     produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
+                    produtoDTO.CodReferencia = Convert.ToInt32(dr["CodReferencia"]);
+                    produtoDTO.Forncedor = Convert.ToString(dr["Fornecedor"]);
                     produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
                     produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
                     produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
+                    produtoDTO.Quantidade = Convert.ToInt32(dr["Quantidade"]);
 
                     listadeprodutos.Add(produtoDTO);
 
@@ -235,7 +240,8 @@ namespace controllerPimNoite.DAO
         {
             SqlCommand cmd = new SqlCommand("SP_AdicionarQuantidade", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
+            cmd.Parameters.AddWithValue("@IdProduto", produto.IdProduto);
+            cmd.Parameters.AddWithValue("@Quantidade", quantidade);
             try
             {
                 conn.Open();

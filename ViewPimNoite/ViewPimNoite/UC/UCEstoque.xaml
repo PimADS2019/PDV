@@ -11,9 +11,9 @@
         <DataGrid  x:Name="dgEstoque" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgEstoque_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Cod. Ref." Binding="{Binding CodReferencia}"  Width="120"/>
-                <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="250"/>
-                <DataGridTextColumn Header="Fornecedor" Binding="{Binding Fornecedor}" Width="250"/>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding quantidade}" Width="150"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="250"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding Forncedor}" Width="250"/>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqProdutoEstoque" LostFocus="txbPesqProdutoEstoque_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF0C0C0C" TextChanged="txbPesqProdutoEstoque_TextChanged" />
