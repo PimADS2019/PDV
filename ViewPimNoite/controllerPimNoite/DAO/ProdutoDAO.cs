@@ -123,6 +123,7 @@ namespace controllerPimNoite.DAO
             {
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
+                this.mensagem = "Falha ao excluir produto. Contate um administrador";
             }
         }
 

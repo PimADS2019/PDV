@@ -103,5 +103,12 @@ namespace ViewPimNoite.UC
             txbPesqUsuario.Visibility = Visibility.Visible;
             txbPesqUsuario.Focus();
         }
+
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            List<FuncionarioDTO> listDadosFuncionario = Controller.getInstance().ConsultarFuncionarioPorNome("");
+            dgUsuarios.ItemsSource = listDadosFuncionario;
+        }
+
     }
 }

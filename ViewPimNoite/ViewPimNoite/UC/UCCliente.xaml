@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ViewPimNoite.UC"
-             mc:Ignorable="d" Width="1100" Height="620">
+             mc:Ignorable="d" Width="1100" Height="620" ContextMenuOpening="UserControl_ContextMenuOpening">
     <Grid Margin="0,0,1,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="61" Stroke="#FF2196F3" VerticalAlignment="Top" Width="1095" RadiusX="15" RadiusY="10" Margin="2,2,0,0"/>
         <Label Content="Clientes" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>

@@ -91,5 +91,11 @@ namespace ViewPimNoite.UC
             txbPesqProduto.Visibility = Visibility.Visible;
             txbPesqProduto.Focus();
         }
+
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            List<ProdutoDTO> listDadosProdutos = Controller.getInstance().ConsultarProduto("");
+            dgProdutos.ItemsSource = listDadosProdutos;
+        }
     }
 }

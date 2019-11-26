@@ -74,11 +74,6 @@ namespace controllerPimNoite.DAO
                                               on fk_Estados_idEstado = idEstado
                                               where Inativar = 1 and Nome_Pessoa like @Nome_Pessoa", conn);
 
-
-            /*SqlCommand cmd = new SqlCommand("select * from tb_Pessoas " +
-                                            "where Inativar = 1 " +
-                                            "and Nome_Pessoa like @nome_Pessoa", conn);*/
-
             cmd.Parameters.AddWithValue("@Nome_Pessoa", '%' + nome + '%');
             List<ClienteDTO> listadeclientes = null;
 
@@ -142,7 +137,8 @@ namespace controllerPimNoite.DAO
             catch (Exception ex)
             {
                 if (conn.State == System.Data.ConnectionState.Open)
-                    conn.Close();  
+                    conn.Close();
+                this.mensagem = "Falha ao excluir cliente. Contate um administrador";
             }
         }
 

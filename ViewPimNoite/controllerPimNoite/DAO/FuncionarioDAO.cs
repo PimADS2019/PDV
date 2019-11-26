@@ -127,7 +127,7 @@ namespace controllerPimNoite.DAO
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Pessoas 
                                             set inativar = 0
-                                            where IdPessoas = @IdFuncionario", conn);
+                                            where IdPessoa = @IdFuncionario", conn);
             cmd.Parameters.AddWithValue("@IdFuncionario", idFuncionario);
 
             try
@@ -141,6 +141,7 @@ namespace controllerPimNoite.DAO
             {
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
+                this.mensagem = "Falha ao excluir, contate um administrador";
             }
         }
 

@@ -21,7 +21,7 @@
         </DataGrid>
         <TextBox x:Name="txbPesqProduto" LostFocus="txbPesqProduto_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF0C0C0C" TextChanged="txbPesqProduto_TextChanged" />
         <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar produto" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4"/>
-        <Button x:Name="btnAtualizar" Content="btnAtualizarProduto" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+        <Button x:Name="btnAtualizar" Content="btnAtualizarProduto" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizar_Click">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
