@@ -427,8 +427,8 @@ inner join tb_Estoques
 on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
 where inativar = 1 and Nome_produto like '% %'
 
-insert into tb_Funcionarios (Usuario, Senha)
-values ('admin', 'admin')
+insert into tb_Funcionarios (Usuario, Senha, fk_Pessoas_IdPessoa)
+values ('admin', 'admin', 1)
 
 select * from tb_Pessoas
 select * from tb_Funcionarios
@@ -436,3 +436,7 @@ select * from tb_Clientes
 
 SELECT * from tb_Produtos
 select * from tb_Estoques
+
+insert into tb_Pessoas (Inativar)
+values ('0')
+

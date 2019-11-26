@@ -60,6 +60,6 @@
         <Image Source="Imagens/iconCalendario.png" Grid.Column="1" Margin="881,621,73,2" Grid.Row="1"/>
         <Image Source="Imagens/iconUsuario.png" Margin="13,620,216,1" Grid.Row="1" RenderTransformOrigin="-0.875,0.429"/>
         <Label x:Name="lblUsuario" Content="Usuário - " HorizontalAlignment="Left" Margin="43,617,0,-7" Grid.Row="1" VerticalAlignment="Top"  Foreground="#DDFFFFFF" Height="27"/>
-        <Label x:Name="lblUsuarioConectado" HorizontalAlignment="Left" Margin="114,618,0,0" Grid.Row="1" VerticalAlignment="Top" Width="136" Foreground="#DDFFFFFF"/>
+        <Label x:Name="lblUsuarioConectado" HorizontalAlignment="Left" Margin="114,617,0,-3" Grid.Row="1" VerticalAlignment="Top" Width="136" Foreground="#DDFFFFFF" Height="23"/>
     </Grid>
 </Window>
