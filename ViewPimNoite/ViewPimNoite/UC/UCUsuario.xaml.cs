@@ -28,7 +28,12 @@ namespace ViewPimNoite.UC
             InitializeComponent();
             dgUsuarios.IsReadOnly = true;
         }
+        private void Pesquisar(FuncionarioDTO funcionario)
+        {
+            funcionario.Nome = txbPesqUsuario.Text.Trim();
 
+            dgUsuarios.ItemsSource = Controller.getInstance().ConsultarFuncionarioPorNome(funcionario.Nome.ToString());
+        }
         private void BtnIncluirUsuario_Click(object sender, RoutedEventArgs e)
         {
             FrmCadUsuario frmCadastrar = new FrmCadUsuario();
@@ -46,7 +51,7 @@ namespace ViewPimNoite.UC
                 frmEditar.txbIdUsuario.Text = funcionario.IdFuncionario.ToString();
                 frmEditar.txbNomeUsuario.Text = funcionario.Nome;
                 frmEditar.txbCpfUsuario.Text = funcionario.Cpf;
-                frmEditar.txbDtNascUsuario.Text = funcionario.Dtnasc;
+                frmEditar.dtpDtNascUsuario.Text = funcionario.Dtnasc;
                 frmEditar.txbUserUsuario.Text = funcionario.Usuario;
                 frmEditar.txbTipoUsuario.Text = funcionario.TipoUsuario;
                 frmEditar.txbSenhaUsuario.Password = funcionario.Senha;
@@ -77,7 +82,8 @@ namespace ViewPimNoite.UC
 
         private void txbPesqUsuario_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgUsuarios.FindName(txbPesqUsuario.Text);
+            FuncionarioDTO funcionario = new FuncionarioDTO();
+            Pesquisar(funcionario);
         }
 
         private void btnExcluirUsuario_Click(object sender, RoutedEventArgs e)

@@ -84,6 +84,7 @@ namespace ViewPimNoite
         {
             Estaticos.logado = false;
             Login login = new Login();
+            this.Close();
             login.ShowDialog();
             if (!Estaticos.logado)
             {

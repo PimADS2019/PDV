@@ -13,17 +13,17 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding Path = IdCliente}"  Width="50"/>
                 <DataGridTextColumn Header="Cliente" Binding="{Binding Nome}"  Width="300"/>
                 <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="200"/>
-                <DataGridTextColumn Header="Data Nasc." Binding="{Binding Dtnasc}"/>
-                <DataGridTextColumn Header="CEP" Binding="{Binding Cep}"/>
+                <DataGridTextColumn Header="Data Nasc." Binding="{Binding Dtnasc, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="CEP" Binding="{Binding Cep}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Width="250"/>
                 <DataGridTextColumn Header="Número" Binding="{Binding Numero}" />
-                <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}" />
-                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}" />
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" />
-                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" />
-                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" />
+                <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}" Visibility="Hidden" />
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" Visibility="Hidden" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Visibility="Hidden" />
+                <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Celular" Binding="{Binding Celular}" Width="100"/>
-                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqCliente" LostFocus="txbPesqCliente_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="Black" TextChanged="txbPesqCliente_TextChanged_1" />

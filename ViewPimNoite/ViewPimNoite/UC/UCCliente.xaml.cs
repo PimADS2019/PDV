@@ -50,7 +50,7 @@ namespace ViewPimNoite.UC
                 frmEditar.txbIdCliente.Text = cliente.IdCliente.ToString();
                 frmEditar.txbNomeCliente.Text = cliente.Nome;
                 frmEditar.txbCpfCliente.Text = cliente.Cpf;
-                frmEditar.txbDtNascCliente.Text = cliente.Dtnasc;
+                frmEditar.dtpDtNasc.Text = cliente.Dtnasc;
                 frmEditar.txbCepCliente.Text = cliente.Cep;
                 frmEditar.txbEnderecoCliente.Text = cliente.Endereco;
                 frmEditar.txbNumeroCliente.Text = cliente.Numero;

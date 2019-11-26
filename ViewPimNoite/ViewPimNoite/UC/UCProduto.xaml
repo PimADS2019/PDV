@@ -10,12 +10,12 @@
         <Label Content="Produtos" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="166"/>
         <DataGrid x:Name="dgProdutos" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgProdutos_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Cód. Ref." Binding="{Binding CodReferencia}"  Width="120"/>
-                <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="300"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="280" />
                 <DataGridTextColumn Header="Fabricante" Binding="{Binding Fabricante}" Width="200"/>
-                <DataGridTextColumn Header="Custo" Binding="{Binding Custo}" Width="150"/>
-                <DataGridTextColumn Header="Preço Venda" Binding="{Binding PrecoVenda}" Width="150"/>
+                <DataGridTextColumn Header="Custo" Binding="{Binding Custo}" Width="100"/>
+                <DataGridTextColumn Header="Preço Venda" Binding="{Binding PrecoVenda}" Width="100"/>
                 <DataGridTextColumn Header="Fornecedor" Binding="{Binding Forncedor}" />
             </DataGrid.Columns>
         </DataGrid>

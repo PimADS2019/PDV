@@ -26,33 +26,26 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
+        private void Pesquisar(VendaDTO venda)
+        {
+            venda.DtCompra = Convert.ToDateTime(dtpDataVenda);
+
+            dgVendas.ItemsSource = Controller.getInstance().ConsultarVendas(venda.DtCompra.ToString());
+        }
         private void dgVendas_Initialized(object sender, EventArgs e)
         {
             List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas("");
             dgVendas.ItemsSource = listDadosClientes;
-        }
-        private void txbPesqVenda_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            dgVendas.FindName(txbPesqVenda.Text);
         }
         private void btnAtualizaVenda_Click(object sender, RoutedEventArgs e)
         {
             List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas("");
             dgVendas.ItemsSource = listDadosClientes;
         }
-        private void txbPesqVenda_LostFocus(object sender, RoutedEventArgs e)
+        private void dtpDataVenda_TextInput(object sender, TextCompositionEventArgs e)
         {
-            if (string.IsNullOrEmpty(txbPesqVenda.Text))
-            {
-                txbPesqVenda.Visibility = Visibility.Collapsed;
-                txbWaterMark.Visibility = Visibility.Visible;
-            }
-        }
-        private void txbWaterMark_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txbWaterMark.Visibility = Visibility.Collapsed;
-            txbPesqVenda.Visibility = Visibility.Visible;
-            txbPesqVenda.Focus();
+            VendaDTO venda = new VendaDTO();
+            Pesquisar(venda);
         }
     }
 }

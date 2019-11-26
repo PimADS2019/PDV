@@ -36,16 +36,6 @@ namespace ViewPimNoite.Usuário
             }
         }
 
-        private void txbDtNascUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            KeyConverter key = new KeyConverter();
-
-            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void txbCepUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             KeyConverter key = new KeyConverter();
@@ -93,7 +83,7 @@ namespace ViewPimNoite.Usuário
             funcionario.IdFuncionario = Convert.ToInt32(txbIdUsuario.Text);
             funcionario.Nome = txbNomeUsuario.Text;
             funcionario.Cpf = txbCpfUsuario.Text;
-            funcionario.Dtnasc = txbDtNascUsuario.Text;
+            funcionario.Dtnasc = dtpDtNascUsuario.Text;
             funcionario.Usuario = txbUserUsuario.Text;
             funcionario.TipoUsuario = txbTipoUsuario.Text;
             funcionario.Senha = txbSenhaUsuario.Password;

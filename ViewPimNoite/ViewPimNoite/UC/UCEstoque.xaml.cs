@@ -27,7 +27,12 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
+        private void Pesquisar(ProdutoDTO produto)
+        {
+            produto.Produto = txbPesqProdutoEstoque.Text.Trim();
 
+            dgEstoque.ItemsSource = Controller.getInstance().ConsultarEstoque(produto.Produto.ToString());
+        }
         private void BtnEntradaProduto_Click(object sender, RoutedEventArgs e)
         {
             ProdutoDTO produto = new ProdutoDTO();
@@ -58,7 +63,8 @@ namespace ViewPimNoite.UC
 
         private void txbPesqProdutoEstoque_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgEstoque.FindName(txbPesqProdutoEstoque.Text);
+            ProdutoDTO produto = new ProdutoDTO();
+            Pesquisar(produto);
         }
 
         private void btnAtualizarEstoque_Click(object sender, RoutedEventArgs e)

@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:ViewPimNoite.UC"
              mc:Ignorable="d" Width="1100" Height="620">
     <Grid>
-            
+        <Label Content="Design Project PDV&#xD;&#xA;&#xD;&#xA;Versão 1.0&#xD;&#xA;&#xD;&#xA;" FontSize="40" HorizontalAlignment="Left" Margin="391,190,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="253" Width="510"/>
+
     </Grid>
 </UserControl>

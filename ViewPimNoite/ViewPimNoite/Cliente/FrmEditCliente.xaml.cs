@@ -35,17 +35,6 @@ namespace ViewPimNoite.Cliente
                 e.Handled = true;
             }
         }
-
-        private void txbDtNascCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            KeyConverter key = new KeyConverter();
-
-            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void txbCepCliente_KeyDown(object sender, KeyEventArgs e)
         {
             KeyConverter key = new KeyConverter();
@@ -93,7 +82,7 @@ namespace ViewPimNoite.Cliente
             cliente.IdCliente = Convert.ToInt32(txbIdCliente.Text);
             cliente.Nome = txbNomeCliente.Text;
             cliente.Cpf = txbCpfCliente.Text;
-            cliente.Dtnasc = txbDtNascCliente.Text;
+            cliente.Dtnasc = dtpDtNasc.Text;
             cliente.Cep = txbCepCliente.Text;
             cliente.Endereco = txbEnderecoCliente.Text;
             cliente.Numero = txbNumeroCliente.Text;

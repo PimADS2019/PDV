@@ -14,7 +14,7 @@
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="35" Stroke="#FF2196F3" VerticalAlignment="Top" Width="125" RadiusX="10" RadiusY="5" Margin="955,486,0,0"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="60" Stroke="#FF2196F3" VerticalAlignment="Top" Width="385" RadiusX="10" RadiusY="5" Margin="695,531,0,0"/>
         <Label Content="Total à Pagar" HorizontalAlignment="Left" FontWeight="Bold" Margin="695,528,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="46" Width="181"/>
-        <DataGrid x:Name="dgProdutosVenda" HorizontalAlignment="Left" Height="427" Margin="692,36,0,0" VerticalAlignment="Top" Width="385">
+        <DataGrid x:Name="dgProdutosVenda" HorizontalAlignment="Left" Height="427" Margin="692,36,0,0" VerticalAlignment="Top" Width="385" AddingNewItem="dgProdutosVenda_AddingNewItem">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Qtd" Binding="{Binding Quantidade}"  Width="60"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="220"/>

@@ -27,7 +27,12 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
+        private void Pesquisar(ProdutoDTO produto)
+        {
+            produto.Produto = txbPesqProduto.Text.Trim();
 
+            dgProdutos.ItemsSource = Controller.getInstance().ConsultarProduto(produto.Produto.ToString());
+        }
         private void BtnIncluirProduto_Click(object sender, RoutedEventArgs e)
         {
             FrmCadProduto frmCadastrar = new FrmCadProduto();
@@ -65,7 +70,8 @@ namespace ViewPimNoite.UC
 
         private void txbPesqProduto_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dgProdutos.FindName(txbPesqProduto.Text);
+            ProdutoDTO produto = new ProdutoDTO();
+            Pesquisar(produto);
         }
 
         private void btnExcluirProduto_Click(object sender, RoutedEventArgs e)
