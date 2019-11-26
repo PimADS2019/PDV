@@ -31,12 +31,12 @@ namespace ViewPimNoite.UC
         }
         private void Atualizar_cmbProduto()
         {
-            List<ProdutoDTO> produto = Controller.getInstance().ConsultarEstoque("");
+            ProdutoDTO produtoDTO = new ProdutoDTO();
 
-            cmbProduto.ItemsSource = produto;
+            cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto("");
             cmbProduto.DisplayMemberPath = "Produto";
             cmbProduto.SelectedValuePath = "IdProduto";
-            cmbProduto.SelectedValuePath = "ValorUnitario";
+
         }
 
         private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
@@ -44,7 +44,7 @@ namespace ViewPimNoite.UC
         {
             ItensVendaDTO item = new ItensVendaDTO();
             item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
-            item.ProdutoDTO = new ProdutoDTO();
+            item.ProdutoDTO.Produto = cmbProduto.SelectedValue.ToString();
             item.ProdutoDTO.IdProduto = Convert.ToInt32(cmbProduto.SelectedValue);
 
             listaItens.Add(item);

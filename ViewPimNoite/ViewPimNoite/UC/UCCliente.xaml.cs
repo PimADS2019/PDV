@@ -27,6 +27,12 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
+        private void Pesquisar(ClienteDTO cliente)
+        {
+            cliente.Nome = txbPesqCliente.Text.Trim();
+
+            dgClientes.ItemsSource = Controller.getInstance().ConsultarCliente(cliente.Nome.ToString());
+        }
         private void BtnIncluirCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
@@ -69,7 +75,8 @@ namespace ViewPimNoite.UC
         }
         private void txbPesqCliente_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            dgClientes.FindName(txbPesqCliente.Text);
+            ClienteDTO cliente = new ClienteDTO();
+            Pesquisar(cliente);
         }
 
         private void btnExcluirCliente_Click(object sender, RoutedEventArgs e)
