@@ -46,7 +46,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Email", funcionario.Email);
             cmd.Parameters.AddWithValue("@Usuario", funcionario.Usuario);
             cmd.Parameters.AddWithValue("@Senha", funcionario.Senha);
-            cmd.Parameters.AddWithValue("@Inativar", 1);
+            cmd.Parameters.AddWithValue("@Inativar", 0);
 
             try
             {
@@ -67,14 +67,14 @@ namespace controllerPimNoite.DAO
         public List<FuncionarioDTO> ConsultarFuncionarioPorNome(string nome)
         {
 
-            SqlCommand cmd = new SqlCommand(@"select IdPessoa, Usuario, Nome_Pessoa, Telefone, Nome_Cidade, * from tb_Pessoas
-                              inner join tb_Funcionarios
-                              on tb_Pessoas.IdPessoa = tb_Funcionarios.fk_Pessoas_IdPessoa
-                              join tb_Cidades
-                              on fk_Cidades_idCidade = idCidade
-                              join tb_Estados
-                              on fk_Estados_idEstado = idEstado
-                              where Inativar = 1 and Nome_Pessoa like @Nome_Pessoa", conn);
+            SqlCommand cmd = new SqlCommand(@"select * from tb_Pessoas
+                                              inner join tb_Funcionarios
+                                              on tb_Pessoas.IdPessoa = tb_Funcionarios.fk_Pessoas_IdPessoa
+                                              join tb_Cidades
+                                              on fk_Cidades_idCidade = idCidade
+                                              join tb_Estados
+                                              on fk_Estados_idEstado = idEstado
+                                              where Inativar = 0 and Nome_Pessoa like @Nome_Pessoa", conn);
 
             cmd.Parameters.AddWithValue("@Nome_Pessoa", "%" + nome + "%");
 
@@ -126,8 +126,9 @@ namespace controllerPimNoite.DAO
         public void ExcluirFuncionario(int idFuncionario)
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Pessoas 
-                                            set inativar = 0
+                                            set inativar = 1
                                             where IdPessoa = @IdFuncionario", conn);
+
             cmd.Parameters.AddWithValue("@IdFuncionario", idFuncionario);
 
             try
@@ -185,7 +186,12 @@ namespace controllerPimNoite.DAO
         }
         public Boolean ValidarUsuario(FuncionarioDTO funcionario)
         {
-            String sqlText = String.Format("Select * from tb_Funcionarios Where Usuario = '{0}' and Senha = '{1}'", funcionario.Usuario, funcionario.Senha);
+            String sqlText = String.Format(@"Select * from tb_Pessoas 
+                                            inner join tb_Funcionarios
+                                            on tb_Pessoas.IdPessoa = tb_Funcionarios.fk_Pessoas_IdPessoa
+                                            where Inativar = 0 and Usuario = '{0}' and Senha = '{1}' ",
+                                            funcionario.Usuario, funcionario.Senha);
+
             SqlCommand cmd = new SqlCommand(sqlText, conn);
             try
             {

@@ -131,7 +131,6 @@ namespace controllerPimNoite.BL
             }
 
             this.mensagem = ItensVendaDAO.getInstance().mensagem;
-            vendaDTO = new VendaDTO();
         }
     }
 }

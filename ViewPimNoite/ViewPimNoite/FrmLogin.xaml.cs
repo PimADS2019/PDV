@@ -40,6 +40,8 @@ namespace ViewPimNoite
                 MainMenu mainMenu = new MainMenu();
 
                 mainMenu.ShowDialog();
+
+                this.Close();
             }
             else
             {

@@ -43,6 +43,7 @@ namespace ViewPimNoite.UC
             if (dgUsuarios.SelectedCells.Count > 0)
             {
                 FrmEditUsuario frmEditar = new FrmEditUsuario();
+                frmEditar.txbIdUsuario.Text = funcionario.IdFuncionario.ToString();
                 frmEditar.txbNomeUsuario.Text = funcionario.Nome;
                 frmEditar.txbCpfUsuario.Text = funcionario.Cpf;
                 frmEditar.txbDtNascUsuario.Text = funcionario.Dtnasc;

@@ -45,7 +45,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Telefone", cliente.Telefone);
             cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
             cmd.Parameters.AddWithValue("@Email", cliente.Email );
-            cmd.Parameters.AddWithValue("@Inativar", 1);
+            cmd.Parameters.AddWithValue("@Inativar", 0);
 
             try
             {
@@ -72,7 +72,7 @@ namespace controllerPimNoite.DAO
                                               on fk_Cidades_idCidade = idCidade
                                               join tb_Estados
                                               on fk_Estados_idEstado = idEstado
-                                              where Inativar = 1 and Nome_Pessoa like @Nome_Pessoa", conn);
+                                              where Inativar = 0 and Nome_Pessoa like @Nome_Pessoa", conn);
 
             cmd.Parameters.AddWithValue("@Nome_Pessoa", '%' + nome + '%');
             List<ClienteDTO> listadeclientes = null;
@@ -123,7 +123,7 @@ namespace controllerPimNoite.DAO
         public void ExcluirCliente(int idCliente)
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Pessoas 
-                                            set inativar = 0
+                                            set inativar = 1
                                             where IdPessoa = @IdCliente",conn);
             cmd.Parameters.AddWithValue("@IdCliente", idCliente);
 

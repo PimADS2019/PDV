@@ -44,7 +44,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
             cmd.Parameters.AddWithValue("@CodReferencia", produto.CodReferencia);
             cmd.Parameters.AddWithValue("@Quantidade", 0);
-            cmd.Parameters.AddWithValue("@Inativar", 1);
+            cmd.Parameters.AddWithValue("@Inativar", 0);
 
             try
             {
@@ -67,7 +67,7 @@ namespace controllerPimNoite.DAO
             SqlCommand cmd = new SqlCommand(@"select IdProduto, CodReferencia, Nome_produto, Fabricante, Custo, Fornecedor, ValorUnitario  from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                            where inativar = 1 and Nome_produto like @nome_Produto", conn);
+                                            where inativar = 0 and Nome_produto like @nome_Produto", conn);
 
             cmd.Parameters.AddWithValue("@nome_Produto", '%' + produto + '%');
 
@@ -109,7 +109,7 @@ namespace controllerPimNoite.DAO
         public void ExcluirProduto(int idProduto)
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Produtos
-                                            set inativar = 0
+                                            set inativar = 1
                                             where IdProduto = @IdProduto", conn);
             cmd.Parameters.AddWithValue("@IdProduto", idProduto);
 
@@ -138,6 +138,7 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
             cmd.Parameters.AddWithValue("@Custo", produto.Custo);
+            cmd.Parameters.AddWithValue("@Quantidade", produto.Quantidade);
 
             try
             {
@@ -163,7 +164,7 @@ namespace controllerPimNoite.DAO
                                             ValorUnitario, Quantidade, Fornecedor, CodReferencia from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                            where inativar = 1 and Nome_produto like @nome_Produto", conn);
+                                            where inativar = 0 and Nome_produto like @nome_Produto", conn);
 
             cmd.Parameters.AddWithValue("@nome_Produto", '%'+estoque+'%');
 
@@ -207,7 +208,7 @@ namespace controllerPimNoite.DAO
         public ProdutoDTO ColetaDadosEstoque(int codReferencia)
         {
             SqlCommand cmd = new SqlCommand(@"select Nome_produto, Fornecedor  from tb_Produtos
-                                              where inativar = 1 and IdProduto = @CodReferencia", conn);
+                                              where inativar = 0 and IdProduto = @CodReferencia", conn);
 
             cmd.Parameters.AddWithValue("@CodReferencia", codReferencia);
             ProdutoDTO produtoDTO = null;

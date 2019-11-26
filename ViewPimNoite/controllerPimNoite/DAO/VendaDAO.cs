@@ -39,7 +39,7 @@ namespace controllerPimNoite.DAO
             SqlCommand cmd = new SqlCommand(@"select CodReferencia, ValorUnitario, Nome_produto from tb_Produtos
                                               inner join tb_Estoques
                                               on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                              where inativar = 1 and Nome_produto like @nome_Produto", conn);
+                                              where inativar = 0 and Nome_produto like @nome_Produto", conn);
 
             cmd.Parameters.AddWithValue("@nome_Produto", "%" + produto.Produto + "%");
 
@@ -80,7 +80,7 @@ namespace controllerPimNoite.DAO
             SqlCommand cmd = new SqlCommand(@"select CodReferencia, ValorUnitario, Nome_produto from tb_Produtos
                                               inner join tb_Estoques
                                               on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                              where inativar = 1 and IdProduto = @Id_Produto", conn);
+                                              where inativar = 0 and IdProduto = @Id_Produto", conn);
 
             cmd.Parameters.AddWithValue("@Id_Produto", produto);
 

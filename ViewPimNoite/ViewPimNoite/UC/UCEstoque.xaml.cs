@@ -36,10 +36,10 @@ namespace ViewPimNoite.UC
             if(dgEstoque.SelectedCells.Count > 0)
             {
                 FrmEntradaProduto frmEntradaProduto = new FrmEntradaProduto();
+                frmEntradaProduto.txbIdProduto.Text = produto.IdProduto.ToString();
                 frmEntradaProduto.txbCodRefEstoque.Text = produto.CodReferencia.ToString();
                 frmEntradaProduto.txbProdutoEntrada.Text = produto.Produto;
                 frmEntradaProduto.txbFornecedor.Text = produto.Forncedor;
-                frmEntradaProduto.txbIdProduto.Text = produto.IdProduto.ToString();
                 frmEntradaProduto.ShowDialog();
             }
             else

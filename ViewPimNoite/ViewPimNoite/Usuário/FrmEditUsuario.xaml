@@ -10,6 +10,7 @@
         <Label Content="Usuário" HorizontalAlignment="Left" Margin="17,-2,0,0" VerticalAlignment="Top" Height="auto" FontSize="20" FontWeight="Bold" Foreground="#DDFFFFFF" Width="86"/>
         <Label Content="Altere os dados desejados para edição de um usuário." HorizontalAlignment="Left" Margin="19,27,0,0" VerticalAlignment="Top" Height="auto" FontSize="12" Foreground="#DDFFFFFF" Width="483"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="184" Margin="19,80,0,0"  Stroke="#DDA6A6A6" VerticalAlignment="Top" Width="753"/>
+        <TextBox Visibility="Hidden" x:Name="txbIdUsuario" HorizontalAlignment="Left" Height="23" Margin="19,578,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="39,109,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6" />
         <TextBox x:Name="txbNomeUsuario" HorizontalAlignment="Left" Height="23" Margin="45,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="293" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="CPF" HorizontalAlignment="Left" Margin="357,109,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6" />
@@ -48,6 +49,5 @@
         <TextBox x:Name="txbTipoUsuario" HorizontalAlignment="Left" Height="23" Margin="207,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6"/>
         <Label Content="IDENTIFICAÇÃO" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Margin="45,63,0,0" VerticalAlignment="Top" Background="White" Width="123" Foreground="#DDA6A6A6"/>
         <Button x:Name="btnSalvarUsuario" Content="Salvar" HorizontalAlignment="Left" Margin="628,569,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.727,0.75" Background="#FF279915" Click="btnSalvarUsuario_Click"/>
-        <TextBox Visibility="Hidden" x:Name="txbIdUsuario" HorizontalAlignment="Left" Height="23" Margin="19,578,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

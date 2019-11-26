@@ -42,11 +42,12 @@ namespace ViewPimNoite.UC
             FrmEditProduto frmEditar = new FrmEditProduto();
             if (dgProdutos.SelectedCells.Count > 0)
             {
-                frmEditar.txbCodReferencia.Text = Convert.ToString(produto.CodReferencia);
+                frmEditar.txbIdProduto.Text = produto.IdProduto.ToString();
+                frmEditar.txbCodReferencia.Text = produto.CodReferencia.ToString();
                 frmEditar.txbProduto.Text = produto.Produto;
                 frmEditar.txbFabricante.Text = produto.Fabricante;
-                frmEditar.txbCusto.Text = Convert.ToString(produto.Custo);
-                frmEditar.txbPrecoVenda.Text = Convert.ToString(produto.PrecoVenda);
+                frmEditar.txbCusto.Text = produto.Custo.ToString();
+                frmEditar.txbPrecoVenda.Text = produto.PrecoVenda.ToString();
                 frmEditar.txbFornecedor.Text = produto.Forncedor;
                 frmEditar.ShowDialog();
             }
