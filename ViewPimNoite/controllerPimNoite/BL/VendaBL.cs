@@ -14,10 +14,9 @@ namespace controllerPimNoite.BL
         private int codReferencia;
         private int qtdVenda;
         private ProdutoDTO produtoDTO;
-        private VendaDTO vendaDTO;
-
 
         private static VendaBL instance = null;
+        
         private VendaBL()
         {
         }
@@ -63,6 +62,7 @@ namespace controllerPimNoite.BL
 
         public VendaDTO CalculosVenda(List<ItensVendaDTO> listProdutos, string qtdVendida, ProdutoDTO produtos)
         {
+            VendaDTO vendaDTO = new VendaDTO();
             //Calculando o subTotal
             try
             {
@@ -72,7 +72,7 @@ namespace controllerPimNoite.BL
             {
                 this.mensagem = "Quantidade inválida";
             }
-
+            
             vendaDTO.SbTotal += produtos.PrecoVenda * qtdVenda;
 
             //Preenchendo o ItensVendaDTO com as informações
@@ -116,7 +116,8 @@ namespace controllerPimNoite.BL
 
         public void SalvarVenda(VendaDTO venda)
         {
-            if(venda.Itens == 0)
+            VendaDTO vendaDTO = new VendaDTO();
+            if (venda.Itens == 0)
             {
                 this.mensagem = "É necessário que tenha pelo menos 1 item para registrar uma venda";
                 return;

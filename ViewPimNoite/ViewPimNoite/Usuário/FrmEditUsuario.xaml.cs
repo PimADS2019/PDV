@@ -90,6 +90,7 @@ namespace ViewPimNoite.Usuário
         {
             FuncionarioDTO funcionario = new FuncionarioDTO();
 
+            funcionario.IdFuncionario = Convert.ToInt32(txbIdUsuario.Text);
             funcionario.Nome = txbNomeUsuario.Text;
             funcionario.Cpf = txbCpfUsuario.Text;
             funcionario.Dtnasc = txbDtNascUsuario.Text;

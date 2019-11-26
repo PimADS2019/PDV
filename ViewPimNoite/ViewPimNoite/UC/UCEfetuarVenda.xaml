@@ -18,7 +18,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Qtd" Binding="{Binding Quantidade}"  Width="60"/>
                 <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="220"/>
-                <DataGridTextColumn Header="Preço" Binding="{Binding Preco}" Width="200"/>
+                <DataGridTextColumn Header="Preço" Binding="{Binding PrecoVenda}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Itens" HorizontalAlignment="Left" FontWeight="Bold" Margin="695,482,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="39"/>

@@ -30,6 +30,7 @@ namespace ViewPimNoite.Produto
         {
             ProdutoDTO produto = new ProdutoDTO();
 
+            produto.IdProduto = Convert.ToInt32(txbIdProduto.Text);
             produto.Produto = txbProduto.Text;
             produto.Fabricante = txbFabricante.Text;
             produto.CodReferencia = Convert.ToInt32(txbCodReferencia.Text);

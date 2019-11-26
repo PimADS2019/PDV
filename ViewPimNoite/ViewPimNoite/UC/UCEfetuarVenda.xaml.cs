@@ -31,7 +31,7 @@ namespace ViewPimNoite.UC
         }
         private void Atualizar_cmbProduto()
         {
-            List<ProdutoDTO> produto = Controller.getInstance().ConsultarProduto("");
+            List<ProdutoDTO> produto = Controller.getInstance().ConsultarEstoque("");
 
             cmbProduto.ItemsSource = produto;
             cmbProduto.DisplayMemberPath = "Produto";
@@ -48,13 +48,15 @@ namespace ViewPimNoite.UC
             item.ProdutoDTO.IdProduto = Convert.ToInt32(cmbProduto.SelectedValue);
 
             listaItens.Add(item);
-            vendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, item.ProdutoDTO);
-            lblQtdItens.Content = vendaDTO.Itens;
-            lblSubTotal.Content = vendaDTO.SbTotal;
-            lblDesconto.Content = vendaDTO.Desconto;
-            lblTotal.Content = vendaDTO.VlTotal;
-
             dgProdutosVenda.ItemsSource = listaItens;
+
+            item.VendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, item.ProdutoDTO);
+            lblQtdItens.Content = item.VendaDTO.Itens;
+            lblSubTotal.Content = item.VendaDTO.SbTotal;
+            lblDesconto.Content = item.VendaDTO.Desconto;
+            lblTotal.Content = item.VendaDTO.VlTotal;
+
+            cmbProduto.Text = "";
         }
 
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
