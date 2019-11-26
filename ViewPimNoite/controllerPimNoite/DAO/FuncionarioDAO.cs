@@ -67,9 +67,13 @@ namespace controllerPimNoite.DAO
         public List<FuncionarioDTO> ConsultarFuncionarioPorNome(string nome)
         {
 
-            SqlCommand cmd = new SqlCommand(@"select IdPessoa, Usuario, Nome_Pessoa, Telefone from tb_Pessoas
+            SqlCommand cmd = new SqlCommand(@"select IdPessoa, Usuario, Nome_Pessoa, Telefone, Nome_Cidade, * from tb_Pessoas
                               inner join tb_Funcionarios
                               on tb_Pessoas.IdPessoa = tb_Funcionarios.fk_Pessoas_IdPessoa
+                              join tb_Cidades
+                              on fk_Cidades_idCidade = idCidade
+                              join tb_Estados
+                              on fk_Estados_idEstado = idEstado
                               where Inativar = 1 and Nome_Pessoa like @Nome_Pessoa", conn);
 
             cmd.Parameters.AddWithValue("@Nome_Pessoa", "%" + nome + "%");
@@ -88,9 +92,21 @@ namespace controllerPimNoite.DAO
                     funcionarioDTO = new FuncionarioDTO();
 
                     funcionarioDTO.IdFuncionario = Convert.ToInt32(dr["IdPessoa"]);
-                    funcionarioDTO.Usuario = Convert.ToString(dr["Usuario"]);
                     funcionarioDTO.Nome = Convert.ToString(dr["Nome_Pessoa"]);
+                    funcionarioDTO.Cpf = Convert.ToString(dr["CPF"]);
+                    funcionarioDTO.Dtnasc = Convert.ToString(dr["DataNascimento"]);
+                    funcionarioDTO.Usuario = Convert.ToString(dr["Usuario"]);
+                    funcionarioDTO.TipoUsuario = Convert.ToString(dr["TipoUsuario"]);
+                    funcionarioDTO.Cep = Convert.ToString(dr["CEP"]);
+                    funcionarioDTO.Endereco = Convert.ToString(dr["Endereco"]);
+                    funcionarioDTO.Numero = Convert.ToString(dr["Numero"]);
+                    funcionarioDTO.Bairro = Convert.ToString(dr["Bairro"]);
+                    funcionarioDTO.Complemento = Convert.ToString(dr["Complemento"]);
+                    funcionarioDTO.Cidade = Convert.ToString(dr["Nome_Cidade"]);
+                    funcionarioDTO.Estado = Convert.ToString(dr["Sigla"]);
                     funcionarioDTO.Telefone = Convert.ToString(dr["Telefone"]);
+                    funcionarioDTO.Celular = Convert.ToString(dr["Celular"]);
+                    funcionarioDTO.Email = Convert.ToString(dr["Email"]);
 
                     listadefuncionarios.Add(funcionarioDTO);
                 }

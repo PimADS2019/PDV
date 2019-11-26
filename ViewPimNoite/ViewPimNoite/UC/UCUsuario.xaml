@@ -10,19 +10,20 @@
         <Label Content="Usuários" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
         <DataGrid x:Name="dgUsuarios" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgUsuarios_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding codFuncionario}"  Width="60"/>
-                <DataGridTextColumn Header="Nome" Binding="{Binding nome}" Width="200"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdFuncionario}"  Width="60"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="200"/>
                 <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="Data Nasc." Binding="{Binding DtNasc}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="Usuário" Binding="{Binding usuario}"  Width="300"/>
+                <DataGridTextColumn Header="Data Nasc." Binding="{Binding Dtnasc}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Usuário" Binding="{Binding Usuario}"  Width="300"/>
                 <DataGridTextColumn Header="Senha" Binding="{Binding Senha}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Conf. Senha" Binding="{Binding ConfSenha}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Tipo Usuário" Binding="{Binding TipoUsuario}" />
                 <DataGridTextColumn Header="Cep" Binding="{Binding Cep}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Endereço" Binding="{Binding Endereco}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Número" Binding="{Binding Numero}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Bairro" Binding="{Binding Bairro}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade}" />
                 <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}" Visibility="Hidden"/>
                 <DataGridTextColumn Header="Celular" Binding="{Binding Celular}" Width="200"/>

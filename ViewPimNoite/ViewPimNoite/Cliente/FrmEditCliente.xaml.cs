@@ -90,6 +90,7 @@ namespace ViewPimNoite.Cliente
         {
             ClienteDTO cliente = new ClienteDTO();
 
+            cliente.IdCliente = Convert.ToInt32(txbIdCliente.Text);
             cliente.Nome = txbNomeCliente.Text;
             cliente.Cpf = txbCpfCliente.Text;
             cliente.Dtnasc = txbDtNascCliente.Text;

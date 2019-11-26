@@ -63,7 +63,7 @@ namespace controllerPimNoite.DAO
 
         public List<ProdutoDTO> ConsultarProduto(string produto)
         {
-            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo, Fornecedor, ValorUnitario  from tb_Produtos
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, CodReferencia, Nome_produto, Fabricante, Custo, Fornecedor, ValorUnitario  from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 1 and Nome_produto like @nome_Produto", conn);
@@ -84,6 +84,7 @@ namespace controllerPimNoite.DAO
                     produtoDTO = new ProdutoDTO();
 
                     produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
+                    produtoDTO.CodReferencia = Convert.ToInt32(dr["CodReferencia"]);
                     produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
                     produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
                     produtoDTO.Forncedor = Convert.ToString(dr["Fornecedor"]);

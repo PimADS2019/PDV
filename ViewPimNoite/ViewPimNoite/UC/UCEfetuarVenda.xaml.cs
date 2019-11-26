@@ -31,11 +31,12 @@ namespace ViewPimNoite.UC
         }
         private void Atualizar_cmbProduto()
         {
-            ProdutoDTO produto = new ProdutoDTO();
+            List<ProdutoDTO> produto = Controller.getInstance().ConsultarProduto("");
 
-            cmbProduto.ItemsSource = Controller.getInstance().ConsultarProduto("");
+            cmbProduto.ItemsSource = produto;
             cmbProduto.DisplayMemberPath = "Produto";
-            cmbProduto.SelectedValuePath = "idProduto";
+            cmbProduto.SelectedValuePath = "IdProduto";
+            cmbProduto.SelectedValuePath = "ValorUnitario";
         }
 
         private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();

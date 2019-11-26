@@ -10,18 +10,18 @@
         <Label Content="Produtos" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="166"/>
         <DataGrid x:Name="dgProdutos" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgProdutos_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding codigo}" Visibility="Hidden"/>
-                <DataGridTextColumn Header="Cód. Ref." Binding="{Binding codReferencia}"  Width="120"/>
-                <DataGridTextColumn Header="Produto" Binding="{Binding produto}"  Width="300"/>
-                <DataGridTextColumn Header="Fabricante" Binding="{Binding fabricante}" Width="200"/>
-                <DataGridTextColumn Header="Custo" Binding="{Binding custo}" Width="150"/>
-                <DataGridTextColumn Header="Preço Venda" Binding="{Binding precoVenda}" Width="150"/>
-                <DataGridTextColumn Header="Fornecedor" Binding="{Binding forncedor}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" />
+                <DataGridTextColumn Header="Cód. Ref." Binding="{Binding CodReferencia}"  Width="120"/>
+                <DataGridTextColumn Header="Produto" Binding="{Binding Produto}"  Width="300"/>
+                <DataGridTextColumn Header="Fabricante" Binding="{Binding Fabricante}" Width="200"/>
+                <DataGridTextColumn Header="Custo" Binding="{Binding Custo}" Width="150"/>
+                <DataGridTextColumn Header="Preço Venda" Binding="{Binding PrecoVenda}" Width="150"/>
+                <DataGridTextColumn Header="Fornecedor" Binding="{Binding Forncedor}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txbPesqProduto" LostFocus="txbPesqProduto_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF0C0C0C" TextChanged="txbPesqProduto_TextChanged" />
         <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar produto" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4"/>
-        <Button Content="btnAtualizarProduto" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
+        <Button x:Name="btnAtualizar" Content="btnAtualizarProduto" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

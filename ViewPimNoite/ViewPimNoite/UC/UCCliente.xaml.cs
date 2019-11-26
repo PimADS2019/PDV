@@ -41,6 +41,7 @@ namespace ViewPimNoite.UC
             cliente = dgClientes.SelectedItem as ClienteDTO;
             if (dgClientes.SelectedCells.Count > 0)
             {
+                frmEditar.txbIdCliente.Text = cliente.IdCliente.ToString();
                 frmEditar.txbNomeCliente.Text = cliente.Nome;
                 frmEditar.txbCpfCliente.Text = cliente.Cpf;
                 frmEditar.txbDtNascCliente.Text = cliente.Dtnasc;

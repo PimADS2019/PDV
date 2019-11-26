@@ -64,10 +64,22 @@ namespace controllerPimNoite.DAO
             }
         }
         public List<ClienteDTO> ConsultarCliente(string nome)
-        { 
-            SqlCommand cmd = new SqlCommand("select * from tb_Pessoas where Inativar = 1 and Nome_Pessoa like @nome_Pessoa", conn);
+        {
+            SqlCommand cmd = new SqlCommand(@"select * from tb_Pessoas
+                                              inner join tb_Clientes
+                                              on tb_Pessoas.IdPessoa = tb_Clientes.fk_Pessoas_IdPessoa
+                                              join tb_Cidades
+                                              on fk_Cidades_idCidade = idCidade
+                                              join tb_Estados
+                                              on fk_Estados_idEstado = idEstado
+                                              where Inativar = 1 and Nome_Pessoa like @Nome_Pessoa", conn);
 
-            cmd.Parameters.AddWithValue("@nome_Pessoa", '%' + nome + '%');
+
+            /*SqlCommand cmd = new SqlCommand("select * from tb_Pessoas " +
+                                            "where Inativar = 1 " +
+                                            "and Nome_Pessoa like @nome_Pessoa", conn);*/
+
+            cmd.Parameters.AddWithValue("@Nome_Pessoa", '%' + nome + '%');
             List<ClienteDTO> listadeclientes = null;
 
             try
@@ -85,12 +97,16 @@ namespace controllerPimNoite.DAO
                     clienteDTO.Nome = Convert.ToString(dr["Nome_Pessoa"]);
                     clienteDTO.Cpf = Convert.ToString(dr["CPF"]);
                     clienteDTO.Dtnasc = Convert.ToString(dr["DataNascimento"]);
-                    clienteDTO.Celular = Convert.ToString(dr["Celular"]);
-                    clienteDTO.Email= Convert.ToString(dr["Email"]);
+                    clienteDTO.Cep = Convert.ToString(dr["CEP"]);
                     clienteDTO.Endereco = Convert.ToString(dr["Endereco"]);
                     clienteDTO.Numero = Convert.ToString(dr["Numero"]);
                     clienteDTO.Bairro = Convert.ToString(dr["Bairro"]);
                     clienteDTO.Complemento = Convert.ToString(dr["Complemento"]);
+                    clienteDTO.Cidade = Convert.ToString(dr["Nome_Cidade"]);
+                    clienteDTO.Estado = Convert.ToString(dr["Sigla"]);
+                    clienteDTO.Telefone = Convert.ToString(dr["Telefone"]);
+                    clienteDTO.Celular = Convert.ToString(dr["Celular"]);
+                    clienteDTO.Email = Convert.ToString(dr["Email"]);
 
                     listadeclientes.Add(clienteDTO);
 

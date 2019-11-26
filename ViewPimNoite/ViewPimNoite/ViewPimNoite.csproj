@@ -220,9 +220,7 @@
   <ItemGroup>
     <Resource Include="Imagens\iconAtualizar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Venda\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagens\iconLogout.png" />
     <Resource Include="Imagens\iconTurnOff.jpg" />
