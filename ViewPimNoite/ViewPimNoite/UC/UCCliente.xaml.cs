@@ -39,21 +39,27 @@ namespace ViewPimNoite.UC
 
             ClienteDTO cliente = new ClienteDTO();
             cliente = dgClientes.SelectedItem as ClienteDTO;
-
-            frmEditar.txbNomeCliente.Text = cliente.Nome;
-            frmEditar.txbCpfCliente.Text = cliente.Cpf;
-            frmEditar.txbDtNascCliente.Text = cliente.Dtnasc;
-            frmEditar.txbCepCliente.Text = cliente.Cep;
-            frmEditar.txbEnderecoCliente.Text = cliente.Endereco;
-            frmEditar.txbNumeroCliente.Text = cliente.Numero;
-            frmEditar.txbBairroCliente.Text = cliente.Bairro;
-            frmEditar.txbComplemento.Text = cliente.Complemento;
-            frmEditar.txbCidadeCliente.Text = cliente.Cidade;
-            frmEditar.txbEstadoCliente.Text = cliente.Estado;
-            frmEditar.txbTelefoneCliente.Text = cliente.Telefone;
-            frmEditar.txbCelularCliente.Text = cliente.Celular;
-            frmEditar.txbEmailCliente.Text = cliente.Email;
-            frmEditar.ShowDialog();
+            if (dgClientes.SelectedCells.Count > 0)
+            {
+                frmEditar.txbNomeCliente.Text = cliente.Nome;
+                frmEditar.txbCpfCliente.Text = cliente.Cpf;
+                frmEditar.txbDtNascCliente.Text = cliente.Dtnasc;
+                frmEditar.txbCepCliente.Text = cliente.Cep;
+                frmEditar.txbEnderecoCliente.Text = cliente.Endereco;
+                frmEditar.txbNumeroCliente.Text = cliente.Numero;
+                frmEditar.txbBairroCliente.Text = cliente.Bairro;
+                frmEditar.txbComplemento.Text = cliente.Complemento;
+                frmEditar.txbCidadeCliente.Text = cliente.Cidade;
+                frmEditar.txbEstadoCliente.Text = cliente.Estado;
+                frmEditar.txbTelefoneCliente.Text = cliente.Telefone;
+                frmEditar.txbCelularCliente.Text = cliente.Celular;
+                frmEditar.txbEmailCliente.Text = cliente.Email;
+                frmEditar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um cliente");
+            }
         }
         private void dgClientes_Initialized(object sender, EventArgs e)
         {

@@ -9,7 +9,6 @@ namespace modelPimNoite.DTO
     public class FuncionarioDTO
     {
         private int idFuncionario;
-        private int codFuncionario;
         private string nome;
         private string cpf;
         private string dtnasc;
@@ -43,7 +42,6 @@ namespace modelPimNoite.DTO
         public string Telefone { get => telefone; set => telefone = value; }
         public string Celular { get => celular; set => celular = value; }
         public string Email { get => email; set => email = value; }
-        public int CodFuncionario { get => codFuncionario; set => codFuncionario = value; }
         public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
         public string Complemento { get => complemento; set => complemento = value; }
         public int IdFuncionario { get => idFuncionario; set => idFuncionario = value; }

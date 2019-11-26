@@ -177,6 +177,7 @@ namespace controllerPimNoite.DAO
 
                 if (dr.Read())
                 {
+                    Estaticos.usuarioConectado = dr["Usuario"].ToString();
                     conn.Close();
                     return true;
                 }

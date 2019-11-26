@@ -32,7 +32,7 @@ namespace ViewPimNoite.Cliente
 
             cliente.Nome = txbNomeCliente.Text;
             cliente.Cpf = txbCpfCliente.Text;
-            cliente.Dtnasc = txbDtNascCliente.Text;
+            cliente.Dtnasc = "1997-08-20";
             cliente.Cep = txbCepCliente.Text;
             cliente.Endereco = txbEnderecoCliente.Text;
             cliente.Numero = txbNumeroCliente.Text;

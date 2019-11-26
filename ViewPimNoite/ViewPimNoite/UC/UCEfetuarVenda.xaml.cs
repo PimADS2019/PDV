@@ -64,5 +64,13 @@ namespace ViewPimNoite.UC
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }
+
+        private void txbQuantidadeProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                this.btnIncluirItem_Click(this, null);
+            }
+        }
     }
 }

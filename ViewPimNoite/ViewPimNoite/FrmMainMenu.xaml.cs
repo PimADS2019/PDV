@@ -42,6 +42,7 @@ namespace ViewPimNoite
         {
             InitializeComponent();
             DataHoraAtual();
+            lblUsuarioConectado.Content = Estaticos.usuarioConectado;
             
             var menuVenda = new List<SubItem>();
             var item1 = new ItemMenu("PDV", menuVenda, PackIconKind.CashRegister);

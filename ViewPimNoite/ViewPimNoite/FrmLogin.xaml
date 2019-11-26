@@ -29,7 +29,7 @@
         <Grid VerticalAlignment="Bottom" Margin="35,0,35,43" Height="240">
             <StackPanel VerticalAlignment="Center" Margin="15,10,15,50">
                 <TextBox x:Name="txbUsuario" Margin="0,0" materialDesign:HintAssist.Hint="Usuário" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Arial" FontSize="15"/>
-                <PasswordBox x:Name="txbSenha" Margin="0,20" materialDesign:HintAssist.Hint="Senha" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Arial" FontSize="15"/>
+                <PasswordBox x:Name="txbSenha" Margin="0,20" materialDesign:HintAssist.Hint="Senha" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Arial" FontSize="15" KeyDown="txbSenha_KeyDown"/>
             </StackPanel>
         </Grid>
         <Image Source="Imagens\DesignProjectLogoLogin.png" HorizontalAlignment="Center" Margin="26,41,23,293" Width="301"/>

@@ -40,14 +40,20 @@ namespace ViewPimNoite.UC
             produto = dgProdutos.SelectedItem as ProdutoDTO;
 
             FrmEditProduto frmEditar = new FrmEditProduto();
-
-            frmEditar.txbCodReferencia.Text = Convert.ToString(produto.CodReferencia);
-            frmEditar.txbProduto.Text = produto.Produto;
-            frmEditar.txbFabricante.Text = produto.Fabricante;
-            frmEditar.txbCusto.Text = Convert.ToString(produto.Custo);
-            frmEditar.txbPrecoVenda.Text = Convert.ToString(produto.PrecoVenda);
-            frmEditar.txbFornecedor.Text = produto.Forncedor;
-            frmEditar.ShowDialog();      
+            if (dgProdutos.SelectedCells.Count > 0)
+            {
+                frmEditar.txbCodReferencia.Text = Convert.ToString(produto.CodReferencia);
+                frmEditar.txbProduto.Text = produto.Produto;
+                frmEditar.txbFabricante.Text = produto.Fabricante;
+                frmEditar.txbCusto.Text = Convert.ToString(produto.Custo);
+                frmEditar.txbPrecoVenda.Text = Convert.ToString(produto.PrecoVenda);
+                frmEditar.txbFornecedor.Text = produto.Forncedor;
+                frmEditar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um produto");
+            }
         }
 
         private void dgProdutos_Initialized(object sender, EventArgs e)

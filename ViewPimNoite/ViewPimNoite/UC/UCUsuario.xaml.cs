@@ -40,25 +40,32 @@ namespace ViewPimNoite.UC
             FuncionarioDTO funcionario = new FuncionarioDTO();
             funcionario = dgUsuarios.SelectedItem as FuncionarioDTO;
 
-            FrmEditUsuario frmEditar = new FrmEditUsuario();
-            frmEditar.txbNomeUsuario.Text = funcionario.Nome;
-            frmEditar.txbCpfUsuario.Text = funcionario.Cpf;
-            frmEditar.txbDtNascUsuario.Text = funcionario.Dtnasc;
-            frmEditar.txbUserUsuario.Text = funcionario.Usuario;
-            frmEditar.txbTipoUsuario.Text = funcionario.TipoUsuario;
-            frmEditar.txbSenhaUsuario.Password = funcionario.Senha;
-            frmEditar.txbConfSenhaUsuario.Password = funcionario.ConfSenha;
-            frmEditar.txbCepUsuario.Text = funcionario.Cep;
-            frmEditar.txbEnderecoUsuario.Text = funcionario.Endereco;
-            frmEditar.txbNumeroUsuario.Text = funcionario.Numero;
-            frmEditar.txbBairroUsuario.Text = funcionario.Bairro;
-            frmEditar.txbComplementoUsuario.Text = funcionario.Complemento;
-            frmEditar.txbCidadeUsuario.Text = funcionario.Cidade;
-            frmEditar.txbEstadoUsuario.Text = funcionario.Estado;
-            frmEditar.txbTelefoneUsuario.Text = funcionario.Telefone;
-            frmEditar.txbCelularUsuario.Text = funcionario.Celular;
-            frmEditar.txbEmailUsuario.Text = funcionario.Email;
-            frmEditar.ShowDialog();
+            if (dgUsuarios.SelectedCells.Count > 0)
+            {
+                FrmEditUsuario frmEditar = new FrmEditUsuario();
+                frmEditar.txbNomeUsuario.Text = funcionario.Nome;
+                frmEditar.txbCpfUsuario.Text = funcionario.Cpf;
+                frmEditar.txbDtNascUsuario.Text = funcionario.Dtnasc;
+                frmEditar.txbUserUsuario.Text = funcionario.Usuario;
+                frmEditar.txbTipoUsuario.Text = funcionario.TipoUsuario;
+                frmEditar.txbSenhaUsuario.Password = funcionario.Senha;
+                frmEditar.txbConfSenhaUsuario.Password = funcionario.ConfSenha;
+                frmEditar.txbCepUsuario.Text = funcionario.Cep;
+                frmEditar.txbEnderecoUsuario.Text = funcionario.Endereco;
+                frmEditar.txbNumeroUsuario.Text = funcionario.Numero;
+                frmEditar.txbBairroUsuario.Text = funcionario.Bairro;
+                frmEditar.txbComplementoUsuario.Text = funcionario.Complemento;
+                frmEditar.txbCidadeUsuario.Text = funcionario.Cidade;
+                frmEditar.txbEstadoUsuario.Text = funcionario.Estado;
+                frmEditar.txbTelefoneUsuario.Text = funcionario.Telefone;
+                frmEditar.txbCelularUsuario.Text = funcionario.Celular;
+                frmEditar.txbEmailUsuario.Text = funcionario.Email;
+                frmEditar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um usuário");
+            }
         }
 
         private void dgUsuarios_Initialized(object sender, EventArgs e)

@@ -30,11 +30,21 @@ namespace ViewPimNoite.UC
 
         private void BtnEntradaProduto_Click(object sender, RoutedEventArgs e)
         {
-            FrmEntradaProduto frmEntradaProduto = new FrmEntradaProduto();
-            frmEntradaProduto.txbCodRefEstoque.Text = dgEstoque.SelectedCells[0].ToString();
-            frmEntradaProduto.txbProdutoEntrada.Text = dgEstoque.SelectedCells[1].ToString();
-            frmEntradaProduto.txbFornecedor.Text = dgEstoque.SelectedCells[2].ToString();
-            frmEntradaProduto.ShowDialog();
+            ProdutoDTO produto = new ProdutoDTO();
+            produto = dgEstoque.SelectedItem as ProdutoDTO;
+
+            if(dgEstoque.SelectedCells.Count > 0)
+            {
+                FrmEntradaProduto frmEntradaProduto = new FrmEntradaProduto();
+                frmEntradaProduto.txbCodRefEstoque.Text = produto.CodReferencia.ToString();
+                frmEntradaProduto.txbProdutoEntrada.Text = produto.Produto;
+                frmEntradaProduto.txbFornecedor.Text = produto.Forncedor;
+                frmEntradaProduto.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um item");
+            }
         }
 
         private void dgEstoque_Initialized(object sender, EventArgs e)

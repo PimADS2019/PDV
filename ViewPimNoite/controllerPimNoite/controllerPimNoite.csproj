@@ -53,7 +53,7 @@
     <Compile Include="DAO\ItensVendaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="DAO\VendaDAO.cs" />
-    <Compile Include="Estaticos.cs" />
+    <Compile Include="BL\Estaticos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

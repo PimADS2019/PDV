@@ -52,5 +52,13 @@ namespace ViewPimNoite
         {
             this.Close();
         }
+
+        private void txbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                this.btnLogar_Click(this, null);
+            }
+        }
     }
 }
