@@ -70,7 +70,6 @@ go
 CREATE TABLE tb_Produtos (
 	IdProduto INT PRIMARY KEY identity,
     Nome_produto VARCHAR (40),
-    Tamanho VARCHAR (3),
     Fabricante VARCHAR (40),
     Fornecedor VARCHAR (40),
 	CodReferencia int, 

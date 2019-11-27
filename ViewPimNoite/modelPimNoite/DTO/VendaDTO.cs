@@ -23,5 +23,6 @@ namespace modelPimNoite.DTO
         public DateTime DtCompra { get => dtCompra; set => dtCompra = value; }
         public List<ItensVendaDTO> ItensVendaDTO { get => itensVendaDTO; set => itensVendaDTO = value; }
         
+
     }
 }

@@ -106,6 +106,48 @@ namespace controllerPimNoite.DAO
             return listadeprodutos;
         }
 
+        public ProdutoDTO ConsultarProdutoPorID(int IdProduto)
+        {
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, CodReferencia, Nome_produto, Fabricante, Custo, Fornecedor, ValorUnitario  from tb_Produtos
+                                            inner join tb_Estoques
+                                            on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
+                                            where inativar = 0 and IdProduto = @Id_Produto", conn);
+
+            cmd.Parameters.AddWithValue("@Id_Produto", IdProduto);
+
+            ProdutoDTO produtoDTO = null;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                produtoDTO = new ProdutoDTO();
+                
+                if (dr.Read())
+                {
+                    produtoDTO = new ProdutoDTO();
+
+                    produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
+                    produtoDTO.CodReferencia = Convert.ToInt32(dr["CodReferencia"]);
+                    produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
+                    produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
+                    produtoDTO.Forncedor = Convert.ToString(dr["Fornecedor"]);
+                    produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
+                    produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
+
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+
+                mensagem = ex.ToString();
+            }
+            return produtoDTO;
+        }
+
         public void ExcluirProduto(int idProduto)
         {
             SqlCommand cmd = new SqlCommand(@"update tb_Produtos

@@ -36,7 +36,6 @@ namespace ViewPimNoite.UC
             cmbProduto.ItemsSource = produto;
             cmbProduto.DisplayMemberPath = "Produto";
             cmbProduto.SelectedValuePath = "IdProduto";
-            cmbProduto.SelectedValuePath = "ValorUnitario";
 
         }
 
@@ -45,12 +44,13 @@ namespace ViewPimNoite.UC
         private void btnIncluirItem_Click(object sender, RoutedEventArgs e)
         {
             ItensVendaDTO item = new ItensVendaDTO();
-            item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
             item.ProdutoDTO = new ProdutoDTO();
-            item.ProdutoDTO.IdProduto = Convert.ToInt32(cmbProduto.SelectedValue);
+            item.ProdutoDTO = controllerPimNoite.DAO.ProdutoDAO.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue));
+            item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
 
             listaItens.Add(item);
             dgProdutosVenda.ItemsSource = listaItens;
+            dgProdutosVenda.Items.Refresh();
 
             cmbProduto.Text = "";
         }
