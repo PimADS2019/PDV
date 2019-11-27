@@ -98,7 +98,10 @@ namespace ViewPimNoite.UC
                 MessageBox.Show(Controller.getInstance().mensagem);
             }
 
-            dgProdutosVenda.Items.Refresh();
+            lblQtdItens.Content = "";
+            lblSubTotal.Content = "";
+            lblDesconto.Content = "";
+            lblTotal.Content = "";
         }
 
         private void txbQuantidadeProduto_KeyDown(object sender, KeyEventArgs e)
