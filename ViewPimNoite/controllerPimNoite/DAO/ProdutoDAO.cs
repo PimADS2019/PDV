@@ -132,6 +132,7 @@ namespace controllerPimNoite.DAO
         {
             SqlCommand cmd = new SqlCommand("SP_EditarProduto", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@IdProduto", produto.IdProduto);
             cmd.Parameters.AddWithValue("@Nome_Produto", produto.Produto);
             cmd.Parameters.AddWithValue("@Tamanho", produto.Tamanho);
             cmd.Parameters.AddWithValue("@Fabricante", produto.Fabricante);
