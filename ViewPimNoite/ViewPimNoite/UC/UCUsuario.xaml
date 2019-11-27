@@ -32,7 +32,7 @@
         </DataGrid>
         <TextBox x:Name="txbPesqUsuario" LostFocus="txbPesqUsuario_LostFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" VerticalAlignment="Top" Width="278" Foreground="Black" TextChanged="txbPesqUsuario_TextChanged" />
         <TextBox x:Name="txbWaterMark" GotFocus="txbWaterMark_GotFocus" HorizontalAlignment="Left" Height="24" Margin="759,104,0,0" Text="Pesquisar usuário" VerticalAlignment="Top" Width="278" Foreground="#FFB4B4B4" />
-        <Button x:Name="btnAtualizar" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizar_Click">
+        <Button x:Name="btnAtualizar" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizar_Click" >
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>

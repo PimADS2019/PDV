@@ -226,7 +226,6 @@ create procedure SP_CadastroProdutos
 (
 	@Nome_Produto Varchar(40),
 	@Fabricante Varchar(40),
-	@Tamanho Varchar(3),
 	@Custo float,
 	@Fornecedor Varchar(40),
 	@Precounitario float,
@@ -237,7 +236,7 @@ create procedure SP_CadastroProdutos
 as
 begin
 	insert into tb_Produtos
-	values (@Nome_Produto, @Tamanho, @Fabricante, @Fornecedor,@CodReferencia, @Inativar)
+	values (@Nome_Produto, @Fabricante, @Fornecedor,@CodReferencia, @Inativar)
 	declare @Id_Produto int=@@identity
 
 	insert into tb_Estoques (ValorUnitario, Custo, Quantidade, fk_Produtos_IdProduto)
@@ -382,7 +381,7 @@ as
 begin
 
 	update tb_Produtos
-	set Nome_produto = @Nome_Produto, Tamanho = @Tamanho, Fabricante = @Fabricante, Fornecedor = @Fornecedor   
+	set Nome_produto = @Nome_Produto, Fabricante = @Fabricante, Fornecedor = @Fornecedor   
 	where IdProduto = @IdProduto
 
 	update tb_Estoques

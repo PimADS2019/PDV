@@ -36,8 +36,7 @@ namespace ViewPimNoite.UC
         private void BtnIncluirCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
-            frmCadastrar.ShowDialog();
-
+            frmCadastrar.ShowDialog();             
         }
         private void BtnEditarCliente_Click(object sender, RoutedEventArgs e)
         {
@@ -81,13 +80,20 @@ namespace ViewPimNoite.UC
 
         private void btnExcluirCliente_Click(object sender, RoutedEventArgs e)
         {
-            ClienteDTO cliente = new ClienteDTO();
+            if (dgClientes.SelectedCells.Count > 0)
+            {
+                ClienteDTO cliente = new ClienteDTO();
 
-            cliente = dgClientes.SelectedItem as ClienteDTO;
+                cliente = dgClientes.SelectedItem as ClienteDTO;
 
-            Controller.getInstance().ExcluirCliente(Convert.ToString(cliente.IdCliente));
+                Controller.getInstance().ExcluirCliente(Convert.ToString(cliente.IdCliente));
 
-            MessageBox.Show(Controller.getInstance().mensagem);
+                MessageBox.Show(Controller.getInstance().mensagem);
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um cliente");
+            }
         }
 
         private void btnAtualizar_Click(object sender, RoutedEventArgs e)

@@ -70,7 +70,6 @@ namespace ViewPimNoite.UC
         private void btnAtualizarEstoque_Click(object sender, RoutedEventArgs e)
         {
             List<ProdutoDTO> listEstoque = Controller.getInstance().ConsultarEstoque("");
-
             dgEstoque.ItemsSource = listEstoque;
         }
 
@@ -89,6 +88,5 @@ namespace ViewPimNoite.UC
             txbPesqProdutoEstoque.Visibility = Visibility.Visible;
             txbPesqProdutoEstoque.Focus();
         }
-
     }
 }

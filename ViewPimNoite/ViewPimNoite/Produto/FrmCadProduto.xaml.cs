@@ -50,7 +50,7 @@ namespace ViewPimNoite.Produto
         {
             KeyConverter key = new KeyConverter();
 
-            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            if ((char.IsDigit((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
             {
                 e.Handled = true;
             }

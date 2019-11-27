@@ -88,13 +88,22 @@ namespace ViewPimNoite.UC
 
         private void btnExcluirUsuario_Click(object sender, RoutedEventArgs e)
         {
-            FuncionarioDTO funcionario = new FuncionarioDTO();
+            if (dgUsuarios.SelectedCells.Count > 0)
+            {
+                FuncionarioDTO funcionario = new FuncionarioDTO();
 
-            funcionario = dgUsuarios.SelectedItem as FuncionarioDTO;
+                funcionario = dgUsuarios.SelectedItem as FuncionarioDTO;
 
-            Controller.getInstance().ExcluirFuncionario(Convert.ToString(funcionario.IdFuncionario));
+                Controller.getInstance().ExcluirFuncionario(Convert.ToString(funcionario.IdFuncionario));
 
-            MessageBox.Show(Controller.getInstance().mensagem);
+                MessageBox.Show(Controller.getInstance().mensagem);
+
+                btnAtualizar_Click(this, null);
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um usuário");
+            }
         }
         private void txbPesqUsuario_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -116,6 +125,5 @@ namespace ViewPimNoite.UC
             List<FuncionarioDTO> listDadosFuncionario = Controller.getInstance().ConsultarFuncionarioPorNome("");
             dgUsuarios.ItemsSource = listDadosFuncionario;
         }
-
     }
 }

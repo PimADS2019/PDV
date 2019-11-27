@@ -8,7 +8,7 @@
     <Grid Background="#FF515151" Margin="-18,0,-10,0">
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="110" Stroke="#FF2196F3" VerticalAlignment="Top" Width="408" RadiusX="10" RadiusY="5" Margin="55,36,0,0"/>
         <Label Content="Produto" FontWeight="Bold" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" Height="56" Width="277"/>
-        <Button x:Name="btnFinalizarVenda" Content="Finalizar Venda" FontSize="35" HorizontalAlignment="Left" Margin="55,523,0,0" VerticalAlignment="Top" Width="544" Height="68" Background="Green" BorderBrush="Green" Click="btnFinalizarVenda_Click"/>
+        <Button x:Name="btnFinalizarVenda" Content="Finalizar Venda" FontSize="30" HorizontalAlignment="Left" Margin="344,523,0,0" VerticalAlignment="Top" Width="255" Height="68" Background="Green" BorderBrush="Green" Click="btnFinalizarVenda_Click"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="35" Stroke="#FF2196F3" VerticalAlignment="Top" Width="125" RadiusX="10" RadiusY="5" Margin="695,486,0,0"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="35" Stroke="#FF2196F3" VerticalAlignment="Top" Width="125" RadiusX="10" RadiusY="5" Margin="825,486,0,0"/>
         <Rectangle Fill="#FF2196F3"  HorizontalAlignment="Left" Height="35" Stroke="#FF2196F3" VerticalAlignment="Top" Width="125" RadiusX="10" RadiusY="5" Margin="955,486,0,0"/>
@@ -32,6 +32,7 @@
         <Label x:Name="lblQtdItens" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="763,496,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="45"/>
         <Label x:Name="lblDesconto" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="1024,496,0,0" VerticalAlignment="Top" FontSize="12" Foreground="White" Height="25" Width="47"/>
         <Label x:Name="lblTotal" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="898,552,0,0" VerticalAlignment="Top" FontSize="22" Foreground="White" Height="39" Width="172"/>
-        <ComboBox x:Name="cmbProduto" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="369" Height="43" Background="White"/>
+        <ComboBox x:Name="cmbProduto" HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Width="369" Height="43" Background="White" MouseDoubleClick="cmbProduto_MouseDoubleClick"/>
+        <Button x:Name="btnCancelarVenda" Content="Cancelar Venda" FontSize="30" HorizontalAlignment="Left" Margin="55,523,0,0" VerticalAlignment="Top" Width="255" Height="68" Background="Red" BorderBrush="Red" Click="btnCancelarVenda_Click"/>
     </Grid>
 </UserControl>

@@ -76,13 +76,20 @@ namespace ViewPimNoite.UC
 
         private void btnExcluirProduto_Click(object sender, RoutedEventArgs e)
         {
-            ProdutoDTO produto = new ProdutoDTO();
+            if (dgProdutos.SelectedCells.Count > 0)
+            {
+                ProdutoDTO produto = new ProdutoDTO();
 
-            produto = dgProdutos.SelectedItem as ProdutoDTO;
+                produto = dgProdutos.SelectedItem as ProdutoDTO;
 
-            Controller.getInstance().ExcluirProduto(Convert.ToString(produto.IdProduto));
+                Controller.getInstance().ExcluirProduto(Convert.ToString(produto.IdProduto));
 
-            MessageBox.Show(Controller.getInstance().mensagem);
+                MessageBox.Show(Controller.getInstance().mensagem);
+            }
+            else
+            {
+                MessageBox.Show("Selecione ao menos um produto");
+            }
         }
         private void txbPesqProduto_LostFocus(object sender, RoutedEventArgs e)
         {

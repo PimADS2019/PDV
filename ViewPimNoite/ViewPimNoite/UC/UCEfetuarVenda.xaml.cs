@@ -111,5 +111,26 @@ namespace ViewPimNoite.UC
                 this.btnIncluirItem_Click(this, null);
             }
         }
+
+        private void cmbProduto_MouseMove(object sender, MouseEventArgs e)
+        {
+            Atualizar_cmbProduto();
+        }
+
+        private void btnCancelarVenda_Click(object sender, RoutedEventArgs e)
+        {
+            cmbProduto.Text = "";
+            txbQuantidadeProduto.Text = "1";
+            dgProdutosVenda.ItemsSource = "";
+            lblQtdItens.Content = "";
+            lblSubTotal.Content = "";
+            lblDesconto.Content = "";
+            lblTotal.Content = "";
+        }
+
+        private void cmbProduto_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Atualizar_cmbProduto();
+        }
     }
 }
