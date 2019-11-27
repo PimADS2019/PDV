@@ -52,7 +52,7 @@ CREATE TABLE tb_Transacoes (
 	Desconto FLOAT,
     SubTotal FLOAT,
 	Total FLOAT,
-	DataVenda date,
+	DataVenda datetime,
     fk_Funcionarios_IdFuncionario INT,
     fk_Clientes_IdCliente INT
 );
@@ -250,16 +250,15 @@ create procedure SP_CadastroVenda
 	@SubTotal float,
 	@Desconto float,
 	@Total float,
-	@IdFuncioanrio int,
-	@IdCliente int,
-	@DataVenda date
+	@IdFuncionario int,
+	@DataVenda datetime
 )
 as
 begin
-	insert into tb_Transacoes
-	values (@Desconto, @SubTotal, @Total,@DataVenda, @IdFuncioanrio, @IdCliente)
+	insert into tb_Transacoes (Desconto, SubTotal, Total,DataVenda,fk_Funcionarios_IdFuncionario)
+	values (@Desconto, @SubTotal, @Total,@DataVenda, @IdFuncionario)
 
-	select SCOPE_IDENTITY() from tb_Transacoes
+	select SCOPE_IDENTITY() as idVenda from tb_Transacoes 
 
 end
 /* Fim Insert Vendas */
@@ -281,8 +280,6 @@ begin
 	where tb_Estoques.fk_Produtos_IdProduto = @IdProduto
 end
 /* Fim Insert Vendas */
-	
-
 
 /* inicio Update Cliente */
 create procedure SP_EditarCliente
@@ -369,7 +366,6 @@ create procedure SP_EditarProduto
 (
 	@Nome_Produto Varchar(40),
 	@Fabricante Varchar(40),
-	@Tamanho Varchar(3),
 	@Custo float,
 	@Fornecedor Varchar(40),
 	@Precounitario float,
@@ -404,37 +400,3 @@ begin
 end
 /* Fim Quantidade Produtos */
 /* fim Procedure */
-
-insert tb_Funcionarios(Usuario, Senha)
-values ('admin', 'admin')
-
-select Nome_produto, Fornecedor  from tb_Produtos
-where inativar = 1 and IdProduto = 1
-select *  from tb_Estoques
-
-select Fabricante, Custo, ValorUnitario, Quantidade  from tb_Produtos
-inner join tb_Estoques
-on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-where inativar = 1 and Nome_produto like @nome_Produto
-
-exec SP_CadastroVenda 1, 1,1,1,1
-
-
-select CodReferencia, ValorUnitario, Nome_produto from tb_Produtos
-inner join tb_Estoques
-on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-where inativar = 1 and Nome_produto like '% %'
-
-insert into tb_Funcionarios (Usuario, Senha, fk_Pessoas_IdPessoa)
-values ('admin', 'admin', 1)
-
-select * from tb_Pessoas
-select * from tb_Funcionarios
-select * from tb_Clientes
-
-SELECT * from tb_Produtos
-select * from tb_Estoques
-
-insert into tb_Pessoas (Inativar)
-values ('0')
-

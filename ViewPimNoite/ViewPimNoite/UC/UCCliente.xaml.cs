@@ -36,7 +36,8 @@ namespace ViewPimNoite.UC
         private void BtnIncluirCliente_Click(object sender, RoutedEventArgs e)
         {
             FrmCadCliente frmCadastrar = new FrmCadCliente();
-            frmCadastrar.ShowDialog();             
+            frmCadastrar.ShowDialog();
+
         }
         private void BtnEditarCliente_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +90,8 @@ namespace ViewPimNoite.UC
                 Controller.getInstance().ExcluirCliente(Convert.ToString(cliente.IdCliente));
 
                 MessageBox.Show(Controller.getInstance().mensagem);
+
+                btnAtualizar_Click(this, null);
             }
             else
             {

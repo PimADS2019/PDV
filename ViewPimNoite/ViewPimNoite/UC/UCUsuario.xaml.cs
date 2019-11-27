@@ -85,7 +85,6 @@ namespace ViewPimNoite.UC
             FuncionarioDTO funcionario = new FuncionarioDTO();
             Pesquisar(funcionario);
         }
-
         private void btnExcluirUsuario_Click(object sender, RoutedEventArgs e)
         {
             if (dgUsuarios.SelectedCells.Count > 0)
@@ -125,5 +124,6 @@ namespace ViewPimNoite.UC
             List<FuncionarioDTO> listDadosFuncionario = Controller.getInstance().ConsultarFuncionarioPorNome("");
             dgUsuarios.ItemsSource = listDadosFuncionario;
         }
+
     }
 }

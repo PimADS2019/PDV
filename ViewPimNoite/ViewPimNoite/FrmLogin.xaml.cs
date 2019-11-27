@@ -40,14 +40,11 @@ namespace ViewPimNoite
                 MainMenu mainMenu = new MainMenu();
 
                 mainMenu.ShowDialog();
-
-                this.Close();
             }
             else
             {
                 MessageBox.Show(Controller.getInstance().ValidarUsuario(funcionario));
             }
-
         }
 
         private void btnFechar_Click(object sender, RoutedEventArgs e)

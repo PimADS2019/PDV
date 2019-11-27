@@ -73,7 +73,6 @@ namespace ViewPimNoite.UC
             ProdutoDTO produto = new ProdutoDTO();
             Pesquisar(produto);
         }
-
         private void btnExcluirProduto_Click(object sender, RoutedEventArgs e)
         {
             if (dgProdutos.SelectedCells.Count > 0)

@@ -42,13 +42,15 @@ namespace ViewPimNoite.UC
         }
         private void btnIncluirItem_Click(object sender, RoutedEventArgs e)
         {
+            ItensVendaDTO item = new ItensVendaDTO();
+
             if (cmbProduto.Text.Equals(""))
             {
                 MessageBox.Show("Selecione um item para a venda");
             }
             else
             {
-                ItensVendaDTO item = new ItensVendaDTO();
+
                 item.ProdutoDTO = new ProdutoDTO();
                 item.ProdutoDTO = Controller.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue));
 
@@ -66,6 +68,7 @@ namespace ViewPimNoite.UC
 
                     PreencherValoresVenda(item);
                     cmbProduto.Text = "";
+                    txbQuantidadeProduto.Text = "1";
                 }
             }
         }
@@ -78,7 +81,17 @@ namespace ViewPimNoite.UC
             lblDesconto.Content = itens.VendaDTO.Desconto;
             lblTotal.Content = itens.VendaDTO.VlTotal;
         }
-
+        private void LimparCampos()
+        {
+            cmbProduto.Text = "";
+            txbQuantidadeProduto.Text = "1";
+            dgProdutosVenda.ItemsSource = "";
+            lblQtdItens.Content = "";
+            lblSubTotal.Content = "";
+            lblDesconto.Content = "";
+            lblTotal.Content = "";
+            listaItens.Clear();
+        }
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
             if (listaItens.Count() == 0)
@@ -96,41 +109,26 @@ namespace ViewPimNoite.UC
                 Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
 
                 MessageBox.Show(Controller.getInstance().mensagem);
-            }
 
-            lblQtdItens.Content = "";
-            lblSubTotal.Content = "";
-            lblDesconto.Content = "";
-            lblTotal.Content = "";
+                LimparCampos();
+
+            }  
+        }
+        private void btnCancelarVenda_Click(object sender, RoutedEventArgs e)
+        {
+            LimparCampos();
         }
 
+        private void cmbProduto_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Atualizar_cmbProduto();
+        }
         private void txbQuantidadeProduto_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 this.btnIncluirItem_Click(this, null);
             }
-        }
-
-        private void cmbProduto_MouseMove(object sender, MouseEventArgs e)
-        {
-            Atualizar_cmbProduto();
-        }
-
-        private void btnCancelarVenda_Click(object sender, RoutedEventArgs e)
-        {
-            cmbProduto.Text = "";
-            txbQuantidadeProduto.Text = "1";
-            dgProdutosVenda.ItemsSource = "";
-            lblQtdItens.Content = "";
-            lblSubTotal.Content = "";
-            lblDesconto.Content = "";
-            lblTotal.Content = "";
-        }
-
-        private void cmbProduto_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Atualizar_cmbProduto();
         }
     }
 }

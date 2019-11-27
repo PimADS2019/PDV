@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\ViewPimNoite\obj\Debug\
+C:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\obj\Debug\
 ViewPimNoite
 none
 false
 DEBUG;TRACE
-C:\Users\Reserva\Documents\GitHub\PDV\ViewPimNoite\ViewPimNoite\App.xaml
+C:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\App.xaml
 17-1176886603
 
 231570127547
-18-1531896573
+18-178809817
 Cliente\FrmCadCliente.xaml;Cliente\FrmEditCliente.xaml;Estoque\FrmEntradaProduto.xaml;FrmLogin.xaml;FrmMainMenu.xaml;Produto\FrmCadProduto.xaml;Produto\FrmEditProduto.xaml;UC\UCEstoque.xaml;UC\UCMenuItem.xaml;UC\UCCliente.xaml;UC\UCProduto.xaml;UC\UCSobre.xaml;UC\UCUsuario.xaml;UC\UCEfetuarVenda.xaml;UC\UCVendas.xaml;Usuário\FrmCadUsuario.xaml;Usuário\FrmEditUsuario.xaml;
 
 False

@@ -21,7 +21,7 @@
         <Label Content="Custo" HorizontalAlignment="Left" Margin="456,178,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
         <TextBox  x:Name="txbCusto" HorizontalAlignment="Left" Height="23" Margin="462,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbCusto_KeyDown"/>
         <Label Content="Preço de Venda" HorizontalAlignment="Left" Margin="456,251,0,0" VerticalAlignment="Top" Foreground="#DDA6A6A6"/>
-        <TextBox  x:Name="txbPrecoVenda" HorizontalAlignment="Left" Height="23" Margin="462,277,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbPrecoVenda_KeyDown"/>   
+        <TextBox  x:Name="txbPrecoVenda" HorizontalAlignment="Left" Height="23" Margin="462,277,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="275" RenderTransformOrigin="0.492,0.478" BorderBrush="#DDA6A6A6" KeyDown="txbPrecoVenda_KeyDown"/>
         <Label Content="DADOS" HorizontalAlignment="Left" FontSize="15" FontWeight="Bold" Margin="45,63,0,0" VerticalAlignment="Top" Background="White" Width="63" Foreground="#DDA6A6A6"/>
         <Button x:Name="btnSalvarProduto" Content="Salvar" HorizontalAlignment="Left" Margin="628,352,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.727,0.75" Background="#FF279915" Click="btnSalvarProduto_Click"/>
     </Grid>
