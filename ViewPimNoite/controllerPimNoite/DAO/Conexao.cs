@@ -11,23 +11,5 @@ namespace controllerPimNoite.DAO
     public class Conexao
     {
         protected SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Servidor"].ConnectionString);
-
-        /*public SqlConnection Conectar()
-        {
-            if (conn.State == System.Data.ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-
-            return conn;
-        }
-
-        public void Desconectar()
-        {
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-                conn.Close();
-            }
-        }*/      
     }
 }

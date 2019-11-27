@@ -140,9 +140,9 @@ namespace controllerPimNoite.Controller
             return VendaBL.getInstance().CalculosVenda(qtdItens, qtdVendida, produtoDTO);
         }
 
-        public void SalvarVenda(VendaDTO venda)
+        public void SalvarVenda(VendaDTO venda, int idFuncionario)
         {
-            VendaBL.getInstance().SalvarVenda(venda);
+            VendaBL.getInstance().SalvarVenda(venda, idFuncionario);
             this.mensagem = VendaBL.getInstance().mensagem;
         }
 

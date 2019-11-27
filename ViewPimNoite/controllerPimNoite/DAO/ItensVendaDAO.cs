@@ -26,13 +26,13 @@ namespace controllerPimNoite.DAO
             return instance;
         }
 
-        public void RegistrarItensVendidos(int idProduto, int quantidadeVendida)
+        public void RegistrarItensVendidos(int idProduto, int quantidadeVendida, int idVenda)
         {
             SqlCommand cmd = new SqlCommand("SP_CadastroProdutoVenda", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdProduto", idProduto);
             cmd.Parameters.AddWithValue("@Quantidade", quantidadeVendida);
-            //cmd.Parameters.AddWithValue("@IdVenda", );
+            cmd.Parameters.AddWithValue("@IdVenda", idVenda);
 
 
             try

@@ -11,5 +11,6 @@ namespace controllerPimNoite
     {
         public static Boolean logado;
         public static string usuarioConectado;
+        public static int idFuncionario;
     }
 }

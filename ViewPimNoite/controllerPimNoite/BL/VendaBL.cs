@@ -14,6 +14,8 @@ namespace controllerPimNoite.BL
         private int codReferencia;
         private int qtdVenda;
         private ProdutoDTO produtoDTO;
+        VendaDTO vendaDTO = new VendaDTO();
+        private int idVenda;
 
         private static VendaBL instance = null;
         
@@ -62,7 +64,7 @@ namespace controllerPimNoite.BL
 
         public VendaDTO CalculosVenda(List<ItensVendaDTO> listProdutos, string qtdVendida, ProdutoDTO produtos)
         {
-            VendaDTO vendaDTO = new VendaDTO();
+            
             //Calculando o subTotal
             try
             {
@@ -75,11 +77,15 @@ namespace controllerPimNoite.BL
             
             vendaDTO.SbTotal += produtos.PrecoVenda * qtdVenda;
 
+            ItensVendaDTO itensPedido = null;
             //Preenchendo o ItensVendaDTO com as informações
-            foreach (ItensVendaDTO itensPedido in listProdutos)
+            int i = 0;
+            while (i <=listProdutos.Count())
             {
+                itensPedido = new ItensVendaDTO();
                 itensPedido.Quantidade = qtdVenda;
                 itensPedido.ProdutoDTO = produtos;
+                i++;
             }
 
             //Quantidade de itens
@@ -114,20 +120,21 @@ namespace controllerPimNoite.BL
             return vendaDTO;
         }
 
-        public void SalvarVenda(VendaDTO venda)
+        public void SalvarVenda(VendaDTO venda, int idFuncionario)
         {
-            VendaDTO vendaDTO = new VendaDTO();
-            if (venda.Itens == 0)
+            if (venda.ItensVendaDTO.Count() == 0)
             {
                 this.mensagem = "É necessário que tenha pelo menos 1 item para registrar uma venda";
                 return;
             }
 
-            VendaDAO.getInstance().SalvarVenda(venda);
+            venda.DtCompra = DateTime.Now;
+
+            this.idVenda = VendaDAO.getInstance().SalvarVenda(venda, idFuncionario);
             
             foreach(ItensVendaDTO itens in venda.ItensVendaDTO)
             {
-                ItensVendaDAO.getInstance().RegistrarItensVendidos(itens.ProdutoDTO.CodReferencia, itens.Quantidade);
+                ItensVendaDAO.getInstance().RegistrarItensVendidos(itens.ProdutoDTO.CodReferencia, itens.Quantidade, this.idVenda);
             }
 
             this.mensagem = ItensVendaDAO.getInstance().mensagem;

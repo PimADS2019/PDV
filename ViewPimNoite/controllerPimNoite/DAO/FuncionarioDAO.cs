@@ -201,6 +201,7 @@ namespace controllerPimNoite.DAO
                 if (dr.Read())
                 {
                     Estaticos.usuarioConectado = dr["Usuario"].ToString();
+                    Estaticos.idFuncionario = Convert.ToInt32(dr["IdFuncionario"]);
                     conn.Close();
                     return true;
                 }

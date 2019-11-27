@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using modelPimNoite.DTO;
 using controllerPimNoite.Controller;
+using controllerPimNoite;
 
 namespace ViewPimNoite.UC
 {
@@ -23,7 +24,7 @@ namespace ViewPimNoite.UC
     public partial class UCEfetuarVenda : UserControl
     {
         VendaDTO vendaDTO = new VendaDTO();
-
+        
         public UCEfetuarVenda()
         {
             InitializeComponent();
@@ -52,14 +53,24 @@ namespace ViewPimNoite.UC
             dgProdutosVenda.ItemsSource = listaItens;
             dgProdutosVenda.Items.Refresh();
 
+            PreencherValoresVenda(item);
             cmbProduto.Text = "";
+        }
+
+        private void PreencherValoresVenda(ItensVendaDTO itens)
+        {
+            itens.VendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, itens.ProdutoDTO);
+            lblQtdItens.Content = itens.VendaDTO.Itens;
+            lblSubTotal.Content = itens.VendaDTO.SbTotal;
+            lblDesconto.Content = itens.VendaDTO.Desconto;
+            lblTotal.Content = itens.VendaDTO.VlTotal;
         }
 
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
             vendaDTO.ItensVendaDTO = listaItens;
 
-            Controller.getInstance().SalvarVenda(vendaDTO);
+            Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
 
             MessageBox.Show(Controller.getInstance().mensagem);
         }
@@ -70,17 +81,6 @@ namespace ViewPimNoite.UC
             {
                 this.btnIncluirItem_Click(this, null);
             }
-        }
-
-        private void dgProdutosVenda_AddingNewItem(object sender, AddingNewItemEventArgs e)
-        {
-            ItensVendaDTO item = new ItensVendaDTO();
-
-            item.VendaDTO = Controller.getInstance().CalculosVenda(listaItens, txbQuantidadeProduto.Text, item.ProdutoDTO);
-            lblQtdItens.Content = vendaDTO.Itens;
-            lblSubTotal.Content = vendaDTO.SbTotal;
-            lblDesconto.Content = vendaDTO.Desconto;
-            lblTotal.Content = vendaDTO.VlTotal;
         }
     }
 }

@@ -116,7 +116,7 @@ namespace controllerPimNoite.DAO
             return listadeprodutos;
         }
 
-        public int SalvarVenda(VendaDTO venda)
+        public int SalvarVenda(VendaDTO venda, int idFuncionario)
         {
             SqlCommand cmd = new SqlCommand("SP_CadastroVenda", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -124,18 +124,19 @@ namespace controllerPimNoite.DAO
             cmd.Parameters.AddWithValue("@Desconto", venda.Desconto);
             cmd.Parameters.AddWithValue("@Total", venda.VlTotal);
             cmd.Parameters.AddWithValue("@DataVenda", venda.DtCompra);
+            cmd.Parameters.AddWithValue("@IdFuncionario", idFuncionario);
 
             int id = 0;
             try
             {
                 conn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                conn.Close();
-                
-                while (dr.Read())
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                /*if (dr.Read())
                 {
-                    id = Convert.ToInt32(dr["IdVenda"]);
-                }
+                    id = Convert.ToInt32(dr["@IdVenda"]);
+                }*/
+                conn.Close();
                 this.mensagem = "Venda Realizada com sucesso";
                 return id;
             }
