@@ -15,6 +15,7 @@ namespace modelPimNoite.DTO
         private Double vlTotal;
         private DateTime dtCompra;
         private List<ItensVendaDTO> itensVendaDTO;
+        private ProdutoDTO produtoDTO;
 
         public int Itens { get => itens; set => itens = value; }
         public double SbTotal { get => sbTotal; set => sbTotal = value; }
@@ -22,7 +23,12 @@ namespace modelPimNoite.DTO
         public double VlTotal { get => vlTotal; set => vlTotal = value; }
         public DateTime DtCompra { get => dtCompra; set => dtCompra = value; }
         public List<ItensVendaDTO> ItensVendaDTO { get => itensVendaDTO; set => itensVendaDTO = value; }
-        
+        public int Id { get => id; set => id = value; }
+        public ProdutoDTO ProdutoDTO { get => produtoDTO; set => produtoDTO = value; }
 
+        public VendaDTO()
+        {
+            ProdutoDTO = new ProdutoDTO();
+        }
     }
 }

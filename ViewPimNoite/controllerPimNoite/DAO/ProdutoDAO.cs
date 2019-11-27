@@ -207,7 +207,7 @@ namespace controllerPimNoite.DAO
                                             ValorUnitario, Quantidade, Fornecedor, CodReferencia from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                            where inativar = 0 and Nome_produto like @nome_Produto", conn);
+                                            where inativar = 0 and Nome_produto like @nome_Produto and Quantidade <= 0", conn);
 
             cmd.Parameters.AddWithValue("@nome_Produto", '%'+estoque+'%');
 

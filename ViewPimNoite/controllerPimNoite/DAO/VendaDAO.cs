@@ -28,10 +28,46 @@ namespace controllerPimNoite.DAO
             return instance;
         }
 
-        public List<VendaDTO> ConsultarVendas(string vendas)
+        public List<VendaDTO> ConsultarVendas()
         {
-            //data, id produto e total
-            return null;
+            SqlCommand cmd = new SqlCommand(@"select IdTransacao, Total, DataVenda, Nome_produto  from tb_Transacoes
+                                            inner join tb_ItensTransacoes_Produtos
+                                            on tb_ItensTransacoes_Produtos.fk_Transacoes_IdTransacao = tb_Transacoes.IdTransacao
+                                            inner join tb_Produtos
+                                            on tb_ItensTransacoes_Produtos.fk_Produtos_IdProduto = tb_Produtos.IdProduto
+                                            order by DataVenda desc", conn);
+
+            List<VendaDTO> ListaVendas = null;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                ListaVendas = new List<VendaDTO>();
+                VendaDTO venda = null;
+
+                while (dr.Read())
+                {
+                    venda = new VendaDTO();
+
+                    venda.Id = Convert.ToInt32(dr["IdTransacao"]);
+                    venda.VlTotal = Convert.ToDouble(dr["Total"]);
+                    venda.DtCompra = Convert.ToDateTime(dr["DataVenda"]);
+                    venda.ProdutoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
+
+                    ListaVendas.Add(venda);
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+
+                mensagem = ex.ToString();
+            }
+
+            return ListaVendas;
         }
 
         public List<ProdutoDTO> ChecarProdutoNome(ProdutoDTO produto)

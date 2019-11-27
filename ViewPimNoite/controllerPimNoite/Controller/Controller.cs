@@ -91,7 +91,12 @@ namespace controllerPimNoite.Controller
         {
             return ProdutoBL.getInstance().ConsultarProduto(produto);
         }
-        
+
+        public ProdutoDTO ConsultarProdutoPorID(int idProduto)
+        {
+            return ProdutoBL.getInstance().ConsultarProdutoPorId(idProduto);
+        }
+
         public void ExcluirProduto(string idProduto)
         {
             ProdutoBL.getInstance().ExcluirProduto(idProduto);
@@ -146,9 +151,9 @@ namespace controllerPimNoite.Controller
             this.mensagem = VendaBL.getInstance().mensagem;
         }
 
-        public List<VendaDTO> ConsultarVendas(string vendas)
+        public List<VendaDTO> ConsultarVendas()
         {
-            return VendaBL.getInstance().ConsultarVendas(vendas);
+            return VendaBL.getInstance().ConsultarVendas();
         }
     }
 }

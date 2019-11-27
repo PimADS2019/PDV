@@ -26,26 +26,15 @@ namespace ViewPimNoite.UC
         {
             InitializeComponent();
         }
-        private void Pesquisar(VendaDTO venda)
-        {
-            venda.DtCompra = Convert.ToDateTime(dtpDataVenda);
-
-            dgVendas.ItemsSource = Controller.getInstance().ConsultarVendas(venda.DtCompra.ToString());
-        }
         private void dgVendas_Initialized(object sender, EventArgs e)
         {
-            List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas("");
+            List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas();
             dgVendas.ItemsSource = listDadosClientes;
         }
         private void btnAtualizaVenda_Click(object sender, RoutedEventArgs e)
         {
-            List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas("");
+            List<VendaDTO> listDadosClientes = Controller.getInstance().ConsultarVendas();
             dgVendas.ItemsSource = listDadosClientes;
-        }
-        private void dtpDataVenda_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            VendaDTO venda = new VendaDTO();
-            Pesquisar(venda);
         }
     }
 }

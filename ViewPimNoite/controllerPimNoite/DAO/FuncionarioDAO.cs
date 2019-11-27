@@ -74,7 +74,7 @@ namespace controllerPimNoite.DAO
                                               on fk_Cidades_idCidade = idCidade
                                               join tb_Estados
                                               on fk_Estados_idEstado = idEstado
-                                              where Inativar = 0 and Nome_Pessoa like @Nome_Pessoa", conn);
+                                              where Inativar = 0 and Nome_Pessoa like @Nome_Pessoa and TipoUsuario != 'Cliente'", conn);
 
             cmd.Parameters.AddWithValue("@Nome_Pessoa", "%" + nome + "%");
 

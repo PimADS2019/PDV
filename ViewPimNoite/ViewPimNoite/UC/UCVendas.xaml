@@ -10,10 +10,10 @@
         <Label Content="Vendas" FontWeight="Bold" HorizontalAlignment="Left" Margin="23,2,0,0" VerticalAlignment="Top" FontSize="35" Foreground="White" Height="51" Width="154"/>
         <DataGrid x:Name="dgVendas" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgVendas_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"  Width="150"/>
-                <DataGridTextColumn Header="Data" Binding="{Binding dtCompra}"  Width="150"/>
-                <DataGridTextColumn Header="Produtos" Binding="{Binding itensVendaDTO}"  Width="500"/>
-                <DataGridTextColumn Header="Total" Binding="{Binding vlTotal}" Width="150"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"  Width="150"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding DtCompra}"  Width="150"/>
+                <DataGridTextColumn Header="Produtos" Binding="{Binding ProdutoDTO.Produto}"  Width="500"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding VlTotal}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAtualizaVenda" HorizontalAlignment="Left" Margin="1040,102,0,0" VerticalAlignment="Top" Width="27" Height="26" Click="btnAtualizaVenda_Click">
@@ -24,6 +24,5 @@
                 <ImageBrush ImageSource="/ViewPimNoite;component/Imagens/iconAtualizar.png"/>
             </Button.Background>
         </Button>
-        <DatePicker x:Name="dtpDataVenda" HorizontalAlignment="Left" Margin="862,103,0,0" VerticalAlignment="Top" Width="169" TextInput="dtpDataVenda_TextInput"/>
     </Grid>
 </UserControl>

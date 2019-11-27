@@ -33,9 +33,9 @@ namespace controllerPimNoite.BL
             return instance;
         }
 
-        public List<VendaDTO> ConsultarVendas(string vendas)
+        public List<VendaDTO> ConsultarVendas()
         {
-            return VendaDAO.getInstance().ConsultarVendas(vendas);
+            return VendaDAO.getInstance().ConsultarVendas();
         }
 
         public List<ProdutoDTO> ChecarVendaProduto(string produto)
@@ -128,13 +128,11 @@ namespace controllerPimNoite.BL
                 return;
             }
 
-            venda.DtCompra = DateTime.Now;
-
             this.idVenda = VendaDAO.getInstance().SalvarVenda(venda, idFuncionario);
             
             foreach(ItensVendaDTO itens in venda.ItensVendaDTO)
             {
-                ItensVendaDAO.getInstance().RegistrarItensVendidos(itens.ProdutoDTO.CodReferencia, itens.Quantidade, this.idVenda);
+                ItensVendaDAO.getInstance().RegistrarItensVendidos(itens.ProdutoDTO.IdProduto, itens.Quantidade, this.idVenda);
             }
 
             this.mensagem = ItensVendaDAO.getInstance().mensagem;

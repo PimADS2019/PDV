@@ -54,8 +54,6 @@ namespace controllerPimNoite.BL
                 this.mensagem = "O preço de venda do produto não pode ser um valor negativo ou 0.";
                 return;
             }
-
-           
         }
 
         public void CadastrarProduto(ProdutoDTO produto)
@@ -82,6 +80,11 @@ namespace controllerPimNoite.BL
         public List<ProdutoDTO> ConsultarProduto(string produto)
         {
             return ProdutoDAO.getInstance().ConsultarProduto(produto);
+        }
+
+        public ProdutoDTO ConsultarProdutoPorId(int idProduto)
+        {
+            return ProdutoDAO.getInstance().ConsultarProdutoPorID(idProduto);
         }
 
         public void ExcluirProduto(string idProduto)

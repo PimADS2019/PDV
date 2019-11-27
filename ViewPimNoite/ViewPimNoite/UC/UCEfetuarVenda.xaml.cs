@@ -46,7 +46,7 @@ namespace ViewPimNoite.UC
         {
             ItensVendaDTO item = new ItensVendaDTO();
             item.ProdutoDTO = new ProdutoDTO();
-            item.ProdutoDTO = controllerPimNoite.DAO.ProdutoDAO.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue));
+            item.ProdutoDTO = Controller.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue)); 
             item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
 
             listaItens.Add(item);
@@ -69,10 +69,16 @@ namespace ViewPimNoite.UC
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
             vendaDTO.ItensVendaDTO = listaItens;
+            vendaDTO.Desconto = Convert.ToDouble(lblDesconto.Content);
+            vendaDTO.DtCompra = DateTime.Now;
+            vendaDTO.SbTotal = Convert.ToDouble(lblSubTotal.Content);
+            vendaDTO.VlTotal = Convert.ToDouble(lblTotal.Content);
 
             Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
 
             MessageBox.Show(Controller.getInstance().mensagem);
+            dgProdutosVenda.ItemsSource = null;
+            dgProdutosVenda.Items.Refresh();
         }
 
         private void txbQuantidadeProduto_KeyDown(object sender, KeyEventArgs e)
