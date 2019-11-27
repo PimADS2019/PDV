@@ -11,7 +11,7 @@
         <DataGrid x:Name="dgVendas" HorizontalAlignment="Left" Height="401" Margin="24,140,0,0" VerticalAlignment="Top" Width="1045" AutoGenerateColumns="False" Background="#FFB6B6B6" Initialized="dgVendas_Initialized" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"  Width="150"/>
-                <DataGridTextColumn Header="Data" Binding="{Binding DtCompra}"  Width="150"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding DtCompra}"  Width="200"/>
                 <DataGridTextColumn Header="Produtos" Binding="{Binding ProdutoDTO.Produto}"  Width="500"/>
                 <DataGridTextColumn Header="Total" Binding="{Binding VlTotal}" Width="150"/>
             </DataGrid.Columns>

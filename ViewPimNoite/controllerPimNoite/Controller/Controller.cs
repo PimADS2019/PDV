@@ -115,6 +115,11 @@ namespace controllerPimNoite.Controller
             return ProdutoBL.getInstance().ConsultarEstoque(estoque);
         }
 
+        public List<ProdutoDTO> ConsultarEstoqueVenda()
+        {
+            return ProdutoBL.getInstance().ConsultarEstoqueVenda();
+        }
+
         public ProdutoDTO ColetaDadosEstoque(string codReferencia)
         {
             ProdutoDTO produto = ProdutoBL.getInstance().ColetaDadosEstoque(codReferencia);

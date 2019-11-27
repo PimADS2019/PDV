@@ -122,12 +122,6 @@ namespace controllerPimNoite.BL
 
         public void SalvarVenda(VendaDTO venda, int idFuncionario)
         {
-            if (venda.ItensVendaDTO.Count() == 0)
-            {
-                this.mensagem = "É necessário que tenha pelo menos 1 item para registrar uma venda";
-                return;
-            }
-
             this.idVenda = VendaDAO.getInstance().SalvarVenda(venda, idFuncionario);
             
             foreach(ItensVendaDTO itens in venda.ItensVendaDTO)

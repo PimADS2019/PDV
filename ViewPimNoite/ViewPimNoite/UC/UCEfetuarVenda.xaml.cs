@@ -24,7 +24,8 @@ namespace ViewPimNoite.UC
     public partial class UCEfetuarVenda : UserControl
     {
         VendaDTO vendaDTO = new VendaDTO();
-        
+        private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
+
         public UCEfetuarVenda()
         {
             InitializeComponent();
@@ -32,29 +33,41 @@ namespace ViewPimNoite.UC
         }
         private void Atualizar_cmbProduto()
         {
-            List<ProdutoDTO> produto = Controller.getInstance().ConsultarEstoque("");
+            List<ProdutoDTO> produto = Controller.getInstance().ConsultarEstoqueVenda();
 
             cmbProduto.ItemsSource = produto;
             cmbProduto.DisplayMemberPath = "Produto";
             cmbProduto.SelectedValuePath = "IdProduto";
 
         }
-
-        private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
-        
         private void btnIncluirItem_Click(object sender, RoutedEventArgs e)
         {
-            ItensVendaDTO item = new ItensVendaDTO();
-            item.ProdutoDTO = new ProdutoDTO();
-            item.ProdutoDTO = Controller.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue)); 
-            item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
+            if (cmbProduto.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione um item para a venda");
+            }
+            else
+            {
+                ItensVendaDTO item = new ItensVendaDTO();
+                item.ProdutoDTO = new ProdutoDTO();
+                item.ProdutoDTO = Controller.getInstance().ConsultarProdutoPorID(Convert.ToInt32(cmbProduto.SelectedValue));
 
-            listaItens.Add(item);
-            dgProdutosVenda.ItemsSource = listaItens;
-            dgProdutosVenda.Items.Refresh();
+                item.Quantidade = int.Parse(txbQuantidadeProduto.Text);
 
-            PreencherValoresVenda(item);
-            cmbProduto.Text = "";
+                if (item.Quantidade > item.ProdutoDTO.Quantidade)
+                {
+                    MessageBox.Show("Quantidade Inserida maior do que se tem em estoque");
+                }
+                else
+                {
+                    listaItens.Add(item);
+                    dgProdutosVenda.ItemsSource = listaItens;
+                    dgProdutosVenda.Items.Refresh();
+
+                    PreencherValoresVenda(item);
+                    cmbProduto.Text = "";
+                }
+            }
         }
 
         private void PreencherValoresVenda(ItensVendaDTO itens)
@@ -68,16 +81,23 @@ namespace ViewPimNoite.UC
 
         private void btnFinalizarVenda_Click(object sender, RoutedEventArgs e)
         {
-            vendaDTO.ItensVendaDTO = listaItens;
-            vendaDTO.Desconto = Convert.ToDouble(lblDesconto.Content);
-            vendaDTO.DtCompra = DateTime.Now;
-            vendaDTO.SbTotal = Convert.ToDouble(lblSubTotal.Content);
-            vendaDTO.VlTotal = Convert.ToDouble(lblTotal.Content);
+            if (listaItens.Count() == 0)
+            {
+                MessageBox.Show("Selecione pelo menos um item para a venda");
+            }
+            else
+            {
+                vendaDTO.ItensVendaDTO = listaItens;
+                vendaDTO.Desconto = Convert.ToDouble(lblDesconto.Content);
+                vendaDTO.DtCompra = DateTime.Now;
+                vendaDTO.SbTotal = Convert.ToDouble(lblSubTotal.Content);
+                vendaDTO.VlTotal = Convert.ToDouble(lblTotal.Content);
 
-            Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
+                Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
 
-            MessageBox.Show(Controller.getInstance().mensagem);
-            dgProdutosVenda.ItemsSource = null;
+                MessageBox.Show(Controller.getInstance().mensagem);
+            }
+
             dgProdutosVenda.Items.Refresh();
         }
 

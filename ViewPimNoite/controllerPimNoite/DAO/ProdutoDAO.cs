@@ -38,7 +38,6 @@ namespace controllerPimNoite.DAO
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Nome_Produto", produto.Produto);
             cmd.Parameters.AddWithValue("@Fabricante", produto.Fabricante);
-            cmd.Parameters.AddWithValue("@Tamanho", produto.Tamanho);
             cmd.Parameters.AddWithValue("@Custo", produto.Custo);
             cmd.Parameters.AddWithValue("@Fornecedor", produto.Forncedor);
             cmd.Parameters.AddWithValue("@Precounitario", produto.PrecoVenda);
@@ -108,7 +107,7 @@ namespace controllerPimNoite.DAO
 
         public ProdutoDTO ConsultarProdutoPorID(int IdProduto)
         {
-            SqlCommand cmd = new SqlCommand(@"select IdProduto, CodReferencia, Nome_produto, Fabricante, Custo, Fornecedor, ValorUnitario  from tb_Produtos
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, CodReferencia, Nome_produto, Fabricante, Custo, Quantidade, Fornecedor, ValorUnitario  from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
                                             where inativar = 0 and IdProduto = @Id_Produto", conn);
@@ -134,6 +133,7 @@ namespace controllerPimNoite.DAO
                     produtoDTO.Forncedor = Convert.ToString(dr["Fornecedor"]);
                     produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
                     produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
+                    produtoDTO.Quantidade = Convert.ToInt32(dr["Quantidade"]);
 
                 }
                 conn.Close();
@@ -207,9 +207,54 @@ namespace controllerPimNoite.DAO
                                             ValorUnitario, Quantidade, Fornecedor, CodReferencia from tb_Produtos
                                             inner join tb_Estoques
                                             on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
-                                            where inativar = 0 and Nome_produto like @nome_Produto and Quantidade <= 0", conn);
+                                            where inativar = 0 and Nome_produto like @nome_Produto", conn);
 
             cmd.Parameters.AddWithValue("@nome_Produto", '%'+estoque+'%');
+
+            List<ProdutoDTO> listadeprodutos = null;
+
+            try
+            {
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                listadeprodutos = new List<ProdutoDTO>();
+                ProdutoDTO produtoDTO = null;
+
+                while (dr.Read())
+                {
+                    produtoDTO = new ProdutoDTO();
+
+                    produtoDTO.IdProduto = Convert.ToInt32(dr["IdProduto"]);
+                    produtoDTO.Produto = Convert.ToString(dr["Nome_produto"]);
+                    produtoDTO.CodReferencia = Convert.ToInt32(dr["CodReferencia"]);
+                    produtoDTO.Forncedor = Convert.ToString(dr["Fornecedor"]);
+                    produtoDTO.Fabricante = Convert.ToString(dr["Fabricante"]);
+                    produtoDTO.Custo = Convert.ToDouble(dr["Custo"]);
+                    produtoDTO.PrecoVenda = Convert.ToDouble(dr["ValorUnitario"]);
+                    produtoDTO.Quantidade = Convert.ToInt32(dr["Quantidade"]);
+
+                    listadeprodutos.Add(produtoDTO);
+
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+
+                mensagem = ex.ToString();
+            }
+            return listadeprodutos;
+        }
+
+        public List<ProdutoDTO> ConsultarEstoqueVenda()
+        {
+            SqlCommand cmd = new SqlCommand(@"select IdProduto, Nome_produto, Fabricante, Custo,
+                                            ValorUnitario, Quantidade, Fornecedor, CodReferencia from tb_Produtos
+                                            inner join tb_Estoques
+                                            on tb_Produtos.IdProduto = tb_Estoques.fk_Produtos_IdProduto
+                                            where inativar = 0 and Quantidade > 0", conn);
 
             List<ProdutoDTO> listadeprodutos = null;
 
