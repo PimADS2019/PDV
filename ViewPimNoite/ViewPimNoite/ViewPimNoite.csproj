@@ -75,8 +75,14 @@
     <Compile Include="Estoque\FrmEntradaProduto.xaml.cs">
       <DependentUpon>FrmEntradaProduto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrmFormaPgto.xaml.cs">
+      <DependentUpon>FrmFormaPgto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.xaml.cs">
       <DependentUpon>FrmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrocoPgto.xaml.cs">
+      <DependentUpon>FrmTrocoPgto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Produto\FrmCadProduto.xaml.cs">
       <DependentUpon>FrmCadProduto.xaml</DependentUpon>
@@ -160,11 +166,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FrmFormaPgto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FrmLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FrmMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmTrocoPgto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

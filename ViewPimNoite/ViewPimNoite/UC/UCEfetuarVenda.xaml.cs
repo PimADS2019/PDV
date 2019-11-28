@@ -25,6 +25,7 @@ namespace ViewPimNoite.UC
     {
         VendaDTO vendaDTO = new VendaDTO();
         private List<ItensVendaDTO> listaItens = new List<ItensVendaDTO>();
+        public Double valorTotal;
 
         public UCEfetuarVenda()
         {
@@ -106,7 +107,12 @@ namespace ViewPimNoite.UC
                 vendaDTO.SbTotal = Convert.ToDouble(lblSubTotal.Content);
                 vendaDTO.VlTotal = Convert.ToDouble(lblTotal.Content);
 
+                Estaticos.valorTotal = vendaDTO.VlTotal;
+                
+
                 Controller.getInstance().SalvarVenda(vendaDTO, Estaticos.idFuncionario);
+                FrmFormaPgto frmForma = new FrmFormaPgto();
+                frmForma.ShowDialog();
 
                 MessageBox.Show(Controller.getInstance().mensagem);
 

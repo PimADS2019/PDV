@@ -1,20 +1,6 @@
 ﻿
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\App.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Cliente\FrmCadCliente.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Cliente\FrmEditCliente.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Estoque\FrmEntradaProduto.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\FrmLogin.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\FrmMainMenu.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Produto\FrmCadProduto.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Produto\FrmEditProduto.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCEstoque.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCMenuItem.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCCliente.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCProduto.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCSobre.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCUsuario.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCEfetuarVenda.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\UC\UCVendas.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Usuário\FrmCadUsuario.xaml;;
-FC:\Users\Reserva\Downloads\bkp\PDV-fd893665dae70097c4e1b31d00c5274553beebf9\ViewPimNoite\ViewPimNoite\Usuário\FrmEditUsuario.xaml;;
+
+FC:\Users\Vinicius\Desktop\PDV\ViewPimNoite\ViewPimNoite\FrmFormaPgto.xaml;;
+FC:\Users\Vinicius\Desktop\PDV\ViewPimNoite\ViewPimNoite\FrmTrocoPgto.xaml;;
+FC:\Users\Vinicius\Desktop\PDV\ViewPimNoite\ViewPimNoite\UC\UCVendas.xaml;;
 
